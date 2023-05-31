@@ -51,6 +51,8 @@ dependencies {
     implementation(Deps.composeNavigation)
     implementation(Deps.coilCompose)
 
+    implementation(Deps.kotlinDateTime)
+
     implementation(Deps.flowLayout)
     implementation(Deps.viewPager)
     implementation(Deps.viewPagerIndicator)

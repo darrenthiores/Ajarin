@@ -25,7 +25,6 @@ import androidx.compose.ui.res.painterResource
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.ajarin.android.R
-import com.example.ajarin.android.core_ui.components.CommonHeader
 import com.example.ajarin.android.core_ui.components.PrimaryButton
 import com.example.ajarin.android.mentor_profile.presentation.components.MentorProfileHeader
 import com.example.ajarin.android.mentor_profile.presentation.components.MentorProfileTabRow
@@ -42,7 +41,8 @@ import com.google.accompanist.pager.rememberPagerState
 @Composable
 fun MentorProfileScreen(
     state: MentorProfileState,
-    onBackClick: () -> Unit
+    onBackClick: () -> Unit,
+    onBookClick: () -> Unit
 ) {
     val pagerState = rememberPagerState()
     val context = LocalContext.current
@@ -58,9 +58,9 @@ fun MentorProfileScreen(
         },
         floatingActionButton = {
             PrimaryButton(
-                text = "Reserve"
+                text = "Book"
             ) {
-
+                onBookClick()
             }
         },
         floatingActionButtonPosition = FabPosition.End

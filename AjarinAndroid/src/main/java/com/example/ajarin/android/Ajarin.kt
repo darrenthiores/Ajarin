@@ -13,6 +13,8 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.ajarin.android.booking.presentation.AndroidBookingViewModel
+import com.example.ajarin.android.booking.presentation.BookingScreen
 import com.example.ajarin.android.components.AppBottomBar
 import com.example.ajarin.core.utils.UiEvent
 import com.example.ajarin.android.core_ui.navigation.Route
@@ -183,12 +185,49 @@ fun Ajarin(
                         type = NavType.StringType
                     }
                 )
-            ) {
+            ) { navBackStackEntry ->
+                val mentorId = navBackStackEntry.arguments?.getString("mentor_id")
                 val viewModel: AndroidMentorProfileViewModel = hiltViewModel()
                 val state by viewModel.state.collectAsState()
 
                 MentorProfileScreen(
                     state = state,
+                    onBackClick = {
+                        navController.navigateUp()
+                    },
+                    onBookClick = {
+                        mentorId?.let {
+                            navController.navigate(Route.Booking.name + "/$it")
+                        }
+                    }
+                )
+            }
+
+            composable(
+                route = Route.Booking.name + "/{mentor_id}",
+                arguments = listOf(
+                    navArgument("mentor_id") {
+                        type = NavType.StringType
+                    }
+                )
+            ) {
+                val viewModel: AndroidBookingViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                LaunchedEffect(key1 = true) {
+                    viewModel.uiEvent.collect { event ->
+                        when(event) {
+                            is UiEvent.Success -> {
+                                appState.showSnackBar("payment success")
+                            }
+                            else -> Unit
+                        }
+                    }
+                }
+
+                BookingScreen(
+                    state = state,
+                    onEvent = viewModel::onEvent,
                     onBackClick = {
                         navController.navigateUp()
                     }

@@ -4,5 +4,6 @@ enum class Route {
     Splash,
     Login,
     Register,
-    MentorProfile
+    MentorProfile,
+    Booking
 }
