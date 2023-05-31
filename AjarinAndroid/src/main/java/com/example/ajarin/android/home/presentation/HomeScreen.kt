@@ -30,7 +30,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun HomeScreen(
     state: HomeState,
-    onEvent: (HomeEvent) -> Unit
+    onEvent: (HomeEvent) -> Unit,
+    onMentorClick: (String) -> Unit
 ) {
     val listState = rememberLazyGridState()
     val coroutineScope = rememberCoroutineScope()
@@ -106,7 +107,7 @@ fun HomeScreen(
                 MentorCard(
                     mentor = mentor
                 ) {
-
+                    onMentorClick(mentor.id)
                 }
             }
         }
@@ -120,7 +121,8 @@ private fun HomeScreenPreview() {
         Surface {
             HomeScreen(
                 state = HomeState(),
-                onEvent = {  }
+                onEvent = {  },
+                onMentorClick = {  }
             )
         }
     }

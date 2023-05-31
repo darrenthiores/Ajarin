@@ -21,6 +21,10 @@ object Deps {
     private const val flowLayoutVersion = "0.24.12-rc"
     const val flowLayout = "com.google.accompanist:accompanist-flowlayout:$flowLayoutVersion"
 
+    private const val viewPagerVersion = "0.25.1"
+    const val viewPager = "com.google.accompanist:accompanist-pager:$viewPagerVersion"
+    const val viewPagerIndicator = "com.google.accompanist:accompanist-pager-indicators:$viewPagerVersion"
+
     // KOTLIN DATE TIME
     private const val dateTimeVersion = "0.4.0"
     const val kotlinDateTime = "org.jetbrains.kotlinx:kotlinx-datetime:$dateTimeVersion"

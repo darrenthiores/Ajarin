@@ -9,8 +9,10 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
 import com.example.ajarin.android.components.AppBottomBar
 import com.example.ajarin.core.utils.UiEvent
 import com.example.ajarin.android.core_ui.navigation.Route
@@ -22,6 +24,8 @@ import com.example.ajarin.android.landing.presentation.login.LoginScreen
 import com.example.ajarin.android.landing.presentation.register.AndroidRegisterViewModel
 import com.example.ajarin.android.landing.presentation.register.RegisterScreen
 import com.example.ajarin.android.landing.presentation.splash.SplashScreen
+import com.example.ajarin.android.mentor_profile.presentation.AndroidMentorProfileViewModel
+import com.example.ajarin.android.mentor_profile.presentation.MentorProfileScreen
 import com.example.ajarin.android.profile.presentation.AndroidProfileViewModel
 import com.example.ajarin.android.profile.presentation.ProfileScreen
 import com.example.ajarin.android.search_mentor.presentation.AndroidSearchMentorViewModel
@@ -123,7 +127,10 @@ fun Ajarin(
 
                 HomeScreen(
                     state = state,
-                    onEvent = viewModel::onEvent
+                    onEvent = viewModel::onEvent,
+                    onMentorClick = { mentorId ->
+                        navController.navigate(Route.MentorProfile.name + "/$mentorId")
+                    }
                 )
             }
 
@@ -133,7 +140,10 @@ fun Ajarin(
 
                 SearchMentorScreen(
                     state = state,
-                    onEvent = viewModel::onEvent
+                    onEvent = viewModel::onEvent,
+                    onMentorClick = { mentorId ->
+                        navController.navigate(Route.MentorProfile.name + "/$mentorId")
+                    }
                 )
             }
 
@@ -166,6 +176,24 @@ fun Ajarin(
                 )
             }
 
+            composable(
+                route = Route.MentorProfile.name + "/{mentor_id}",
+                arguments = listOf(
+                    navArgument("mentor_id") {
+                        type = NavType.StringType
+                    }
+                )
+            ) {
+                val viewModel: AndroidMentorProfileViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                MentorProfileScreen(
+                    state = state,
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
+            }
         }
     }
 }

@@ -52,6 +52,8 @@ dependencies {
     implementation(Deps.coilCompose)
 
     implementation(Deps.flowLayout)
+    implementation(Deps.viewPager)
+    implementation(Deps.viewPagerIndicator)
 
     implementation(Deps.hiltAndroid)
     kapt(Deps.hiltAndroidCompiler)

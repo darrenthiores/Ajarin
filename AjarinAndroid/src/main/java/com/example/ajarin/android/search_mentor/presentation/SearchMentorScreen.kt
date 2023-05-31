@@ -37,7 +37,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun SearchMentorScreen(
     state: SearchMentorState,
-    onEvent: (SearchMentorEvent) -> Unit
+    onEvent: (SearchMentorEvent) -> Unit,
+    onMentorClick: (String) -> Unit
 ) {
     val sheetState = rememberBottomSheetState(initialValue = BottomSheetValue.Collapsed)
     val scaffoldState = rememberBottomSheetScaffoldState(bottomSheetState = sheetState)
@@ -133,7 +134,8 @@ fun SearchMentorScreen(
             if (state.mentors.isNotEmpty()) {
                 SearchMentorResult(
                     mentors = state.mentors,
-                    state = resultListState
+                    state = resultListState,
+                    onMentorClick = onMentorClick
                 )
             } else {
                 SearchMentorDefault(
@@ -160,7 +162,8 @@ private fun SearchMentorScreenPreview() {
     AjarinTheme {
         SearchMentorScreen(
             state = SearchMentorState(),
-            onEvent = {  }
+            onEvent = {  },
+            onMentorClick = {  }
         )
     }
 }

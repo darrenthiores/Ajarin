@@ -22,6 +22,7 @@ fun SearchMentorResult(
     modifier: Modifier = Modifier,
     mentors: List<Mentor>,
     state: LazyGridState,
+    onMentorClick: (String) -> Unit
 ) {
     LazyVerticalGrid(
         modifier = modifier
@@ -39,7 +40,7 @@ fun SearchMentorResult(
             MentorCard(
                 mentor = mentor
             ) {
-
+                onMentorClick(mentor.id)
             }
         }
     }
@@ -51,7 +52,8 @@ private fun SearchMentorResultPreview() {
     AjarinTheme {
         SearchMentorResult(
             mentors = dummyMentors,
-            state = rememberLazyGridState()
+            state = rememberLazyGridState(),
+            onMentorClick = {  }
         )
     }
 }
