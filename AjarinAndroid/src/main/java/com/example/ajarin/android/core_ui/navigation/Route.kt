@@ -5,5 +5,6 @@ enum class Route {
     Login,
     Register,
     MentorProfile,
-    Booking
+    Booking,
+    BookingSuccess
 }

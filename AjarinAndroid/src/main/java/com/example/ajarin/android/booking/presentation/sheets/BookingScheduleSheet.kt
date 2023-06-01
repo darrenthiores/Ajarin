@@ -64,13 +64,17 @@ fun BookingScheduleSheet(
         itemsIndexed(
             items = sessions
         ) { index, session ->
+            val disabled = isToday && (session.id.toIntOrNull() ?: 0) <= (currentSession.toIntOrNull() ?: 0)
+
             ScheduleItem(
                 modifier = Modifier
                     .clickable {
-                        onClick(session)
+                        if (!disabled) {
+                            onClick(session)
+                        }
                     },
                 session = session,
-                isDisabled = isToday && (session.id.toIntOrNull() ?: 0) < (currentSession.toIntOrNull() ?: 0)
+                isDisabled = disabled
             )
 
             if (index != sessions.lastIndex) {

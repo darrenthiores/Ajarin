@@ -1,5 +1,6 @@
 package com.example.ajarin.android
 
+import android.content.Intent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
@@ -13,8 +14,10 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import androidx.navigation.navDeepLink
 import com.example.ajarin.android.booking.presentation.AndroidBookingViewModel
 import com.example.ajarin.android.booking.presentation.BookingScreen
+import com.example.ajarin.android.booking_success.BookingSuccessScreen
 import com.example.ajarin.android.components.AppBottomBar
 import com.example.ajarin.core.utils.UiEvent
 import com.example.ajarin.android.core_ui.navigation.Route
@@ -184,6 +187,12 @@ fun Ajarin(
                     navArgument("mentor_id") {
                         type = NavType.StringType
                     }
+                ),
+                deepLinks = listOf(
+                    navDeepLink {
+                        action = Intent.ACTION_VIEW
+                        uriPattern = "https://www.ajarin.com/" + Route.MentorProfile.name + "/{mentor_id}"
+                    }
                 )
             ) { navBackStackEntry ->
                 val mentorId = navBackStackEntry.arguments?.getString("mentor_id")
@@ -218,7 +227,11 @@ fun Ajarin(
                     viewModel.uiEvent.collect { event ->
                         when(event) {
                             is UiEvent.Success -> {
-                                appState.showSnackBar("payment success")
+                                navController.navigate(Route.BookingSuccess.name) {
+                                    popUpTo(Route.MentorProfile.name + "/{mentor_id}") {
+                                        inclusive = true
+                                    }
+                                }
                             }
                             else -> Unit
                         }
@@ -230,6 +243,25 @@ fun Ajarin(
                     onEvent = viewModel::onEvent,
                     onBackClick = {
                         navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(Route.BookingSuccess.name) {
+                BookingSuccessScreen(
+                    onButtonClick = {
+                        navController.navigate(TopLevelDestination.History.name) {
+                            popUpTo(Route.BookingSuccess.name) {
+                                inclusive = true
+                            }
+                        }
+                    },
+                    onBackClick = {
+                        navController.navigate(TopLevelDestination.Home.name) {
+                            popUpTo(Route.BookingSuccess.name) {
+                                inclusive = true
+                            }
+                        }
                     }
                 )
             }

@@ -1,5 +1,6 @@
 package com.example.ajarin.android.mentor_profile.presentation
 
+import android.content.Intent
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
@@ -26,6 +27,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.ajarin.android.R
 import com.example.ajarin.android.core_ui.components.PrimaryButton
+import com.example.ajarin.android.core_ui.navigation.Route
 import com.example.ajarin.android.mentor_profile.presentation.components.MentorProfileHeader
 import com.example.ajarin.android.mentor_profile.presentation.components.MentorProfileTabRow
 import com.example.ajarin.android.mentor_profile.presentation.sections.MentorProfileAboutSection
@@ -53,7 +55,23 @@ fun MentorProfileScreen(
             MentorProfileHeader(
                 title = mentor?.name ?: "Mentor Profile",
                 onBackClick = onBackClick,
-                onChatClick = {  }
+                onChatClick = {  },
+                onShareClick = {
+                    mentor?.let {
+                        val uri = "https://www.ajarin.com/" + Route.MentorProfile.name + "/${mentor.id}"
+                        val sendIntent: Intent = Intent().apply {
+                            action = Intent.ACTION_SEND
+                            putExtra(
+                                Intent.EXTRA_TEXT,
+                                uri
+                            )
+                            type = "text/plain"
+                        }
+                        val shareIntent = Intent.createChooser(sendIntent, null)
+
+                        context.startActivity(shareIntent)
+                    }
+                }
             )
         },
         floatingActionButton = {
