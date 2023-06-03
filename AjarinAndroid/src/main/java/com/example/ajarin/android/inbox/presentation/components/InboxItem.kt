@@ -77,7 +77,8 @@ fun InboxItem(
                 style = MaterialTheme.typography.body2.copy(
                     color = Color.Gray
                 ),
-                overflow = TextOverflow.Ellipsis
+                overflow = TextOverflow.Ellipsis,
+                maxLines = 1
             )
         }
     }

@@ -22,6 +22,8 @@ import com.example.ajarin.android.components.AppBottomBar
 import com.example.ajarin.core.utils.UiEvent
 import com.example.ajarin.android.core_ui.navigation.Route
 import com.example.ajarin.android.core_ui.navigation.TopLevelDestination
+import com.example.ajarin.android.history.presentation.AndroidHistoryViewModel
+import com.example.ajarin.android.history.presentation.HistoryScreen
 import com.example.ajarin.android.home.presentation.AndroidHomeViewModel
 import com.example.ajarin.android.home.presentation.HomeScreen
 import com.example.ajarin.android.inbox.presentation.AndroidInboxViewModel
@@ -160,7 +162,15 @@ fun Ajarin(
             }
 
             composable(TopLevelDestination.History.name) {
+                val viewModel: AndroidHistoryViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
 
+                HistoryScreen(
+                    state = state,
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
             }
 
             composable(TopLevelDestination.Profile.name) {
