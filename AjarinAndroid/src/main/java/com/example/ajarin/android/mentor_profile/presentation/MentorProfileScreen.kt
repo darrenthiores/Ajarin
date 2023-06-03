@@ -44,7 +44,8 @@ import com.google.accompanist.pager.rememberPagerState
 fun MentorProfileScreen(
     state: MentorProfileState,
     onBackClick: () -> Unit,
-    onBookClick: () -> Unit
+    onBookClick: () -> Unit,
+    onChatClick: () -> Unit
 ) {
     val pagerState = rememberPagerState()
     val context = LocalContext.current
@@ -55,7 +56,7 @@ fun MentorProfileScreen(
             MentorProfileHeader(
                 title = mentor?.name ?: "Mentor Profile",
                 onBackClick = onBackClick,
-                onChatClick = {  },
+                onChatClick = onChatClick,
                 onShareClick = {
                     mentor?.let {
                         val uri = "https://www.ajarin.com/" + Route.MentorProfile.name + "/${mentor.id}"

@@ -9,7 +9,8 @@ SELECT i.id, i.lastMessage, i.lastSendUserId, p.userId
 FROM inboxEntity i
 JOIN participantEntity p
 ON i.id = p.inboxId
-WHERE p.userId != ?;
+WHERE p.userId != ?
+ORDER BY i.id DESC;
 
 createInbox:
 INSERT OR REPLACE

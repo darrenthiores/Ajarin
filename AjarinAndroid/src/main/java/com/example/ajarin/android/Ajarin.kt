@@ -211,6 +211,11 @@ fun Ajarin(
                     onBackClick = {
                         navController.navigateUp()
                     },
+                    onChatClick = {
+                        mentorId?.let {
+                            navController.navigate(Route.Message.name + "/$it")
+                        }
+                    },
                     onBookClick = {
                         mentorId?.let {
                             navController.navigate(Route.Booking.name + "/$it")
