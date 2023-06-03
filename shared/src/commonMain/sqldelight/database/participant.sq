@@ -1,0 +1,13 @@
+CREATE TABLE participantEntity (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    userId TEXT NOT NULL,
+    inboxId TEXT NOT NULL
+);
+
+addParticipant:
+INSERT OR REPLACE
+INTO participantEntity(
+    id,
+    userId,
+    inboxId
+) VALUES (?, ?, ?);

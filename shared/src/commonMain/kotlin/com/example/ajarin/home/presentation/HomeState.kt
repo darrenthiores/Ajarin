@@ -5,7 +5,8 @@ data class HomeState(
     val selectedCourse: Course = Course(
         id = "0", name = "All"
     ),
-    val mentors: List<Mentor> = dummyMentors
+    val mentors: List<Mentor> = dummyMentors,
+    val unreadMessageCount: Int = 0
 )
 
 data class Course(

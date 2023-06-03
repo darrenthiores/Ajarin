@@ -83,3 +83,10 @@ android {
         targetSdk = 33
     }
 }
+
+sqldelight {
+    database("ChatDatabase") {
+        packageName = "com.example.ajarin.database"
+        sourceFolders = listOf("sqldelight")
+    }
+}

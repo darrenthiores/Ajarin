@@ -24,6 +24,8 @@ import com.example.ajarin.android.core_ui.navigation.Route
 import com.example.ajarin.android.core_ui.navigation.TopLevelDestination
 import com.example.ajarin.android.home.presentation.AndroidHomeViewModel
 import com.example.ajarin.android.home.presentation.HomeScreen
+import com.example.ajarin.android.inbox.presentation.AndroidInboxViewModel
+import com.example.ajarin.android.inbox.presentation.InboxScreen
 import com.example.ajarin.android.landing.presentation.login.AndroidLoginViewModel
 import com.example.ajarin.android.landing.presentation.login.LoginScreen
 import com.example.ajarin.android.landing.presentation.register.AndroidRegisterViewModel
@@ -135,6 +137,9 @@ fun Ajarin(
                     onEvent = viewModel::onEvent,
                     onMentorClick = { mentorId ->
                         navController.navigate(Route.MentorProfile.name + "/$mentorId")
+                    },
+                    onMessageClick = {
+                        navController.navigate(Route.Inbox.name)
                     }
                 )
             }
@@ -262,6 +267,21 @@ fun Ajarin(
                                 inclusive = true
                             }
                         }
+                    }
+                )
+            }
+
+            composable(Route.Inbox.name) {
+                val viewModel: AndroidInboxViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                InboxScreen(
+                    state = state,
+                    onBackClick = {
+                        navController.navigateUp()
+                    },
+                    onMessageClick = { mentorId ->
+
                     }
                 )
             }

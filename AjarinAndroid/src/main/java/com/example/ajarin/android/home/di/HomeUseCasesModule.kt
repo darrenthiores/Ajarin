@@ -1,5 +1,7 @@
 package com.example.ajarin.android.home.di
 
+import com.example.ajarin.home.domain.repository.HomeRepository
+import com.example.ajarin.home.domain.use_cases.GetUnreadCount
 import com.example.ajarin.home.domain.use_cases.SearchMentorByCourse
 import dagger.Module
 import dagger.Provides
@@ -15,5 +17,15 @@ object HomeUseCasesModule {
     @ViewModelScoped
     fun provideSearchMentorByCourseUseCase(): SearchMentorByCourse {
         return SearchMentorByCourse()
+    }
+
+    @Provides
+    @ViewModelScoped
+    fun provideGetUnreadCountUseCase(
+        repository: HomeRepository
+    ): GetUnreadCount {
+        return GetUnreadCount(
+            repository = repository
+        )
     }
 }

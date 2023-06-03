@@ -1,0 +1,20 @@
+CREATE TABLE inboxEntity (
+    id TEXT NOT NULL PRIMARY KEY,
+    lastMessage TEXT NOT NULL,
+    lastSendUserId TEXT NOT NULL
+);
+
+getInbox:
+SELECT i.id, i.lastMessage, i.lastSendUserId, p.userId
+FROM inboxEntity i
+JOIN participantEntity p
+ON i.id = p.inboxId
+WHERE p.userId != ?;
+
+createInbox:
+INSERT OR REPLACE
+INTO inboxEntity(
+    id,
+    lastMessage,
+    lastSendUserId
+) VALUES (?, ?, ?);

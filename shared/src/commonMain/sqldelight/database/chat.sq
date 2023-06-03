@@ -1,0 +1,39 @@
+CREATE TABLE chatEntity (
+    id TEXT NOT NULL PRIMARY KEY,
+    inboxId TEXT NOT NULL,
+    sentToId TEXT NOT NULL,
+    sentFromId TEXT NOT NULL,
+    content TEXT NOT NULL,
+    mediaUrl TEXT NOT NULL,
+    timestamp INTEGER NOT NULL,
+    isRead INTEGER AS Boolean DEFAULT 0 NOT NULL
+);
+
+getUnreadCount:
+SELECT COUNT(isRead)
+FROM chatEntity
+WHERE isRead = 0
+AND sentToId = ?;
+
+getMessagesById:
+SELECT *
+FROM chatEntity
+WHERE sentToId = ? OR sentFromId = ?
+UNION ALL
+SELECT *
+FROM chatEntity
+WHERE sentToId = ? OR sentFromId = ?
+ORDER BY timestamp DESC;
+
+insertMessage:
+INSERT OR REPLACE
+INTO chatEntity(
+    id,
+    inboxId,
+    sentToId,
+    sentFromId,
+    content,
+    mediaUrl,
+    timestamp,
+    isRead
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?);
