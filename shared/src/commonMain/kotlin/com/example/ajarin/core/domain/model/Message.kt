@@ -4,6 +4,7 @@ import kotlinx.datetime.LocalDateTime
 
 data class Message(
     val id: String,
+    val inboxId: String,
     val sentToId: String,
     val sentFromId: String,
     val content: String,

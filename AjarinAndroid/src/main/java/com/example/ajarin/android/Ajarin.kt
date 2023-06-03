@@ -33,6 +33,8 @@ import com.example.ajarin.android.landing.presentation.register.RegisterScreen
 import com.example.ajarin.android.landing.presentation.splash.SplashScreen
 import com.example.ajarin.android.mentor_profile.presentation.AndroidMentorProfileViewModel
 import com.example.ajarin.android.mentor_profile.presentation.MentorProfileScreen
+import com.example.ajarin.android.message.presentation.AndroidMessageViewModel
+import com.example.ajarin.android.message.presentation.MessageScreen
 import com.example.ajarin.android.profile.presentation.AndroidProfileViewModel
 import com.example.ajarin.android.profile.presentation.ProfileScreen
 import com.example.ajarin.android.search_mentor.presentation.AndroidSearchMentorViewModel
@@ -281,9 +283,34 @@ fun Ajarin(
                         navController.navigateUp()
                     },
                     onMessageClick = { mentorId ->
-
+                        navController.navigate(Route.Message.name + "/$mentorId")
                     }
                 )
+            }
+
+            composable(
+                route = Route.Message.name + "/{mentor_id}",
+                arguments = listOf(
+                    navArgument("mentor_id") {
+                        type = NavType.StringType
+                    }
+                )
+            ) { navBackStackEntry ->
+                val mentorId = navBackStackEntry.arguments?.getString("mentor_id")
+                val viewModel: AndroidMessageViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                mentorId?.let {
+                    MessageScreen(
+                        mentorId = mentorId,
+                        state = state,
+                        onEvent = viewModel::onEvent,
+                        onSendMessage = viewModel::sendMessage,
+                        onBackClick = {
+                            navController.navigateUp()
+                        }
+                    )
+                }
             }
         }
     }

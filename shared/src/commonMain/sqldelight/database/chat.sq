@@ -18,11 +18,11 @@ AND sentToId = ?;
 getMessagesById:
 SELECT *
 FROM chatEntity
-WHERE sentToId = ? OR sentFromId = ?
+WHERE sentToId = ? AND sentFromId = ?
 UNION ALL
 SELECT *
 FROM chatEntity
-WHERE sentToId = ? OR sentFromId = ?
+WHERE sentToId = ? AND sentFromId = ?
 ORDER BY timestamp DESC;
 
 insertMessage:

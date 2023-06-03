@@ -9,6 +9,7 @@ import kotlinx.datetime.toLocalDateTime
 fun ChatEntity.toMessage(): Message {
     return Message(
         id = id,
+        inboxId = inboxId,
         sentToId = sentToId,
         sentFromId = sentFromId,
         content = content,
