@@ -17,6 +17,8 @@ import androidx.navigation.navArgument
 import androidx.navigation.navDeepLink
 import com.example.ajarin.android.add_review.presentation.AddReviewScreen
 import com.example.ajarin.android.add_review.presentation.AndroidAddReviewViewModel
+import com.example.ajarin.android.apply_as_mentor.presentation.AndroidApplyAsMentorViewModel
+import com.example.ajarin.android.apply_as_mentor.presentation.ApplyAsMentorScreen
 import com.example.ajarin.android.booking.presentation.AndroidBookingViewModel
 import com.example.ajarin.android.booking.presentation.BookingScreen
 import com.example.ajarin.android.booking_success.BookingSuccessScreen
@@ -261,7 +263,40 @@ fun Ajarin(
 
                 ProfileScreen(
                     state = state,
-                    onEvent = viewModel::onEvent
+                    onEvent = viewModel::onEvent,
+                    onApplyAsMentorClick = {
+                        navController.navigate(Route.ApplyAsMentor.name)
+                    }
+                )
+            }
+
+            composable(Route.ApplyAsMentor.name) {
+                val viewModel: AndroidApplyAsMentorViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+                val androidState by viewModel.androidState.collectAsState()
+
+                LaunchedEffect(key1 = true) {
+                    viewModel.uiEvent.collect { event ->
+                        when(event) {
+                            is UiEvent.Success -> {
+                                navController.navigateUp()
+                            }
+                            is UiEvent.ShowSnackBar -> {
+                                appState.showSnackBar(event.message)
+                            }
+                            else -> Unit
+                        }
+                    }
+                }
+
+                ApplyAsMentorScreen(
+                    state = state,
+                    androidState = androidState,
+                    onEvent = viewModel::onEvent,
+                    androidOnEvent = viewModel::onEvent,
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
                 )
             }
 

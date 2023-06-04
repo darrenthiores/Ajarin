@@ -11,5 +11,6 @@ enum class Route {
     Message,
     Session,
     SessionAsMentor,
-    AddReview
+    AddReview,
+    ApplyAsMentor
 }

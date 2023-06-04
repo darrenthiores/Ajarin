@@ -27,7 +27,7 @@ private val dummyPrices = listOf(
     ">200k"
 )
 
-private val dummyEducations = listOf(
+val dummyEducations = listOf(
     "SMA 1",
     "SMA 2",
     "SMA 3",

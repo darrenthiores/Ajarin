@@ -33,6 +33,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.ajarin.android.core_ui.components.NegativeConfirmationDialog
+import com.example.ajarin.android.core_ui.components.OutlinedPrimaryButton
 import com.example.ajarin.android.profile.presentation.components.ProfileButton
 import com.example.ajarin.profile.presentation.ProfileEvent
 import com.example.ajarin.profile.presentation.ProfileState
@@ -40,7 +41,9 @@ import com.example.ajarin.profile.presentation.ProfileState
 @Composable
 fun ProfileScreen(
     state: ProfileState,
-    onEvent: (ProfileEvent) -> Unit
+    isMentor: Boolean = false,
+    onEvent: (ProfileEvent) -> Unit,
+    onApplyAsMentorClick: () -> Unit
 ) {
     LazyColumn(
         modifier = Modifier
@@ -54,7 +57,7 @@ fun ProfileScreen(
                         MaterialTheme.colors.primary.copy(
                             alpha = 0.1f
                         )
-                    ),
+                    )
             ) {
                 Spacer(modifier = Modifier.height(16.dp))
 
@@ -104,6 +107,22 @@ fun ProfileScreen(
                 }
 
                 Spacer(modifier = Modifier.height(16.dp))
+            }
+        }
+
+        if (!isMentor) {
+            item {
+                Spacer(modifier = Modifier.height(16.dp))
+
+                OutlinedPrimaryButton(
+                    modifier = Modifier
+                        .padding(horizontal = 16.dp),
+                    text = "Apply As Mentor",
+                    textModifier = Modifier
+                        .fillMaxWidth()
+                ) {
+                    onApplyAsMentorClick()
+                }
             }
         }
 

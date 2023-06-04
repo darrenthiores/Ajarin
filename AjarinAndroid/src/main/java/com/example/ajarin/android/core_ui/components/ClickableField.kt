@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
@@ -46,7 +47,9 @@ fun ClickableField(
                 text = value ?: title,
                 style = MaterialTheme.typography.body1.copy(
                     color = if (value != null) MaterialTheme.colors.primary else Color.Gray
-                )
+                ),
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
             )
 
             Icon(
