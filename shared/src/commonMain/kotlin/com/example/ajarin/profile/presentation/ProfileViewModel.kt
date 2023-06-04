@@ -4,8 +4,6 @@ import com.example.ajarin.core.domain.utils.toCommonStateFlow
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
 
 class ProfileViewModel(
     coroutineScope: CoroutineScope? = null
@@ -14,6 +12,12 @@ class ProfileViewModel(
 
     private val _state = MutableStateFlow(ProfileState())
     val state = _state.toCommonStateFlow()
+
+    init {
+        _state.value = state.value.copy(
+            user = dummyUsers[0]
+        )
+    }
 
     fun onEvent(event: ProfileEvent) {
         when(event) {

@@ -30,6 +30,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.booking.presentation.components.BookingBottomBar
@@ -168,7 +169,9 @@ fun BookingScreen(
                 item {
                     Text(
                         text = "Mentor Detail",
-                        style = MaterialTheme.typography.subtitle1
+                        style = MaterialTheme.typography.subtitle1.copy(
+                            fontWeight = FontWeight.SemiBold
+                        )
                     )
 
                     Spacer(modifier = Modifier.height(16.dp))
@@ -208,7 +211,9 @@ fun BookingScreen(
                 item {
                     Text(
                         text = "Schedule",
-                        style = MaterialTheme.typography.subtitle1
+                        style = MaterialTheme.typography.subtitle1.copy(
+                            fontWeight = FontWeight.SemiBold
+                        )
                     )
 
                     Spacer(modifier = Modifier.height(16.dp))
@@ -240,7 +245,9 @@ fun BookingScreen(
                 item {
                     Text(
                         text = "Payment Method",
-                        style = MaterialTheme.typography.subtitle1
+                        style = MaterialTheme.typography.subtitle1.copy(
+                            fontWeight = FontWeight.SemiBold
+                        )
                     )
 
                     Spacer(modifier = Modifier.height(16.dp))

@@ -81,7 +81,7 @@ private fun BookingPaymentMethodSheetPreview() {
 }
 
 @Composable
-private fun PaymentMethodItem(
+fun PaymentMethodItem(
     modifier: Modifier = Modifier,
     method: PaymentMethod
 ) {
@@ -114,7 +114,7 @@ private fun PaymentMethodItem(
 
 @Preview
 @Composable
-private fun ScheduleItemPreview() {
+private fun PaymentMethodItemPreview() {
     AjarinTheme {
         PaymentMethodItem(
             method = PaymentMethod(

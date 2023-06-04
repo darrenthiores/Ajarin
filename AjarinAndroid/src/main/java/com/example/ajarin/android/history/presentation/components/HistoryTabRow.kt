@@ -1,4 +1,4 @@
-package com.example.ajarin.android.mentor_profile.presentation.components
+package com.example.ajarin.android.history.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.mentorProfile.presentation.MentorProfileTab
+import com.example.ajarin.history.presentation.HistoryTab
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.pagerTabIndicatorOffset
@@ -19,7 +19,7 @@ import kotlinx.coroutines.launch
 
 @ExperimentalPagerApi
 @Composable
-fun MentorProfileTabRow(
+fun HistoryTabRow(
     modifier: Modifier = Modifier,
     pagerState: PagerState
 ) {
@@ -40,7 +40,7 @@ fun MentorProfileTabRow(
         backgroundColor = Color.Transparent,
         contentColor = MaterialTheme.colors.primary
     ) {
-        MentorProfileTab.values().forEachIndexed { index, screen ->
+        HistoryTab.values().forEachIndexed { index, screen ->
             Tab(
                 text = { Text(screen.name) },
                 selected = pagerState.currentPage == index,
@@ -53,9 +53,9 @@ fun MentorProfileTabRow(
 @OptIn(ExperimentalPagerApi::class)
 @Preview
 @Composable
-private fun MentorProfileTabRowPreview() {
+fun HistoryTabRowPreview() {
     AjarinTheme {
-        MentorProfileTabRow(
+        HistoryTabRow(
             pagerState = rememberPagerState()
         )
     }

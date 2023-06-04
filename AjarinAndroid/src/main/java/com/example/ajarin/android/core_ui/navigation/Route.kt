@@ -8,5 +8,7 @@ enum class Route {
     Booking,
     BookingSuccess,
     Inbox,
-    Message
+    Message,
+    Session,
+    SessionAsMentor
 }

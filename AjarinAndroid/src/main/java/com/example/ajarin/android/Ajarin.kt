@@ -41,6 +41,10 @@ import com.example.ajarin.android.profile.presentation.AndroidProfileViewModel
 import com.example.ajarin.android.profile.presentation.ProfileScreen
 import com.example.ajarin.android.search_mentor.presentation.AndroidSearchMentorViewModel
 import com.example.ajarin.android.search_mentor.presentation.SearchMentorScreen
+import com.example.ajarin.android.session.presentation.AndroidSessionViewModel
+import com.example.ajarin.android.session.presentation.SessionScreen
+import com.example.ajarin.android.session_as_mentor.presentation.AndroidSessionAsMentorViewModel
+import com.example.ajarin.android.session_as_mentor.presentation.SessionAsMentorScreen
 
 @Composable
 fun Ajarin(
@@ -167,6 +171,58 @@ fun Ajarin(
 
                 HistoryScreen(
                     state = state,
+                    isMentor = true,
+                    onUserClick = { sessionId, mentorId ->
+                        navController.navigate(Route.Session.name + "/$sessionId" + "/$mentorId")
+                    },
+                    onMentorClick = { sessionId, userId ->
+                        navController.navigate(Route.SessionAsMentor.name + "/$sessionId" + "/$userId")
+                    },
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(
+                route = Route.Session.name + "/{session_id}/{mentor_id}",
+                arguments = listOf(
+                    navArgument("session_id") {
+                        type = NavType.StringType
+                    },
+                    navArgument("mentor_id") {
+                        type = NavType.StringType
+                    }
+                )
+            ) {
+                val viewModel: AndroidSessionViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                SessionScreen(
+                    state = state,
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(
+                route = Route.SessionAsMentor.name + "/{session_id}/{user_id}",
+                arguments = listOf(
+                    navArgument("session_id") {
+                        type = NavType.StringType
+                    },
+                    navArgument("user_id") {
+                        type = NavType.StringType
+                    }
+                )
+            ) {
+                val viewModel: AndroidSessionAsMentorViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                SessionAsMentorScreen(
+                    state = state,
+                    onEvent = viewModel::onEvent,
                     onBackClick = {
                         navController.navigateUp()
                     }
