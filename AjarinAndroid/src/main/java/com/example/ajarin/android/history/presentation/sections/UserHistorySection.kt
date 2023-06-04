@@ -15,7 +15,8 @@ import com.example.ajarin.history.presentation.HistoryState
 fun UserHistorySection(
     modifier: Modifier = Modifier,
     state: HistoryState,
-    onItemClick: (String, String) -> Unit
+    onItemClick: (String, String) -> Unit,
+    onReviewClick: (String) -> Unit
 ) {
     LazyColumn(
         modifier = modifier
@@ -31,6 +32,9 @@ fun UserHistorySection(
                 history = history,
                 onItemClick = {
                     onItemClick(history.id, history.mentorId)
+                },
+                onReviewClick = {
+                    onReviewClick(history.id)
                 }
             )
         }

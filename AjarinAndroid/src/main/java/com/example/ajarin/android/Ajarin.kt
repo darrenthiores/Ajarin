@@ -15,6 +15,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import androidx.navigation.navDeepLink
+import com.example.ajarin.android.add_review.presentation.AddReviewScreen
+import com.example.ajarin.android.add_review.presentation.AndroidAddReviewViewModel
 import com.example.ajarin.android.booking.presentation.AndroidBookingViewModel
 import com.example.ajarin.android.booking.presentation.BookingScreen
 import com.example.ajarin.android.booking_success.BookingSuccessScreen
@@ -178,6 +180,9 @@ fun Ajarin(
                     onMentorClick = { sessionId, userId ->
                         navController.navigate(Route.SessionAsMentor.name + "/$sessionId" + "/$userId")
                     },
+                    onReviewClick = { sessionId ->
+                        navController.navigate(Route.AddReview.name + "/$sessionId")
+                    },
                     onBackClick = {
                         navController.navigateUp()
                     }
@@ -194,12 +199,18 @@ fun Ajarin(
                         type = NavType.StringType
                     }
                 )
-            ) {
+            ) { navBackStackEntry ->
+                val sessionId = navBackStackEntry.arguments?.getString("session_id")
                 val viewModel: AndroidSessionViewModel = hiltViewModel()
                 val state by viewModel.state.collectAsState()
 
                 SessionScreen(
                     state = state,
+                    onReviewClick = {
+                        sessionId?.let {
+                            navController.navigate(Route.AddReview.name + "/$it")
+                        }
+                    },
                     onBackClick = {
                         navController.navigateUp()
                     }
@@ -382,6 +393,40 @@ fun Ajarin(
                         }
                     )
                 }
+            }
+
+            composable(
+                route = Route.AddReview.name + "/{session_id}",
+                arguments = listOf(
+                    navArgument("session_id") {
+                        type = NavType.StringType
+                    }
+                )
+            ) {
+                val viewModel: AndroidAddReviewViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                LaunchedEffect(key1 = true) {
+                    viewModel.uiEvent.collect { event ->
+                        when(event) {
+                            is UiEvent.Success -> {
+                                navController.navigateUp()
+                            }
+                            else -> Unit
+                        }
+                    }
+                }
+
+                AddReviewScreen(
+                    state = state,
+                    onEvent = viewModel::onEvent,
+                    images = viewModel.images,
+                    addImage = viewModel::addImage,
+                    removeImage = viewModel::removeImage,
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
             }
         }
     }

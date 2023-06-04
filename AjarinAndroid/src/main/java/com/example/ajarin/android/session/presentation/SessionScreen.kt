@@ -33,6 +33,7 @@ import com.example.ajarin.session.presentation.SessionState
 @Composable
 fun SessionScreen(
     state: SessionState,
+    onReviewClick: () -> Unit,
     onBackClick: () -> Unit
 ) {
     val uriHandler = LocalUriHandler.current
@@ -49,7 +50,7 @@ fun SessionScreen(
                 PrimaryButton(
                     text = "Review"
                 ) {
-
+                    onReviewClick()
                 }
             }
         },
@@ -281,7 +282,10 @@ fun SessionScreen(
 @Composable
 private fun SessionScreenPreview() {
     AjarinTheme {
-        SessionScreen(state = SessionState()) {
+        SessionScreen(
+            state = SessionState(),
+            onReviewClick = {  }
+        ) {
             
         }
     }

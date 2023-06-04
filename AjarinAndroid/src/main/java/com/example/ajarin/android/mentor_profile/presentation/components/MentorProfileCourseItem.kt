@@ -8,7 +8,10 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.ajarin.android.core_ui.theme.AjarinTheme
 
 @Composable
 fun MentorProfileCourseItem(
@@ -29,7 +32,16 @@ fun MentorProfileCourseItem(
             )
             .padding(8.dp),
         style = MaterialTheme.typography.subtitle1.copy(
-            color = MaterialTheme.colors.primary
+            color = MaterialTheme.colors.primary,
+            textAlign = TextAlign.Center
         )
     )
+}
+
+@Preview
+@Composable
+private fun MentorProfileCourseItemPreview() {
+    AjarinTheme {
+        MentorProfileCourseItem(text = "test")
+    }
 }

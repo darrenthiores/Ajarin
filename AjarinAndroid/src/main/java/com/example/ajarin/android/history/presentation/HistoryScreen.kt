@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.ajarin.android.core_ui.theme.AjarinTheme
 import com.example.ajarin.android.history.presentation.components.HistoryHeader
 import com.example.ajarin.android.history.presentation.sections.MentorHistorySection
 import com.example.ajarin.android.history.presentation.sections.UserHistorySection
@@ -21,6 +23,7 @@ fun HistoryScreen(
     isMentor: Boolean,
     onUserClick: (String, String) -> Unit,
     onMentorClick: (String, String) -> Unit,
+    onReviewClick: (String) -> Unit,
     onBackClick: () -> Unit
 ) {
     val pagerState = rememberPagerState()
@@ -47,7 +50,8 @@ fun HistoryScreen(
                     0 -> {
                         UserHistorySection(
                             state = state,
-                            onItemClick = onUserClick
+                            onItemClick = onUserClick,
+                            onReviewClick = onReviewClick
                         )
                     }
                     1 -> {
@@ -63,8 +67,24 @@ fun HistoryScreen(
                 modifier = Modifier
                     .padding(paddingValues),
                 state = state,
-                onItemClick = onUserClick
+                onItemClick = onUserClick,
+                onReviewClick = onReviewClick
             )
         }
+    }
+}
+
+@Preview
+@Composable
+private fun HistoryScreenPreview() {
+    AjarinTheme {
+        HistoryScreen(
+            state = HistoryState(),
+            isMentor = true,
+            onUserClick = { _, _ -> },
+            onMentorClick = { _, _ -> },
+            onBackClick = {  },
+            onReviewClick = {  }
+        )
     }
 }

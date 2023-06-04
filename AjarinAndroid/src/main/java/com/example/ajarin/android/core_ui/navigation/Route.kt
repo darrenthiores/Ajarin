@@ -10,5 +10,6 @@ enum class Route {
     Inbox,
     Message,
     Session,
-    SessionAsMentor
+    SessionAsMentor,
+    AddReview
 }
