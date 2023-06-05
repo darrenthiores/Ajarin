@@ -100,7 +100,9 @@ fun ProfileScreen(
                         Text(
                             text = if (state.isFetchingUser) "loading..." else state.user?.email ?: "null",
                             style = MaterialTheme.typography.body2.copy(
-                                color = Color.DarkGray
+                                color = MaterialTheme.colors.onBackground.copy(
+                                    alpha = 0.5f
+                                )
                             )
                         )
                     }

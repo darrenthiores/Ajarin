@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.material.LocalTextStyle
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -28,6 +29,9 @@ fun MessageTextField(
             onTextChange(it)
         },
         modifier = modifier,
+        textStyle = LocalTextStyle.current.copy(
+            color = MaterialTheme.colors.onSurface
+        ),
         decorationBox = { innerTextField ->
             Row(
                 modifier = Modifier
@@ -48,7 +52,7 @@ fun MessageTextField(
                     if (text.isEmpty()) {
                         Text(
                             text = "Message...",
-                            style = MaterialTheme.typography.caption.copy(
+                            style = LocalTextStyle.current.copy(
                                 color = MaterialTheme.colors.onSurface.copy(
                                     alpha = 0.3f
                                 )
@@ -66,7 +70,9 @@ fun MessageTextField(
 @Preview
 @Composable
 private fun MessageTextFieldPreview() {
-    AjarinTheme {
+    AjarinTheme(
+        darkTheme = true
+    ) {
         MessageTextField(
             text = "test",
             onTextChange = {  }

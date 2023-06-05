@@ -27,11 +27,13 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.Layout
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.apply_as_mentor.presentation.components.ApplyAsMentorEducationCourseDropDown
+import com.example.ajarin.android.apply_as_mentor.presentation.helper.getName
 import com.example.ajarin.android.apply_as_mentor.presentation.sheets.ApplyAsMentorCourseSheet
 import com.example.ajarin.android.apply_as_mentor.presentation.sheets.ApplyAsMentorScheduleSheet
 import com.example.ajarin.android.core_ui.components.BasicTextField
@@ -58,6 +60,7 @@ fun ApplyAsMentorScreen(
         bottomSheetState = sheetState
     )
     val coroutineScope = rememberCoroutineScope()
+    val context = LocalContext.current
 
     var sheetContent by remember {
         mutableStateOf<ApplyAsMentorSheet?>(null)
@@ -109,7 +112,7 @@ fun ApplyAsMentorScreen(
                                 state.id.isNotBlank() &&
                                 state.idError == null &&
                                 state.lastEducation != null &&
-                                state.selectedCourses.isEmpty() &&
+                                state.selectedCourses.isNotEmpty() &&
                                 androidState.idFile != null &&
                                 androidState.gradeReportFile != null
                     ) {
@@ -216,7 +219,7 @@ fun ApplyAsMentorScreen(
 
                 ClickableField(
                     title = "Id File (as pdf)",
-                    value = androidState.idFile?.pathSegments?.last(),
+                    value = androidState.idFile?.getName(context),
                     onClick = {
                         idLauncher.launch("application/pdf")
                     }
@@ -251,6 +254,10 @@ fun ApplyAsMentorScreen(
                         onEvent(
                             ApplyAsMentorEvent.OnPickEducation(it)
                         )
+
+                        onEvent(
+                            ApplyAsMentorEvent.ToggleEducationDropDown(false)
+                        )
                     }
                 )
 
@@ -271,7 +278,7 @@ fun ApplyAsMentorScreen(
 
                 ClickableField(
                     title = "Institution Id File (as pdf) (optional)",
-                    value = androidState.institutionIdFile?.pathSegments?.last(),
+                    value = androidState.institutionIdFile?.getName(context),
                     onClick = {
                         institutionIdLauncher.launch("application/pdf")
                     }
@@ -281,7 +288,7 @@ fun ApplyAsMentorScreen(
 
                 ClickableField(
                     title = "Select Courses",
-                    value = null,
+                    value = if (state.selectedCourses.isNotEmpty()) "Selected ${state.selectedCourses.size} Course(s)" else null,
                     onClick = {
                         sheetContent = ApplyAsMentorSheet.SelectCourses
 
@@ -295,7 +302,7 @@ fun ApplyAsMentorScreen(
 
                 ClickableField(
                     title = "Grade Report File (as pdf)",
-                    value = androidState.gradeReportFile?.pathSegments?.last(),
+                    value = androidState.gradeReportFile?.getName(context),
                     onClick = {
                         gradeReportLauncher.launch("application/pdf")
                     }
@@ -314,7 +321,7 @@ fun ApplyAsMentorScreen(
 
                 ClickableField(
                     title = "Select Schedules",
-                    value = null,
+                    value = if (state.selectedSchedule.isNotEmpty()) "Selected ${state.selectedSchedule.size} Session(s)" else null,
                     onClick = {
                         sheetContent = ApplyAsMentorSheet.SelectSchedules
 
