@@ -1,10 +1,13 @@
-package com.example.ajarin.android.apply_as_mentor.presentation.components
+package com.example.ajarin.android.add_bank.presentation.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -13,6 +16,7 @@ import androidx.compose.material.DropdownMenu
 import androidx.compose.material.DropdownMenuItem
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
@@ -25,22 +29,26 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toSize
+import com.example.ajarin.android.core_ui.helper.getImageId
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
+import com.example.ajarin.bankAccount.presentation.Bank
+import com.example.ajarin.bankAccount.presentation.dummyBanks
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun ApplyAsMentorEducationDropDown(
-    educations: List<String>,
-    education: String?,
+fun BankDropDown(
+    bank: Bank?,
     isOpen: Boolean,
     onClick: () -> Unit,
     onDismiss: () -> Unit,
-    onSelectEducation: (String) -> Unit,
+    onSelectBank: (Bank) -> Unit,
     modifier: Modifier = Modifier
 ) {
     var rowSize by remember { mutableStateOf(Size.Zero) }
@@ -56,22 +64,37 @@ fun ApplyAsMentorEducationDropDown(
             expanded = isOpen,
             onDismissRequest = onDismiss
         ) {
-            educations.forEachIndexed { index, education ->
+            dummyBanks.forEachIndexed { index, bank ->
                 DropdownMenuItem(
-                    onClick = { onSelectEducation(education) },
+                    onClick = { onSelectBank(bank) },
                     modifier = Modifier
                         .width(
                             with(LocalDensity.current) { rowSize.width.toDp() }
                         )
                 ) {
-                    Text(
-                        modifier = Modifier
-                            .fillMaxWidth(),
-                        text = education
-                    )
+                    Row(
+                        modifier = modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        horizontalArrangement = Arrangement.spacedBy(32.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Image(
+                            modifier = modifier
+                                .size(50.dp),
+                            painter = painterResource(id = bank.getImageId()),
+                            contentDescription = "Bank Account Logo",
+                            contentScale = ContentScale.Fit
+                        )
+
+                        Text(
+                            text = bank.bankName,
+                            style = MaterialTheme.typography.subtitle1
+                        )
+                    }
                 }
 
-                if (index != educations.lastIndex) {
+                if (index != dummyBanks.lastIndex) {
                     Divider()
                 }
             }
@@ -88,11 +111,24 @@ fun ApplyAsMentorEducationDropDown(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
+                verticalAlignment = Alignment.CenterVertically
             ) {
+                bank?.let {
+                    Image(
+                        modifier = modifier
+                            .size(50.dp),
+                        painter = painterResource(id = bank.getImageId()),
+                        contentDescription = "Bank Account Logo",
+                        contentScale = ContentScale.Fit
+                    )
+
+                    Spacer(modifier = Modifier.width(32.dp))
+                }
+
                 Text(
-                    text = education ?: "Select Last or Current Education"
+                    modifier =  Modifier
+                        .weight(1f),
+                    text = bank?.bankName ?: "Select Bank"
                 )
 
                 Icon(
@@ -106,15 +142,14 @@ fun ApplyAsMentorEducationDropDown(
 
 @Preview
 @Composable
-fun ApplyAsMentorEducationDropDownPreview() {
+fun BookingCourseDropDownPreview() {
     AjarinTheme {
-        ApplyAsMentorEducationDropDown(
-            educations = emptyList(),
-            education = null,
+        BankDropDown(
+            bank = null,
             isOpen = false,
             onClick = { },
             onDismiss = {  },
-            onSelectEducation = {  }
+            onSelectBank = {  }
         )
     }
 }

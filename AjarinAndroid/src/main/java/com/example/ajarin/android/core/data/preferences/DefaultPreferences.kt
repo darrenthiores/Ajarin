@@ -19,4 +19,14 @@ class DefaultPreferences @Inject constructor(
 
     override fun loadShouldShowOnBoarding(): Boolean =
         sharedPref.getBoolean(Preferences.SHOULD_SHOW_ON_BOARDING, true)
+
+    override fun saveHasPin(hasPin: Boolean) {
+        sharedPref
+            .edit()
+            .putBoolean(Preferences.HAS_PIN, hasPin)
+            .apply()
+    }
+
+    override fun loadHasPin(): Boolean =
+        sharedPref.getBoolean(Preferences.HAS_PIN, false)
 }

@@ -20,6 +20,7 @@ android {
 
         buildConfigField("String", "PREF_NAME", "\"AJARIN_PREFERENCE\"")
         buildConfigField("String", "SHOW_ON_BOARDING_KEY", "\"SHOW_ON_BOARDING\"")
+        buildConfigField("String", "HAS_PIN_KEY", "\"HAS_PIN\"")
     }
     buildFeatures {
         compose = true

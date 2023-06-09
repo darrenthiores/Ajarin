@@ -15,15 +15,20 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import androidx.navigation.navDeepLink
+import com.example.ajarin.android.add_bank.presentation.AddBankScreen
+import com.example.ajarin.android.add_bank.presentation.AndroidAddBankViewModel
+import com.example.ajarin.android.add_pin.presentation.AddPinScreen
+import com.example.ajarin.android.add_pin.presentation.AndroidAddPinViewModel
 import com.example.ajarin.android.add_review.presentation.AddReviewScreen
 import com.example.ajarin.android.add_review.presentation.AndroidAddReviewViewModel
 import com.example.ajarin.android.apply_as_mentor.presentation.AndroidApplyAsMentorViewModel
 import com.example.ajarin.android.apply_as_mentor.presentation.ApplyAsMentorScreen
+import com.example.ajarin.android.bank_account.presentation.AndroidBankAccountViewModel
+import com.example.ajarin.android.bank_account.presentation.BankAccountScreen
 import com.example.ajarin.android.booking.presentation.AndroidBookingViewModel
 import com.example.ajarin.android.booking.presentation.BookingScreen
 import com.example.ajarin.android.booking_success.BookingSuccessScreen
 import com.example.ajarin.android.components.AppBottomBar
-import com.example.ajarin.core.utils.UiEvent
 import com.example.ajarin.android.core_ui.navigation.Route
 import com.example.ajarin.android.core_ui.navigation.TopLevelDestination
 import com.example.ajarin.android.history.presentation.AndroidHistoryViewModel
@@ -49,6 +54,8 @@ import com.example.ajarin.android.session.presentation.AndroidSessionViewModel
 import com.example.ajarin.android.session.presentation.SessionScreen
 import com.example.ajarin.android.session_as_mentor.presentation.AndroidSessionAsMentorViewModel
 import com.example.ajarin.android.session_as_mentor.presentation.SessionAsMentorScreen
+import com.example.ajarin.core.utils.UiEvent
+import timber.log.Timber
 
 @Composable
 fun Ajarin(
@@ -266,6 +273,9 @@ fun Ajarin(
                     onEvent = viewModel::onEvent,
                     onApplyAsMentorClick = {
                         navController.navigate(Route.ApplyAsMentor.name)
+                    },
+                    onBankAccountClick = {
+                        navController.navigate(Route.BankAccount.name)
                     }
                 )
             }
@@ -458,6 +468,80 @@ fun Ajarin(
                     images = viewModel.images,
                     addImage = viewModel::addImage,
                     removeImage = viewModel::removeImage,
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(Route.BankAccount.name) {
+                val viewModel: AndroidBankAccountViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                LaunchedEffect(key1 = true) {
+                    viewModel.init()
+                    Timber.d("INIT BANK ACCOUNT")
+                }
+
+                LaunchedEffect(viewModel.hasPin) {
+                    if (!viewModel.hasPin) {
+                        navController.navigate(Route.AddPin.name)
+                    }
+                }
+
+                BankAccountScreen(
+                    state = state,
+                    onBackClick = {
+                        navController.navigateUp()
+                    },
+                    onAddClick = {
+                        navController.navigate(Route.AddBankAccount.name)
+                    }
+                )
+            }
+
+            composable(Route.AddBankAccount.name) {
+                val viewModel: AndroidAddBankViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                LaunchedEffect(key1 = true) {
+                    viewModel.uiEvent.collect { event ->
+                        when(event) {
+                            is UiEvent.Success -> {
+                                navController.navigateUp()
+                            }
+                            else -> Unit
+                        }
+                    }
+                }
+
+                AddBankScreen(
+                    state = state,
+                    onEvent = viewModel::onEvent,
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(Route.AddPin.name) {
+                val viewModel: AndroidAddPinViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                LaunchedEffect(key1 = true) {
+                    viewModel.uiEvent.collect { event ->
+                        when(event) {
+                            is UiEvent.Success -> {
+                                navController.navigateUp()
+                            }
+                            else -> Unit
+                        }
+                    }
+                }
+
+                AddPinScreen(
+                    state = state,
+                    onEvent = viewModel::onEvent,
                     onBackClick = {
                         navController.navigateUp()
                     }

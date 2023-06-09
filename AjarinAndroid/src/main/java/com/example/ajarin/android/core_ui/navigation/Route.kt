@@ -12,5 +12,8 @@ enum class Route {
     Session,
     SessionAsMentor,
     AddReview,
-    ApplyAsMentor
+    ApplyAsMentor,
+    BankAccount,
+    AddBankAccount,
+    AddPin
 }

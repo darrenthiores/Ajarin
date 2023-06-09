@@ -32,7 +32,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.ajarin.android.apply_as_mentor.presentation.components.ApplyAsMentorEducationCourseDropDown
+import com.example.ajarin.android.apply_as_mentor.presentation.components.ApplyAsMentorEducationDropDown
 import com.example.ajarin.android.apply_as_mentor.presentation.helper.getName
 import com.example.ajarin.android.apply_as_mentor.presentation.sheets.ApplyAsMentorCourseSheet
 import com.example.ajarin.android.apply_as_mentor.presentation.sheets.ApplyAsMentorScheduleSheet
@@ -236,7 +236,7 @@ fun ApplyAsMentorScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                ApplyAsMentorEducationCourseDropDown(
+                ApplyAsMentorEducationDropDown(
                     educations = dummyEducations,
                     education = state.lastEducation,
                     isOpen = state.isEducationDropDownOpen,

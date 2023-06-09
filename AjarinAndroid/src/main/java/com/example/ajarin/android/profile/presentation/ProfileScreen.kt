@@ -30,20 +30,24 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.ajarin.android.core_ui.components.NegativeConfirmationDialog
 import com.example.ajarin.android.core_ui.components.OutlinedPrimaryButton
+import com.example.ajarin.android.core_ui.theme.AjarinTheme
 import com.example.ajarin.android.profile.presentation.components.ProfileButton
+import com.example.ajarin.android.profile.presentation.components.ProfileWallet
 import com.example.ajarin.profile.presentation.ProfileEvent
 import com.example.ajarin.profile.presentation.ProfileState
 
 @Composable
 fun ProfileScreen(
     state: ProfileState,
-    isMentor: Boolean = false,
+    isMentor: Boolean = true,
     onEvent: (ProfileEvent) -> Unit,
-    onApplyAsMentorClick: () -> Unit
+    onApplyAsMentorClick: () -> Unit,
+    onBankAccountClick: () -> Unit
 ) {
     LazyColumn(
         modifier = Modifier
@@ -112,6 +116,19 @@ fun ProfileScreen(
             }
         }
 
+        if (isMentor) {
+            item {
+                Spacer(modifier = Modifier.height(16.dp))
+
+                ProfileWallet(
+                    modifier = Modifier
+                        .padding(horizontal = 16.dp),
+                    balance = "0",
+                    onWithdrawClick = {  }
+                )
+            }
+        }
+
         if (!isMentor) {
             item {
                 Spacer(modifier = Modifier.height(16.dp))
@@ -150,6 +167,19 @@ fun ProfileScreen(
                     .padding(horizontal = 16.dp)
             ) {
 
+            }
+
+            if (isMentor) {
+                Spacer(modifier = Modifier.height(8.dp))
+
+                ProfileButton(
+                    icon = Icons.Default.AccountCircle,
+                    text = "Bank Account",
+                    modifier = Modifier
+                        .padding(horizontal = 16.dp)
+                ) {
+                    onBankAccountClick()
+                }
             }
         }
 
@@ -257,5 +287,19 @@ fun ProfileScreen(
             cancellationText = "Cancel",
             confirmationText = "Log Out"
         )
+    }
+}
+
+@Preview
+@Composable
+private fun ProfileScreenPreview() {
+    AjarinTheme {
+        ProfileScreen(
+            state = ProfileState(),
+            onEvent = {  },
+            onApplyAsMentorClick = {  }
+        ) {
+            
+        }
     }
 }
