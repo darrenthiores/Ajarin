@@ -47,7 +47,8 @@ fun ProfileScreen(
     isMentor: Boolean = true,
     onEvent: (ProfileEvent) -> Unit,
     onApplyAsMentorClick: () -> Unit,
-    onBankAccountClick: () -> Unit
+    onBankAccountClick: () -> Unit,
+    onWithdrawClick: () -> Unit
 ) {
     LazyColumn(
         modifier = Modifier
@@ -124,7 +125,7 @@ fun ProfileScreen(
                     modifier = Modifier
                         .padding(horizontal = 16.dp),
                     balance = "0",
-                    onWithdrawClick = {  }
+                    onWithdrawClick = onWithdrawClick
                 )
             }
         }
@@ -297,7 +298,8 @@ private fun ProfileScreenPreview() {
         ProfileScreen(
             state = ProfileState(),
             onEvent = {  },
-            onApplyAsMentorClick = {  }
+            onApplyAsMentorClick = {  },
+            onBankAccountClick = {  }
         ) {
             
         }

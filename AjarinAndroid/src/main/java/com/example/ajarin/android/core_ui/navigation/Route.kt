@@ -15,5 +15,8 @@ enum class Route {
     ApplyAsMentor,
     BankAccount,
     AddBankAccount,
-    AddPin
+    AddPin,
+    Withdraw,
+    WithdrawSuccess,
+    VerifyPin
 }

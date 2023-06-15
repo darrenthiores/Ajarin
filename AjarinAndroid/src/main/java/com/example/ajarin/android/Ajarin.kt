@@ -54,6 +54,11 @@ import com.example.ajarin.android.session.presentation.AndroidSessionViewModel
 import com.example.ajarin.android.session.presentation.SessionScreen
 import com.example.ajarin.android.session_as_mentor.presentation.AndroidSessionAsMentorViewModel
 import com.example.ajarin.android.session_as_mentor.presentation.SessionAsMentorScreen
+import com.example.ajarin.android.verify_pin.presentation.AndroidVerifyPinViewModel
+import com.example.ajarin.android.verify_pin.presentation.VerifyPinScreen
+import com.example.ajarin.android.withdraw.presentation.AndroidWithdrawViewModel
+import com.example.ajarin.android.withdraw.presentation.WithdrawScreen
+import com.example.ajarin.android.withdraw_success.WithdrawSuccessScreen
 import com.example.ajarin.core.utils.UiEvent
 import timber.log.Timber
 
@@ -276,6 +281,9 @@ fun Ajarin(
                     },
                     onBankAccountClick = {
                         navController.navigate(Route.BankAccount.name)
+                    },
+                    onWithdrawClick = {
+                        navController.navigate(Route.Withdraw.name)
                     }
                 )
             }
@@ -540,6 +548,70 @@ fun Ajarin(
                 }
 
                 AddPinScreen(
+                    state = state,
+                    onEvent = viewModel::onEvent,
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(Route.Withdraw.name) {
+                val viewModel: AndroidWithdrawViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                LaunchedEffect(key1 = true) {
+                    viewModel.uiEvent.collect { event ->
+                        when(event) {
+                            is UiEvent.Success -> {
+                                navController.navigate(Route.VerifyPin.name)
+                            }
+                            else -> Unit
+                        }
+                    }
+                }
+
+                WithdrawScreen(
+                    state = state,
+                    onEvent = viewModel::onEvent,
+                    onBackClick = {
+                        navController.navigateUp()
+                    }
+                )
+            }
+
+            composable(Route.WithdrawSuccess.name) {
+                WithdrawSuccessScreen(
+                    onBackClick = {
+                        navController.navigate(TopLevelDestination.Profile.name) {
+                            popUpTo(Route.WithdrawSuccess.name) {
+                                inclusive = true
+                            }
+                        }
+                    }
+                )
+            }
+
+            composable(Route.VerifyPin.name) {
+                val viewModel: AndroidVerifyPinViewModel = hiltViewModel()
+                val state by viewModel.state.collectAsState()
+
+                LaunchedEffect(key1 = true) {
+                    viewModel.uiEvent.collect { event ->
+                        when(event) {
+                            is UiEvent.Success -> {
+                                navController.navigate(Route.WithdrawSuccess.name) {
+                                    popUpTo(TopLevelDestination.Profile.name) {
+                                        inclusive = true
+                                    }
+                                }
+                            }
+                            else -> Unit
+                        }
+                    }
+                }
+
+                VerifyPinScreen(
                     state = state,
                     onEvent = viewModel::onEvent,
                     onBackClick = {
