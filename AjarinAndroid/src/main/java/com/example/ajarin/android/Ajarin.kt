@@ -187,7 +187,6 @@ fun Ajarin(
 
                 HistoryScreen(
                     state = state,
-                    isMentor = true,
                     onUserClick = { sessionId, mentorId ->
                         navController.navigate(Route.Session.name + "/$sessionId" + "/$mentorId")
                     },
@@ -298,6 +297,7 @@ fun Ajarin(
                         when(event) {
                             is UiEvent.Success -> {
                                 navController.navigateUp()
+                                appState.showSnackBar("Your application is sent!")
                             }
                             is UiEvent.ShowSnackBar -> {
                                 appState.showSnackBar(event.message)
@@ -517,6 +517,7 @@ fun Ajarin(
                         when(event) {
                             is UiEvent.Success -> {
                                 navController.navigateUp()
+                                appState.showSnackBar("Bank Account Successfully Added!")
                             }
                             else -> Unit
                         }

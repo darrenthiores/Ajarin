@@ -29,7 +29,15 @@ class ApplyAsMentorViewModel (
     fun onEvent(event: ApplyAsMentorEvent) {
         when(event) {
             ApplyAsMentorEvent.OnApply -> {
+                _state.value = state.value.copy(
+                    applySuccess = true
+                )
 
+                viewModelScope.launch {
+                    _uiEvent.send(
+                        UiEvent.Success
+                    )
+                }
             }
             is ApplyAsMentorEvent.OnFeeChange -> {
                 _state.value = state.value.copy(

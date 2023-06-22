@@ -61,7 +61,7 @@ fun VerifyPinScreen(
             )
 
             PrimaryButton(
-                text = "Save Pin",
+                text = "Verify Pin",
                 textModifier = Modifier
                     .fillMaxWidth(),
                 isEnabled = state.pin.isNotEmpty() &&

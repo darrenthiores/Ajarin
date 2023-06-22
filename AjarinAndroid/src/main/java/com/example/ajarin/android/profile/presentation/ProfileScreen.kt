@@ -44,7 +44,7 @@ import com.example.ajarin.profile.presentation.ProfileState
 @Composable
 fun ProfileScreen(
     state: ProfileState,
-    isMentor: Boolean = true,
+    isMentor: Boolean = false,
     onEvent: (ProfileEvent) -> Unit,
     onApplyAsMentorClick: () -> Unit,
     onBankAccountClick: () -> Unit,

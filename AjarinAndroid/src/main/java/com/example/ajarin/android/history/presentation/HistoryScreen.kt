@@ -20,7 +20,7 @@ import com.google.accompanist.pager.rememberPagerState
 @Composable
 fun HistoryScreen(
     state: HistoryState,
-    isMentor: Boolean,
+    isMentor: Boolean = true,
     onUserClick: (String, String) -> Unit,
     onMentorClick: (String, String) -> Unit,
     onReviewClick: (String) -> Unit,
