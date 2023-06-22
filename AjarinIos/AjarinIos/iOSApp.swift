@@ -4,9 +4,13 @@ import SwiftUI
 struct iOSApp: App {
     
     init() {
+        HomeDatabaseModule()
+        HomeRepositoryModule()
+        
         LandingUseCasesModule()
         HomeUseCasesModule()
         SearchMentorUseCasesModule()
+        MentorProfileUseCasesModule()
     }
     
 	var body: some Scene {

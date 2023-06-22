@@ -10,6 +10,7 @@ struct HomeScreen: View {
                 HomeHeader(
                     courses: viewModel.state.courses,
                     currentCourse: viewModel.state.selectedCourse,
+                    unreadMessageCount: Int(viewModel.state.unreadMessageCount),
                     onClick: { course in
                         viewModel.onEvent(
                             event: .OnSelectCourse(course: course)

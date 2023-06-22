@@ -23,11 +23,13 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.ajarin.android.R
 import com.example.ajarin.android.core_ui.components.PrimaryButton
 import com.example.ajarin.android.core_ui.navigation.Route
+import com.example.ajarin.android.core_ui.theme.AjarinTheme
 import com.example.ajarin.android.mentor_profile.presentation.components.MentorProfileHeader
 import com.example.ajarin.android.mentor_profile.presentation.components.MentorProfileTabRow
 import com.example.ajarin.android.mentor_profile.presentation.sections.MentorProfileAboutSection
@@ -159,5 +161,18 @@ fun MentorProfileScreen(
                 }
             }
         }
+    }
+}
+
+@Preview
+@Composable
+fun MentorProfileScreenPreview() {
+    AjarinTheme {
+        MentorProfileScreen(
+            state = MentorProfileState(),
+            onBackClick = {  },
+            onBookClick = {  },
+            onChatClick = {  }
+        )
     }
 }

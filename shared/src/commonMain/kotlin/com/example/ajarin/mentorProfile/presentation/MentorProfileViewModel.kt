@@ -3,8 +3,6 @@ package com.example.ajarin.mentorProfile.presentation
 import com.example.ajarin.core.domain.utils.toCommonStateFlow
 import com.example.ajarin.core.utils.Resource
 import com.example.ajarin.mentorProfile.domain.use_cases.GetMentorById
-import com.example.ajarin.searchMentor.domain.use_cases.SearchMentor
-import com.example.ajarin.searchMentor.presentation.SearchMentorState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

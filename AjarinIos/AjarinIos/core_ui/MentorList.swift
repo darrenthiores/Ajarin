@@ -16,7 +16,9 @@ struct MentorList: View {
                 ) {
                     ForEach(mentors, id: \.id) { mentor in
                         NavigationLink {
-                            Text("\(mentor.name)")
+                            MentorProfileScreen(
+                                id: mentor.id
+                            )
                         } label: {
                             MentorCard(
                                 mentor: mentor,
