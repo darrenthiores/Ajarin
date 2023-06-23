@@ -5,7 +5,7 @@ struct SearchMentorScreen: View {
     @State private var showFilter: Bool = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 SearchMentorHeader(
                     searchText: Binding(

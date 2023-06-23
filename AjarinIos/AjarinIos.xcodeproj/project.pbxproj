@@ -67,6 +67,11 @@
 		C7FDBE6E2A458AD700C60C70 /* PaymentMethodExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE6D2A458AD700C60C70 /* PaymentMethodExtension.swift */; };
 		C7FDBE722A458C3200C60C70 /* PaymentMethodField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE712A458C3200C60C70 /* PaymentMethodField.swift */; };
 		C7FDBE762A45948900C60C70 /* BookingSuccessScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE752A45948900C60C70 /* BookingSuccessScreen.swift */; };
+		C7FDBE7B2A459CB000C60C70 /* MentorHistoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE7A2A459CB000C60C70 /* MentorHistoryCard.swift */; };
+		C7FDBE7D2A45A8C100C60C70 /* UserHistoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE7C2A45A8C100C60C70 /* UserHistoryCard.swift */; };
+		C7FDBE7F2A45A98F00C60C70 /* HistoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE7E2A45A98F00C60C70 /* HistoryScreen.swift */; };
+		C7FDBE812A45A99800C60C70 /* IosHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE802A45A99800C60C70 /* IosHistoryViewModel.swift */; };
+		C7FDBE842A45AA5800C60C70 /* HistoryUseCasesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE832A45AA5800C60C70 /* HistoryUseCasesModule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -145,6 +150,11 @@
 		C7FDBE6D2A458AD700C60C70 /* PaymentMethodExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodExtension.swift; sourceTree = "<group>"; };
 		C7FDBE712A458C3200C60C70 /* PaymentMethodField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodField.swift; sourceTree = "<group>"; };
 		C7FDBE752A45948900C60C70 /* BookingSuccessScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSuccessScreen.swift; sourceTree = "<group>"; };
+		C7FDBE7A2A459CB000C60C70 /* MentorHistoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorHistoryCard.swift; sourceTree = "<group>"; };
+		C7FDBE7C2A45A8C100C60C70 /* UserHistoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHistoryCard.swift; sourceTree = "<group>"; };
+		C7FDBE7E2A45A98F00C60C70 /* HistoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreen.swift; sourceTree = "<group>"; };
+		C7FDBE802A45A99800C60C70 /* IosHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosHistoryViewModel.swift; sourceTree = "<group>"; };
+		C7FDBE832A45AA5800C60C70 /* HistoryUseCasesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryUseCasesModule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +196,7 @@
 		7555FF7D242A565900829871 /* AjarinIos */ = {
 			isa = PBXGroup;
 			children = (
+				C7FDBE772A459C9000C60C70 /* history */,
 				C7FDBE732A45947A00C60C70 /* booking_success */,
 				C732F98E2A445A600037B0C4 /* booking */,
 				C732F9732A44334F0037B0C4 /* mentor_profile */,
@@ -215,6 +226,7 @@
 		C725F9402A1F8ECC002FEEFC /* di */ = {
 			isa = PBXGroup;
 			children = (
+				C7FDBE822A45AA4A00C60C70 /* history */,
 				C732F97A2A4434020037B0C4 /* mentor_profile */,
 				C7385C0C2A23C37500E3801C /* search */,
 				C7385C092A23C34F00E3801C /* home */,
@@ -562,6 +574,41 @@
 			path = presentation;
 			sourceTree = "<group>";
 		};
+		C7FDBE772A459C9000C60C70 /* history */ = {
+			isa = PBXGroup;
+			children = (
+				C7FDBE782A459C9600C60C70 /* presentation */,
+			);
+			path = history;
+			sourceTree = "<group>";
+		};
+		C7FDBE782A459C9600C60C70 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C7FDBE792A459C9B00C60C70 /* components */,
+				C7FDBE7E2A45A98F00C60C70 /* HistoryScreen.swift */,
+				C7FDBE802A45A99800C60C70 /* IosHistoryViewModel.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		C7FDBE792A459C9B00C60C70 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				C7FDBE7A2A459CB000C60C70 /* MentorHistoryCard.swift */,
+				C7FDBE7C2A45A8C100C60C70 /* UserHistoryCard.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		C7FDBE822A45AA4A00C60C70 /* history */ = {
+			isa = PBXGroup;
+			children = (
+				C7FDBE832A45AA5800C60C70 /* HistoryUseCasesModule.swift */,
+			);
+			path = history;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -658,6 +705,7 @@
 				C732F9702A44281B0037B0C4 /* HomeDatabaseModule.swift in Sources */,
 				C78039642A20C49500DEA808 /* FilterItem.swift in Sources */,
 				C78039582A20B6D100DEA808 /* IosProfileViewModel.swift in Sources */,
+				C7FDBE7D2A45A8C100C60C70 /* UserHistoryCard.swift in Sources */,
 				C77C3ACC2A1FB4B000AACF25 /* RegisterHeader.swift in Sources */,
 				C78039462A208DC900DEA808 /* MentorCard.swift in Sources */,
 				C725F95D2A1F9EE6002FEEFC /* RegisterScreen.swift in Sources */,
@@ -677,10 +725,13 @@
 				C7FDBE6E2A458AD700C60C70 /* PaymentMethodExtension.swift in Sources */,
 				C780395E2A20C10A00DEA808 /* IosSearchMentorViewModel.swift in Sources */,
 				C78039392A2088D900DEA808 /* MainTab.swift in Sources */,
+				C7FDBE812A45A99800C60C70 /* IosHistoryViewModel.swift in Sources */,
+				C7FDBE7B2A459CB000C60C70 /* MentorHistoryCard.swift in Sources */,
 				C78039482A20901200DEA808 /* InformationItem.swift in Sources */,
 				C725F94E2A1F94A8002FEEFC /* DependencyInjector.swift in Sources */,
 				C7FDBE6B2A45897800C60C70 /* PaymentMethodSheet.swift in Sources */,
 				C725F95A2A1F9880002FEEFC /* PasswordTextField.swift in Sources */,
+				C7FDBE842A45AA5800C60C70 /* HistoryUseCasesModule.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				C78039672A20C95000DEA808 /* SearchMentorDefault.swift in Sources */,
 				C725F94A2A1F938C002FEEFC /* IosLoginViewModel.swift in Sources */,
@@ -691,6 +742,7 @@
 				C78039602A20C3BB00DEA808 /* SearchMentorHeader.swift in Sources */,
 				C732F97E2A4442500037B0C4 /* TabButton.swift in Sources */,
 				C7FDBE722A458C3200C60C70 /* PaymentMethodField.swift in Sources */,
+				C7FDBE7F2A45A98F00C60C70 /* HistoryScreen.swift in Sources */,
 				C78039562A20B6C800DEA808 /* ProfileScreen.swift in Sources */,
 				C725F9622A1FA4F9002FEEFC /* CreateAccount.swift in Sources */,
 				C732F9892A4455C10037B0C4 /* ReviewImageView.swift in Sources */,

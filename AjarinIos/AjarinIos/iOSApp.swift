@@ -11,6 +11,7 @@ struct iOSApp: App {
         HomeUseCasesModule()
         SearchMentorUseCasesModule()
         MentorProfileUseCasesModule()
+        HistoryUseCasesModule()
     }
     
 	var body: some Scene {

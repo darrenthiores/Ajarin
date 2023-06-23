@@ -33,7 +33,7 @@ struct ContentView: View {
                     }
                     .tag(MainTab.Search)
                 
-                Text("History")
+                HistoryScreen()
                     .tabItem {
                         Label(
                             "History",

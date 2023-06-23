@@ -29,4 +29,12 @@ object LocalDateConverter {
             .atStartOfDayIn(TimeZone.currentSystemDefault())
             .toEpochMilliseconds()
     }
+
+    fun localDateToString(date: LocalDate): String {
+        val year = date.year
+        val month = if(date.monthNumber < 9) "0${date.monthNumber}" else date.monthNumber
+        val day = if(date.dayOfMonth < 9) "0${date.dayOfMonth}" else date.dayOfMonth
+
+        return "$year-$month-$day"
+    }
 }
