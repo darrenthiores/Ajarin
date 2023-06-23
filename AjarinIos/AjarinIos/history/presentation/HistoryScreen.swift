@@ -43,7 +43,15 @@ struct HistoryScreen: View {
                     ) {
                         ScrollView {
                             ForEach(viewModel.state.historySessions, id: \.id) { history in
-                                MentorHistoryCard(history: history)
+                                NavigationLink {
+                                    SessionAsUserScreen(
+                                        sessionId: history.id,
+                                        mentorId: history.mentorId
+                                    )
+                                } label: {
+                                    MentorHistoryCard(history: history)
+                                }
+                                .buttonStyle(.plain)
                             }
                             .padding()
                         }
@@ -69,8 +77,15 @@ struct HistoryScreen: View {
             } else {
                 ScrollView {
                     ForEach(viewModel.state.historySessions, id: \.id) { history in
-                        MentorHistoryCard(history: history)
-                        
+                        NavigationLink {
+                            SessionAsUserScreen(
+                                sessionId: history.id,
+                                mentorId: history.mentorId
+                            )
+                        } label: {
+                            MentorHistoryCard(history: history)
+                        }
+                        .buttonStyle(.plain)
                     }
                     .padding()
                 }

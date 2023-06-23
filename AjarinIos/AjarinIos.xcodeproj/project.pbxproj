@@ -72,6 +72,9 @@
 		C7FDBE7F2A45A98F00C60C70 /* HistoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE7E2A45A98F00C60C70 /* HistoryScreen.swift */; };
 		C7FDBE812A45A99800C60C70 /* IosHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE802A45A99800C60C70 /* IosHistoryViewModel.swift */; };
 		C7FDBE842A45AA5800C60C70 /* HistoryUseCasesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE832A45AA5800C60C70 /* HistoryUseCasesModule.swift */; };
+		C7FDBE892A45AEEB00C60C70 /* SessionAsUserScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE882A45AEEB00C60C70 /* SessionAsUserScreen.swift */; };
+		C7FDBE8B2A45AF3200C60C70 /* IosSessionAsUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE8A2A45AF3200C60C70 /* IosSessionAsUserViewModel.swift */; };
+		C7FDBE8E2A45B14100C60C70 /* SessionUseCasesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE8D2A45B14100C60C70 /* SessionUseCasesModule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -155,6 +158,9 @@
 		C7FDBE7E2A45A98F00C60C70 /* HistoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreen.swift; sourceTree = "<group>"; };
 		C7FDBE802A45A99800C60C70 /* IosHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosHistoryViewModel.swift; sourceTree = "<group>"; };
 		C7FDBE832A45AA5800C60C70 /* HistoryUseCasesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryUseCasesModule.swift; sourceTree = "<group>"; };
+		C7FDBE882A45AEEB00C60C70 /* SessionAsUserScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionAsUserScreen.swift; sourceTree = "<group>"; };
+		C7FDBE8A2A45AF3200C60C70 /* IosSessionAsUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosSessionAsUserViewModel.swift; sourceTree = "<group>"; };
+		C7FDBE8D2A45B14100C60C70 /* SessionUseCasesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionUseCasesModule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +202,8 @@
 		7555FF7D242A565900829871 /* AjarinIos */ = {
 			isa = PBXGroup;
 			children = (
+				C7FDBE862A45AECF00C60C70 /* session_as_user */,
+				C7FDBE852A45AEBE00C60C70 /* session_as_mentor */,
 				C7FDBE772A459C9000C60C70 /* history */,
 				C7FDBE732A45947A00C60C70 /* booking_success */,
 				C732F98E2A445A600037B0C4 /* booking */,
@@ -226,6 +234,7 @@
 		C725F9402A1F8ECC002FEEFC /* di */ = {
 			isa = PBXGroup;
 			children = (
+				C7FDBE8C2A45B13800C60C70 /* session */,
 				C7FDBE822A45AA4A00C60C70 /* history */,
 				C732F97A2A4434020037B0C4 /* mentor_profile */,
 				C7385C0C2A23C37500E3801C /* search */,
@@ -609,6 +618,38 @@
 			path = history;
 			sourceTree = "<group>";
 		};
+		C7FDBE852A45AEBE00C60C70 /* session_as_mentor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = session_as_mentor;
+			sourceTree = "<group>";
+		};
+		C7FDBE862A45AECF00C60C70 /* session_as_user */ = {
+			isa = PBXGroup;
+			children = (
+				C7FDBE872A45AED500C60C70 /* presentation */,
+			);
+			path = session_as_user;
+			sourceTree = "<group>";
+		};
+		C7FDBE872A45AED500C60C70 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C7FDBE882A45AEEB00C60C70 /* SessionAsUserScreen.swift */,
+				C7FDBE8A2A45AF3200C60C70 /* IosSessionAsUserViewModel.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		C7FDBE8C2A45B13800C60C70 /* session */ = {
+			isa = PBXGroup;
+			children = (
+				C7FDBE8D2A45B14100C60C70 /* SessionUseCasesModule.swift */,
+			);
+			path = session;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -713,6 +754,7 @@
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				C780394C2A2092F100DEA808 /* MentorList.swift in Sources */,
 				C732F9812A4449800037B0C4 /* MentorAbout.swift in Sources */,
+				C7FDBE892A45AEEB00C60C70 /* SessionAsUserScreen.swift in Sources */,
 				C732F9792A44337F0037B0C4 /* IosMentorProfileViewModel.swift in Sources */,
 				C78039622A20C41E00DEA808 /* MentorFilterSheet.swift in Sources */,
 				C732F9722A4429100037B0C4 /* HomeRepositoryModule.swift in Sources */,
@@ -729,6 +771,7 @@
 				C7FDBE7B2A459CB000C60C70 /* MentorHistoryCard.swift in Sources */,
 				C78039482A20901200DEA808 /* InformationItem.swift in Sources */,
 				C725F94E2A1F94A8002FEEFC /* DependencyInjector.swift in Sources */,
+				C7FDBE8B2A45AF3200C60C70 /* IosSessionAsUserViewModel.swift in Sources */,
 				C7FDBE6B2A45897800C60C70 /* PaymentMethodSheet.swift in Sources */,
 				C725F95A2A1F9880002FEEFC /* PasswordTextField.swift in Sources */,
 				C7FDBE842A45AA5800C60C70 /* HistoryUseCasesModule.swift in Sources */,
@@ -742,6 +785,7 @@
 				C78039602A20C3BB00DEA808 /* SearchMentorHeader.swift in Sources */,
 				C732F97E2A4442500037B0C4 /* TabButton.swift in Sources */,
 				C7FDBE722A458C3200C60C70 /* PaymentMethodField.swift in Sources */,
+				C7FDBE8E2A45B14100C60C70 /* SessionUseCasesModule.swift in Sources */,
 				C7FDBE7F2A45A98F00C60C70 /* HistoryScreen.swift in Sources */,
 				C78039562A20B6C800DEA808 /* ProfileScreen.swift in Sources */,
 				C725F9622A1FA4F9002FEEFC /* CreateAccount.swift in Sources */,
