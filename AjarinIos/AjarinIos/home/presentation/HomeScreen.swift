@@ -5,7 +5,7 @@ struct HomeScreen: View {
     @StateObject private var viewModel = IosHomeViewModel()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 HomeHeader(
                     courses: viewModel.state.courses,

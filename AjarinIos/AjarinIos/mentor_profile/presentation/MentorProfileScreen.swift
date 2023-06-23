@@ -98,14 +98,15 @@ struct MentorProfileScreen: View {
                     HStack {
                         Spacer()
                         
-                        Button{
-                            
+                        NavigationLink {
+                            BookingScreen(id: id)
                         } label: {
                             Text("Book")
                                 .font(.title2)
                                 .foregroundColor(Color.white)
                                 .padding()
                         }
+                        .buttonStyle(.plain)
                         .background(.primary)
                         .cornerRadius(16)
                         .padding()

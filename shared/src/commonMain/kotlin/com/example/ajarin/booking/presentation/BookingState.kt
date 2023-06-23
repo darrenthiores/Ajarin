@@ -1,5 +1,6 @@
 package com.example.ajarin.booking.presentation
 
+import com.example.ajarin.booking.domain.utils.LocalDateConverter
 import com.example.ajarin.home.presentation.Course
 import com.example.ajarin.home.presentation.Mentor
 import com.example.ajarin.mentorProfile.presentation.Session
@@ -12,7 +13,7 @@ data class BookingState(
     val isCourseDropDownOpen: Boolean = false,
     val course: Course? = null,
     val courseError: Error? = null,
-    val date: LocalDate? = null,
+    val date: LocalDate? = LocalDateConverter.currentDate(),
     val dateError: Error? = null,
     val schedule: Session? = null,
     val scheduleError: Error? = null,
