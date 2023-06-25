@@ -59,7 +59,15 @@ struct HistoryScreen: View {
                         
                         ScrollView {
                             ForEach(viewModel.state.historySessions, id: \.id) { history in
-                                UserHistoryCard(history: history)
+                                NavigationLink {
+                                    SessionAsMentorScreen(
+                                        sessionId: history.id,
+                                        userId: history.userId
+                                    )
+                                } label: {
+                                    UserHistoryCard(history: history)
+                                }
+                                .buttonStyle(.plain)
                             }
                             .padding()
                         }

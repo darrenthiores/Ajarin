@@ -75,6 +75,10 @@
 		C7FDBE892A45AEEB00C60C70 /* SessionAsUserScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE882A45AEEB00C60C70 /* SessionAsUserScreen.swift */; };
 		C7FDBE8B2A45AF3200C60C70 /* IosSessionAsUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE8A2A45AF3200C60C70 /* IosSessionAsUserViewModel.swift */; };
 		C7FDBE8E2A45B14100C60C70 /* SessionUseCasesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE8D2A45B14100C60C70 /* SessionUseCasesModule.swift */; };
+		C7FDBE902A45B51E00C60C70 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE8F2A45B51E00C60C70 /* ActivityView.swift */; };
+		C7FDBE932A45B57700C60C70 /* SessionAsMentorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE922A45B57700C60C70 /* SessionAsMentorScreen.swift */; };
+		C7FDBE952A45B58100C60C70 /* IosSessionAsMentorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE942A45B58100C60C70 /* IosSessionAsMentorViewModel.swift */; };
+		C7FDBE972A45B76E00C60C70 /* SmallUserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE962A45B76E00C60C70 /* SmallUserCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -161,6 +165,10 @@
 		C7FDBE882A45AEEB00C60C70 /* SessionAsUserScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionAsUserScreen.swift; sourceTree = "<group>"; };
 		C7FDBE8A2A45AF3200C60C70 /* IosSessionAsUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosSessionAsUserViewModel.swift; sourceTree = "<group>"; };
 		C7FDBE8D2A45B14100C60C70 /* SessionUseCasesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionUseCasesModule.swift; sourceTree = "<group>"; };
+		C7FDBE8F2A45B51E00C60C70 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		C7FDBE922A45B57700C60C70 /* SessionAsMentorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionAsMentorScreen.swift; sourceTree = "<group>"; };
+		C7FDBE942A45B58100C60C70 /* IosSessionAsMentorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosSessionAsMentorViewModel.swift; sourceTree = "<group>"; };
+		C7FDBE962A45B76E00C60C70 /* SmallUserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallUserCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,6 +447,8 @@
 				C732F98A2A4455F60037B0C4 /* ExpandableText.swift */,
 				C732F9942A4461C50037B0C4 /* SmallMentorCard.swift */,
 				C7FDBE622A45554F00C60C70 /* ClickableField.swift */,
+				C7FDBE8F2A45B51E00C60C70 /* ActivityView.swift */,
+				C7FDBE962A45B76E00C60C70 /* SmallUserCard.swift */,
 			);
 			path = core_ui;
 			sourceTree = "<group>";
@@ -621,6 +631,7 @@
 		C7FDBE852A45AEBE00C60C70 /* session_as_mentor */ = {
 			isa = PBXGroup;
 			children = (
+				C7FDBE912A45B56B00C60C70 /* presentation */,
 			);
 			path = session_as_mentor;
 			sourceTree = "<group>";
@@ -648,6 +659,15 @@
 				C7FDBE8D2A45B14100C60C70 /* SessionUseCasesModule.swift */,
 			);
 			path = session;
+			sourceTree = "<group>";
+		};
+		C7FDBE912A45B56B00C60C70 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C7FDBE922A45B57700C60C70 /* SessionAsMentorScreen.swift */,
+				C7FDBE942A45B58100C60C70 /* IosSessionAsMentorViewModel.swift */,
+			);
+			path = presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -755,6 +775,7 @@
 				C780394C2A2092F100DEA808 /* MentorList.swift in Sources */,
 				C732F9812A4449800037B0C4 /* MentorAbout.swift in Sources */,
 				C7FDBE892A45AEEB00C60C70 /* SessionAsUserScreen.swift in Sources */,
+				C7FDBE952A45B58100C60C70 /* IosSessionAsMentorViewModel.swift in Sources */,
 				C732F9792A44337F0037B0C4 /* IosMentorProfileViewModel.swift in Sources */,
 				C78039622A20C41E00DEA808 /* MentorFilterSheet.swift in Sources */,
 				C732F9722A4429100037B0C4 /* HomeRepositoryModule.swift in Sources */,
@@ -774,6 +795,7 @@
 				C7FDBE8B2A45AF3200C60C70 /* IosSessionAsUserViewModel.swift in Sources */,
 				C7FDBE6B2A45897800C60C70 /* PaymentMethodSheet.swift in Sources */,
 				C725F95A2A1F9880002FEEFC /* PasswordTextField.swift in Sources */,
+				C7FDBE932A45B57700C60C70 /* SessionAsMentorScreen.swift in Sources */,
 				C7FDBE842A45AA5800C60C70 /* HistoryUseCasesModule.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				C78039672A20C95000DEA808 /* SearchMentorDefault.swift in Sources */,
@@ -783,8 +805,10 @@
 				C725F9532A1F94E1002FEEFC /* LandingUseCasesModule.swift in Sources */,
 				C780393F2A208AB500DEA808 /* IosHomeViewModel.swift in Sources */,
 				C78039602A20C3BB00DEA808 /* SearchMentorHeader.swift in Sources */,
+				C7FDBE972A45B76E00C60C70 /* SmallUserCard.swift in Sources */,
 				C732F97E2A4442500037B0C4 /* TabButton.swift in Sources */,
 				C7FDBE722A458C3200C60C70 /* PaymentMethodField.swift in Sources */,
+				C7FDBE902A45B51E00C60C70 /* ActivityView.swift in Sources */,
 				C7FDBE8E2A45B14100C60C70 /* SessionUseCasesModule.swift in Sources */,
 				C7FDBE7F2A45A98F00C60C70 /* HistoryScreen.swift in Sources */,
 				C78039562A20B6C800DEA808 /* ProfileScreen.swift in Sources */,

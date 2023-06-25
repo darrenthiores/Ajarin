@@ -6,6 +6,7 @@ struct MentorProfileScreen: View {
     
     @StateObject private var viewModel = IosMentorProfileViewModel()
     @State private var selectedTab: MentorProfileTab = .about
+    @State private var showShareSheet: Bool = false
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     
@@ -131,12 +132,17 @@ struct MentorProfileScreen: View {
                     .buttonStyle(.plain)
                     
                     Button {
-                        
+                        showShareSheet = true
                     } label: {
                         Image(systemName: "arrowshape.turn.up.right.fill")
                     }
                     .buttonStyle(.plain)
                 }
+            }
+            .sheet(isPresented: $showShareSheet) {
+                ActivityView(
+                    text: "Hello friends! check this mentor"
+                )
             }
             .onAppear {
                 viewModel.startObserving()

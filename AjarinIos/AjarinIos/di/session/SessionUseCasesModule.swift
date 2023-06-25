@@ -12,5 +12,6 @@ import shared
 class SessionUseCasesModule {
     init() {
         @Provider var getSessionById: GetSessionById = GetSessionById()
+        @Provider var getUserById: GetUserById = GetUserById()
     }
 }
