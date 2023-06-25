@@ -125,7 +125,10 @@ struct MentorProfileScreen: View {
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     NavigationLink {
-                        Text("Message")
+                        MessageScreen(
+                            mentorId: id,
+                            userId: "U1"
+                        )
                     } label: {
                         Image(systemName: "ellipsis.message")
                     }

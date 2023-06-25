@@ -39,6 +39,21 @@
 		C732F9952A4461C50037B0C4 /* SmallMentorCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732F9942A4461C50037B0C4 /* SmallMentorCard.swift */; };
 		C7385C0B2A23C35900E3801C /* HomeUseCasesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7385C0A2A23C35900E3801C /* HomeUseCasesModule.swift */; };
 		C7385C0E2A23C38500E3801C /* SearchMentorUseCasesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7385C0D2A23C38500E3801C /* SearchMentorUseCasesModule.swift */; };
+		C75583672A48A4C800ED8ABC /* InboxDatabaseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75583662A48A4C800ED8ABC /* InboxDatabaseModule.swift */; };
+		C75583692A48A50300ED8ABC /* InboxRepositoryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75583682A48A50300ED8ABC /* InboxRepositoryModule.swift */; };
+		C755836B2A48A52800ED8ABC /* InboxUseCasesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C755836A2A48A52800ED8ABC /* InboxUseCasesModule.swift */; };
+		C755836D2A48A59E00ED8ABC /* InboxScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C755836C2A48A59E00ED8ABC /* InboxScreen.swift */; };
+		C755836F2A48A5A900ED8ABC /* IosInboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C755836E2A48A5A900ED8ABC /* IosInboxViewModel.swift */; };
+		C75583742A48A8E100ED8ABC /* MessageDatabaseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75583732A48A8E100ED8ABC /* MessageDatabaseModule.swift */; };
+		C75583762A48A91200ED8ABC /* MessageRepositoryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75583752A48A91200ED8ABC /* MessageRepositoryModule.swift */; };
+		C75583782A48A93C00ED8ABC /* MessageUseCasesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75583772A48A93C00ED8ABC /* MessageUseCasesModule.swift */; };
+		C755837A2A48A9C300ED8ABC /* MessageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75583792A48A9C300ED8ABC /* MessageScreen.swift */; };
+		C755837C2A48A9CD00ED8ABC /* IosMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C755837B2A48A9CD00ED8ABC /* IosMessageViewModel.swift */; };
+		C75583812A48AE5700ED8ABC /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75583802A48AE5700ED8ABC /* RoundedCorner.swift */; };
+		C75583832A48AEC700ED8ABC /* PersonalMessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75583822A48AEC700ED8ABC /* PersonalMessageItem.swift */; };
+		C75583852A48AF6800ED8ABC /* FriendMessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75583842A48AF6800ED8ABC /* FriendMessageItem.swift */; };
+		C75583872A48B5A800ED8ABC /* ReversedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75583862A48B5A800ED8ABC /* ReversedScrollView.swift */; };
+		C75583892A48B79100ED8ABC /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75583882A48B79100ED8ABC /* Stack.swift */; };
 		C77C3ACC2A1FB4B000AACF25 /* RegisterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACB2A1FB4B000AACF25 /* RegisterHeader.swift */; };
 		C77C3ACE2A1FB64D00AACF25 /* FillNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACD2A1FB64D00AACF25 /* FillNumber.swift */; };
 		C77C3AD02A1FBC3B00AACF25 /* NumberVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACF2A1FBC3B00AACF25 /* NumberVerification.swift */; };
@@ -129,6 +144,21 @@
 		C732F9942A4461C50037B0C4 /* SmallMentorCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallMentorCard.swift; sourceTree = "<group>"; };
 		C7385C0A2A23C35900E3801C /* HomeUseCasesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCasesModule.swift; sourceTree = "<group>"; };
 		C7385C0D2A23C38500E3801C /* SearchMentorUseCasesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMentorUseCasesModule.swift; sourceTree = "<group>"; };
+		C75583662A48A4C800ED8ABC /* InboxDatabaseModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxDatabaseModule.swift; sourceTree = "<group>"; };
+		C75583682A48A50300ED8ABC /* InboxRepositoryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxRepositoryModule.swift; sourceTree = "<group>"; };
+		C755836A2A48A52800ED8ABC /* InboxUseCasesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxUseCasesModule.swift; sourceTree = "<group>"; };
+		C755836C2A48A59E00ED8ABC /* InboxScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxScreen.swift; sourceTree = "<group>"; };
+		C755836E2A48A5A900ED8ABC /* IosInboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosInboxViewModel.swift; sourceTree = "<group>"; };
+		C75583732A48A8E100ED8ABC /* MessageDatabaseModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDatabaseModule.swift; sourceTree = "<group>"; };
+		C75583752A48A91200ED8ABC /* MessageRepositoryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRepositoryModule.swift; sourceTree = "<group>"; };
+		C75583772A48A93C00ED8ABC /* MessageUseCasesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageUseCasesModule.swift; sourceTree = "<group>"; };
+		C75583792A48A9C300ED8ABC /* MessageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageScreen.swift; sourceTree = "<group>"; };
+		C755837B2A48A9CD00ED8ABC /* IosMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosMessageViewModel.swift; sourceTree = "<group>"; };
+		C75583802A48AE5700ED8ABC /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		C75583822A48AEC700ED8ABC /* PersonalMessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalMessageItem.swift; sourceTree = "<group>"; };
+		C75583842A48AF6800ED8ABC /* FriendMessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendMessageItem.swift; sourceTree = "<group>"; };
+		C75583862A48B5A800ED8ABC /* ReversedScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversedScrollView.swift; sourceTree = "<group>"; };
+		C75583882A48B79100ED8ABC /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		C77C3ACB2A1FB4B000AACF25 /* RegisterHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterHeader.swift; sourceTree = "<group>"; };
 		C77C3ACD2A1FB64D00AACF25 /* FillNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillNumber.swift; sourceTree = "<group>"; };
 		C77C3ACF2A1FBC3B00AACF25 /* NumberVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberVerification.swift; sourceTree = "<group>"; };
@@ -210,6 +240,8 @@
 		7555FF7D242A565900829871 /* AjarinIos */ = {
 			isa = PBXGroup;
 			children = (
+				C75583702A48A8B600ED8ABC /* message */,
+				C75583632A48A45900ED8ABC /* inbox */,
 				C7FDBE862A45AECF00C60C70 /* session_as_user */,
 				C7FDBE852A45AEBE00C60C70 /* session_as_mentor */,
 				C7FDBE772A459C9000C60C70 /* history */,
@@ -242,6 +274,8 @@
 		C725F9402A1F8ECC002FEEFC /* di */ = {
 			isa = PBXGroup;
 			children = (
+				C75583722A48A8D600ED8ABC /* message */,
+				C75583652A48A4B500ED8ABC /* inbox */,
 				C7FDBE8C2A45B13800C60C70 /* session */,
 				C7FDBE822A45AA4A00C60C70 /* history */,
 				C732F97A2A4434020037B0C4 /* mentor_profile */,
@@ -435,6 +469,72 @@
 			path = search;
 			sourceTree = "<group>";
 		};
+		C75583632A48A45900ED8ABC /* inbox */ = {
+			isa = PBXGroup;
+			children = (
+				C75583642A48A46100ED8ABC /* presentation */,
+			);
+			path = inbox;
+			sourceTree = "<group>";
+		};
+		C75583642A48A46100ED8ABC /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C755836C2A48A59E00ED8ABC /* InboxScreen.swift */,
+				C755836E2A48A5A900ED8ABC /* IosInboxViewModel.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		C75583652A48A4B500ED8ABC /* inbox */ = {
+			isa = PBXGroup;
+			children = (
+				C75583662A48A4C800ED8ABC /* InboxDatabaseModule.swift */,
+				C75583682A48A50300ED8ABC /* InboxRepositoryModule.swift */,
+				C755836A2A48A52800ED8ABC /* InboxUseCasesModule.swift */,
+			);
+			path = inbox;
+			sourceTree = "<group>";
+		};
+		C75583702A48A8B600ED8ABC /* message */ = {
+			isa = PBXGroup;
+			children = (
+				C75583712A48A8CE00ED8ABC /* presentation */,
+			);
+			path = message;
+			sourceTree = "<group>";
+		};
+		C75583712A48A8CE00ED8ABC /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C755837D2A48AE0800ED8ABC /* components */,
+				C75583792A48A9C300ED8ABC /* MessageScreen.swift */,
+				C755837B2A48A9CD00ED8ABC /* IosMessageViewModel.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		C75583722A48A8D600ED8ABC /* message */ = {
+			isa = PBXGroup;
+			children = (
+				C75583732A48A8E100ED8ABC /* MessageDatabaseModule.swift */,
+				C75583752A48A91200ED8ABC /* MessageRepositoryModule.swift */,
+				C75583772A48A93C00ED8ABC /* MessageUseCasesModule.swift */,
+			);
+			path = message;
+			sourceTree = "<group>";
+		};
+		C755837D2A48AE0800ED8ABC /* components */ = {
+			isa = PBXGroup;
+			children = (
+				C75583822A48AEC700ED8ABC /* PersonalMessageItem.swift */,
+				C75583842A48AF6800ED8ABC /* FriendMessageItem.swift */,
+				C75583862A48B5A800ED8ABC /* ReversedScrollView.swift */,
+				C75583882A48B79100ED8ABC /* Stack.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		C78039362A2088C200DEA808 /* core_ui */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +549,7 @@
 				C7FDBE622A45554F00C60C70 /* ClickableField.swift */,
 				C7FDBE8F2A45B51E00C60C70 /* ActivityView.swift */,
 				C7FDBE962A45B76E00C60C70 /* SmallUserCard.swift */,
+				C75583802A48AE5700ED8ABC /* RoundedCorner.swift */,
 			);
 			path = core_ui;
 			sourceTree = "<group>";
@@ -765,18 +866,25 @@
 			files = (
 				C732F9702A44281B0037B0C4 /* HomeDatabaseModule.swift in Sources */,
 				C78039642A20C49500DEA808 /* FilterItem.swift in Sources */,
+				C75583852A48AF6800ED8ABC /* FriendMessageItem.swift in Sources */,
+				C75583832A48AEC700ED8ABC /* PersonalMessageItem.swift in Sources */,
 				C78039582A20B6D100DEA808 /* IosProfileViewModel.swift in Sources */,
+				C755836F2A48A5A900ED8ABC /* IosInboxViewModel.swift in Sources */,
 				C7FDBE7D2A45A8C100C60C70 /* UserHistoryCard.swift in Sources */,
 				C77C3ACC2A1FB4B000AACF25 /* RegisterHeader.swift in Sources */,
 				C78039462A208DC900DEA808 /* MentorCard.swift in Sources */,
 				C725F95D2A1F9EE6002FEEFC /* RegisterScreen.swift in Sources */,
 				C732F9912A445EC60037B0C4 /* BookingScreen.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				C755837A2A48A9C300ED8ABC /* MessageScreen.swift in Sources */,
 				C780394C2A2092F100DEA808 /* MentorList.swift in Sources */,
 				C732F9812A4449800037B0C4 /* MentorAbout.swift in Sources */,
 				C7FDBE892A45AEEB00C60C70 /* SessionAsUserScreen.swift in Sources */,
+				C755836B2A48A52800ED8ABC /* InboxUseCasesModule.swift in Sources */,
 				C7FDBE952A45B58100C60C70 /* IosSessionAsMentorViewModel.swift in Sources */,
+				C755837C2A48A9CD00ED8ABC /* IosMessageViewModel.swift in Sources */,
 				C732F9792A44337F0037B0C4 /* IosMentorProfileViewModel.swift in Sources */,
+				C75583812A48AE5700ED8ABC /* RoundedCorner.swift in Sources */,
 				C78039622A20C41E00DEA808 /* MentorFilterSheet.swift in Sources */,
 				C732F9722A4429100037B0C4 /* HomeRepositoryModule.swift in Sources */,
 				C77C3ACE2A1FB64D00AACF25 /* FillNumber.swift in Sources */,
@@ -791,6 +899,7 @@
 				C7FDBE812A45A99800C60C70 /* IosHistoryViewModel.swift in Sources */,
 				C7FDBE7B2A459CB000C60C70 /* MentorHistoryCard.swift in Sources */,
 				C78039482A20901200DEA808 /* InformationItem.swift in Sources */,
+				C75583692A48A50300ED8ABC /* InboxRepositoryModule.swift in Sources */,
 				C725F94E2A1F94A8002FEEFC /* DependencyInjector.swift in Sources */,
 				C7FDBE8B2A45AF3200C60C70 /* IosSessionAsUserViewModel.swift in Sources */,
 				C7FDBE6B2A45897800C60C70 /* PaymentMethodSheet.swift in Sources */,
@@ -803,6 +912,8 @@
 				C7FDBE762A45948900C60C70 /* BookingSuccessScreen.swift in Sources */,
 				C77C3AD02A1FBC3B00AACF25 /* NumberVerification.swift in Sources */,
 				C725F9532A1F94E1002FEEFC /* LandingUseCasesModule.swift in Sources */,
+				C75583782A48A93C00ED8ABC /* MessageUseCasesModule.swift in Sources */,
+				C755836D2A48A59E00ED8ABC /* InboxScreen.swift in Sources */,
 				C780393F2A208AB500DEA808 /* IosHomeViewModel.swift in Sources */,
 				C78039602A20C3BB00DEA808 /* SearchMentorHeader.swift in Sources */,
 				C7FDBE972A45B76E00C60C70 /* SmallUserCard.swift in Sources */,
@@ -813,6 +924,7 @@
 				C7FDBE7F2A45A98F00C60C70 /* HistoryScreen.swift in Sources */,
 				C78039562A20B6C800DEA808 /* ProfileScreen.swift in Sources */,
 				C725F9622A1FA4F9002FEEFC /* CreateAccount.swift in Sources */,
+				C75583672A48A4C800ED8ABC /* InboxDatabaseModule.swift in Sources */,
 				C732F9892A4455C10037B0C4 /* ReviewImageView.swift in Sources */,
 				C78039442A208C4F00DEA808 /* HomeTabButton.swift in Sources */,
 				C732F9832A444ABD0037B0C4 /* CourseItem.swift in Sources */,
@@ -821,9 +933,12 @@
 				C732F98D2A4457010037B0C4 /* MentorReview.swift in Sources */,
 				C725F9472A1F937A002FEEFC /* LoginScreen.swift in Sources */,
 				C725F9602A1F9F06002FEEFC /* IosRegisterViewModel.swift in Sources */,
+				C75583872A48B5A800ED8ABC /* ReversedScrollView.swift in Sources */,
 				C7FDBE632A45554F00C60C70 /* ClickableField.swift in Sources */,
+				C75583892A48B79100ED8ABC /* Stack.swift in Sources */,
 				C732F9932A445ECF0037B0C4 /* IosBookingViewModel.swift in Sources */,
 				C7FDBE662A45570700C60C70 /* CourseDropDown.swift in Sources */,
+				C75583742A48A8E100ED8ABC /* MessageDatabaseModule.swift in Sources */,
 				C78039542A20B62B00DEA808 /* ProfileButton.swift in Sources */,
 				C725F9512A1F94C9002FEEFC /* AppModule.swift in Sources */,
 				C732F9872A4455240037B0C4 /* ReviewItem.swift in Sources */,
@@ -831,6 +946,7 @@
 				C780395C2A20C0FF00DEA808 /* SearchMentorScreen.swift in Sources */,
 				C732F9852A444EB30037B0C4 /* MentorSchedule.swift in Sources */,
 				C7385C0B2A23C35900E3801C /* HomeUseCasesModule.swift in Sources */,
+				C75583762A48A91200ED8ABC /* MessageRepositoryModule.swift in Sources */,
 				C725F9582A1F982E002FEEFC /* DefaultTextField.swift in Sources */,
 				C732F98B2A4455F60037B0C4 /* ExpandableText.swift in Sources */,
 			);

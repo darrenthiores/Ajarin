@@ -16,25 +16,29 @@ struct HomeHeader: View {
                 
                 Spacer()
                 
-                ZStack {
-                    Image(systemName:"ellipsis.message")
-                    
-                    if unreadMessageCount > 0 {
-                        Color
-                            .red
-                            .frame(
-                                width: 15,
-                                height: 15
-                            )
-                            .clipShape(Circle())
-                            .overlay {
-                                Text("\(unreadMessageCount)")
-                                    .font(.caption2)
-                                    .foregroundColor(
-                                        Color(UIColor.systemBackground)
-                                    )
-                            }
-                            .offset(x: 8, y: -8)
+                NavigationLink {
+                    InboxScreen(userId: "U1")
+                } label: {
+                    ZStack {
+                        Image(systemName:"ellipsis.message")
+                        
+                        if unreadMessageCount > 0 {
+                            Color
+                                .red
+                                .frame(
+                                    width: 15,
+                                    height: 15
+                                )
+                                .clipShape(Circle())
+                                .overlay {
+                                    Text("\(unreadMessageCount)")
+                                        .font(.caption2)
+                                        .foregroundColor(
+                                            Color(UIColor.systemBackground)
+                                        )
+                                }
+                                .offset(x: 8, y: -8)
+                        }
                     }
                 }
             }

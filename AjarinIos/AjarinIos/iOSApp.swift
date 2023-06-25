@@ -4,8 +4,13 @@ import SwiftUI
 struct iOSApp: App {
     
     init() {
+        AppModule()
         HomeDatabaseModule()
         HomeRepositoryModule()
+        InboxDatabaseModule()
+        InboxRepositoryModule()
+        MessageDatabaseModule()
+        MessageRepositoryModule()
         
         LandingUseCasesModule()
         HomeUseCasesModule()
@@ -13,6 +18,8 @@ struct iOSApp: App {
         MentorProfileUseCasesModule()
         HistoryUseCasesModule()
         SessionUseCasesModule()
+        InboxUseCasesModule()
+        MessageUseCasesModule()
     }
     
 	var body: some Scene {
