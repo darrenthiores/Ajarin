@@ -8,7 +8,7 @@ struct ProfileScreen: View {
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 HStack {
                     ZStack {

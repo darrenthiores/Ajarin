@@ -7,4 +7,5 @@ sealed class WithdrawEvent {
     data class OnSelectAccount(val bankAccount: BankAccount): WithdrawEvent()
     data class OnNoteChange(val note: String): WithdrawEvent()
     object Withdraw: WithdrawEvent()
+    data class UpdateWithdrawResult(val result: Boolean): WithdrawEvent()
 }

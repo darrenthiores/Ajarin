@@ -66,6 +66,11 @@ class WithdrawViewModel(
                     selectedAccount = event.bankAccount
                 )
             }
+            is WithdrawEvent.UpdateWithdrawResult -> {
+                _state.value = state.value.copy(
+                    withdrawSuccess = event.result
+                )
+            }
             WithdrawEvent.Withdraw -> {
                 _state.value = state.value.copy(
                     withdrawSuccess = true

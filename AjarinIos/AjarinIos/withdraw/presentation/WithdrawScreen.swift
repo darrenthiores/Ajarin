@@ -119,7 +119,16 @@ struct WithdrawScreen: View {
         }
         .navigationTitle("Withdraw")
         .sheet(isPresented: $accountSheetOpen) {
-            
+            BankAccountSheet(
+                accounts: viewModel.state.bankAccounts,
+                onClick: { account in
+                    viewModel.onEvent(
+                        event: .OnSelectAccount(bankAccount: account)
+                    )
+                    
+                    accountSheetOpen = false
+                }
+            )
         }
         .onAppear {
             viewModel.startObserving()
@@ -127,10 +136,21 @@ struct WithdrawScreen: View {
         .onDisappear {
             viewModel.dispose()
         }
-        .onChange(of: viewModel.state.withdrawSuccess) { result in
-            if result {
-                dismiss()
-            }
+        .navigationDestination(
+            isPresented: Binding(
+                get: {
+                    viewModel.state.withdrawSuccess
+                },
+                set: {
+                    viewModel.onEvent(event: .UpdateWithdrawResult(result: $0))
+                }
+            )
+        ) {
+            VerifyPinScreen(
+                onDismiss: {
+                    dismiss()
+                }
+            )
         }
     }
 }

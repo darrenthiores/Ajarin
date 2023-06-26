@@ -66,6 +66,10 @@
 		C770BFDE2A496D150075F408 /* WithdrawScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFDD2A496D150075F408 /* WithdrawScreen.swift */; };
 		C770BFE22A496D250075F408 /* IosWithdrawViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFE12A496D250075F408 /* IosWithdrawViewModel.swift */; };
 		C770BFE52A496ED20075F408 /* BankField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFE42A496ED20075F408 /* BankField.swift */; };
+		C770BFE82A4982D70075F408 /* BankAccountSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFE72A4982D70075F408 /* BankAccountSheet.swift */; };
+		C770BFEC2A4983D30075F408 /* VerifyPinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFEB2A4983D30075F408 /* VerifyPinScreen.swift */; };
+		C770BFEE2A4983DD0075F408 /* IosVerifyPinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFED2A4983DD0075F408 /* IosVerifyPinViewModel.swift */; };
+		C770BFF22A4984970075F408 /* WithdrawSuccessScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFF12A4984970075F408 /* WithdrawSuccessScreen.swift */; };
 		C77C3ACC2A1FB4B000AACF25 /* RegisterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACB2A1FB4B000AACF25 /* RegisterHeader.swift */; };
 		C77C3ACE2A1FB64D00AACF25 /* FillNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACD2A1FB64D00AACF25 /* FillNumber.swift */; };
 		C77C3AD02A1FBC3B00AACF25 /* NumberVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACF2A1FBC3B00AACF25 /* NumberVerification.swift */; };
@@ -183,6 +187,10 @@
 		C770BFDD2A496D150075F408 /* WithdrawScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawScreen.swift; sourceTree = "<group>"; };
 		C770BFE12A496D250075F408 /* IosWithdrawViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosWithdrawViewModel.swift; sourceTree = "<group>"; };
 		C770BFE42A496ED20075F408 /* BankField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankField.swift; sourceTree = "<group>"; };
+		C770BFE72A4982D70075F408 /* BankAccountSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountSheet.swift; sourceTree = "<group>"; };
+		C770BFEB2A4983D30075F408 /* VerifyPinScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPinScreen.swift; sourceTree = "<group>"; };
+		C770BFED2A4983DD0075F408 /* IosVerifyPinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosVerifyPinViewModel.swift; sourceTree = "<group>"; };
+		C770BFF12A4984970075F408 /* WithdrawSuccessScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawSuccessScreen.swift; sourceTree = "<group>"; };
 		C77C3ACB2A1FB4B000AACF25 /* RegisterHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterHeader.swift; sourceTree = "<group>"; };
 		C77C3ACD2A1FB64D00AACF25 /* FillNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillNumber.swift; sourceTree = "<group>"; };
 		C77C3ACF2A1FBC3B00AACF25 /* NumberVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberVerification.swift; sourceTree = "<group>"; };
@@ -264,6 +272,8 @@
 		7555FF7D242A565900829871 /* AjarinIos */ = {
 			isa = PBXGroup;
 			children = (
+				C770BFEF2A49847C0075F408 /* withdraw_success */,
+				C770BFE92A4983AE0075F408 /* verify_pin */,
 				C770BFDB2A496D040075F408 /* withdraw */,
 				C770BFD22A495E790075F408 /* add_bank */,
 				C770BFC62A49560E0075F408 /* bank_account */,
@@ -652,6 +662,7 @@
 		C770BFDC2A496D090075F408 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C770BFE62A4982C70075F408 /* sheets */,
 				C770BFE32A496ECA0075F408 /* components */,
 				C770BFDD2A496D150075F408 /* WithdrawScreen.swift */,
 				C770BFE12A496D250075F408 /* IosWithdrawViewModel.swift */,
@@ -665,6 +676,47 @@
 				C770BFE42A496ED20075F408 /* BankField.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		C770BFE62A4982C70075F408 /* sheets */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFE72A4982D70075F408 /* BankAccountSheet.swift */,
+			);
+			path = sheets;
+			sourceTree = "<group>";
+		};
+		C770BFE92A4983AE0075F408 /* verify_pin */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFEA2A4983B40075F408 /* presentation */,
+			);
+			path = verify_pin;
+			sourceTree = "<group>";
+		};
+		C770BFEA2A4983B40075F408 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFEB2A4983D30075F408 /* VerifyPinScreen.swift */,
+				C770BFED2A4983DD0075F408 /* IosVerifyPinViewModel.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		C770BFEF2A49847C0075F408 /* withdraw_success */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFF02A4984840075F408 /* presentation */,
+			);
+			path = withdraw_success;
+			sourceTree = "<group>";
+		};
+		C770BFF02A4984840075F408 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFF12A4984970075F408 /* WithdrawSuccessScreen.swift */,
+			);
+			path = presentation;
 			sourceTree = "<group>";
 		};
 		C78039362A2088C200DEA808 /* core_ui */ = {
@@ -1005,6 +1057,7 @@
 				C755836F2A48A5A900ED8ABC /* IosInboxViewModel.swift in Sources */,
 				C7FDBE7D2A45A8C100C60C70 /* UserHistoryCard.swift in Sources */,
 				C77C3ACC2A1FB4B000AACF25 /* RegisterHeader.swift in Sources */,
+				C770BFEC2A4983D30075F408 /* VerifyPinScreen.swift in Sources */,
 				C78039462A208DC900DEA808 /* MentorCard.swift in Sources */,
 				C770BFDA2A49658F0075F408 /* BankDropDown.swift in Sources */,
 				C725F95D2A1F9EE6002FEEFC /* RegisterScreen.swift in Sources */,
@@ -1032,6 +1085,7 @@
 				C770BFCB2A4956BF0075F408 /* IosBankAccountViewModel.swift in Sources */,
 				C7FDBE6E2A458AD700C60C70 /* PaymentMethodExtension.swift in Sources */,
 				C780395E2A20C10A00DEA808 /* IosSearchMentorViewModel.swift in Sources */,
+				C770BFEE2A4983DD0075F408 /* IosVerifyPinViewModel.swift in Sources */,
 				C78039392A2088D900DEA808 /* MainTab.swift in Sources */,
 				C7FDBE812A45A99800C60C70 /* IosHistoryViewModel.swift in Sources */,
 				C7FDBE7B2A459CB000C60C70 /* MentorHistoryCard.swift in Sources */,
@@ -1052,6 +1106,7 @@
 				C725F9532A1F94E1002FEEFC /* LandingUseCasesModule.swift in Sources */,
 				C75583782A48A93C00ED8ABC /* MessageUseCasesModule.swift in Sources */,
 				C755836D2A48A59E00ED8ABC /* InboxScreen.swift in Sources */,
+				C770BFF22A4984970075F408 /* WithdrawSuccessScreen.swift in Sources */,
 				C780393F2A208AB500DEA808 /* IosHomeViewModel.swift in Sources */,
 				C770BFC92A4956B50075F408 /* BankAccountScreen.swift in Sources */,
 				C78039602A20C3BB00DEA808 /* SearchMentorHeader.swift in Sources */,
@@ -1081,6 +1136,7 @@
 				C75583892A48B79100ED8ABC /* Stack.swift in Sources */,
 				C732F9932A445ECF0037B0C4 /* IosBookingViewModel.swift in Sources */,
 				C770BFDE2A496D150075F408 /* WithdrawScreen.swift in Sources */,
+				C770BFE82A4982D70075F408 /* BankAccountSheet.swift in Sources */,
 				C7FDBE662A45570700C60C70 /* CourseDropDown.swift in Sources */,
 				C75583742A48A8E100ED8ABC /* MessageDatabaseModule.swift in Sources */,
 				C78039542A20B62B00DEA808 /* ProfileButton.swift in Sources */,
