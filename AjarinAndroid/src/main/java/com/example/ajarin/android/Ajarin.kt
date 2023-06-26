@@ -552,7 +552,11 @@ fun Ajarin(
                     state = state,
                     onEvent = viewModel::onEvent,
                     onBackClick = {
-                        navController.navigateUp()
+                        navController.navigate(TopLevelDestination.Profile.name) {
+                            popUpTo(TopLevelDestination.Profile.name) {
+                                inclusive = true
+                            }
+                        }
                     }
                 )
             }

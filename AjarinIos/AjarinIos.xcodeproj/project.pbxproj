@@ -63,6 +63,9 @@
 		C770BFD52A4963490075F408 /* AddBankScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFD42A4963490075F408 /* AddBankScreen.swift */; };
 		C770BFD72A4963520075F408 /* IosAddBankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFD62A4963520075F408 /* IosAddBankViewModel.swift */; };
 		C770BFDA2A49658F0075F408 /* BankDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFD92A49658F0075F408 /* BankDropDown.swift */; };
+		C770BFDE2A496D150075F408 /* WithdrawScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFDD2A496D150075F408 /* WithdrawScreen.swift */; };
+		C770BFE22A496D250075F408 /* IosWithdrawViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFE12A496D250075F408 /* IosWithdrawViewModel.swift */; };
+		C770BFE52A496ED20075F408 /* BankField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFE42A496ED20075F408 /* BankField.swift */; };
 		C77C3ACC2A1FB4B000AACF25 /* RegisterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACB2A1FB4B000AACF25 /* RegisterHeader.swift */; };
 		C77C3ACE2A1FB64D00AACF25 /* FillNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACD2A1FB64D00AACF25 /* FillNumber.swift */; };
 		C77C3AD02A1FBC3B00AACF25 /* NumberVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACF2A1FBC3B00AACF25 /* NumberVerification.swift */; };
@@ -177,6 +180,9 @@
 		C770BFD42A4963490075F408 /* AddBankScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankScreen.swift; sourceTree = "<group>"; };
 		C770BFD62A4963520075F408 /* IosAddBankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosAddBankViewModel.swift; sourceTree = "<group>"; };
 		C770BFD92A49658F0075F408 /* BankDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankDropDown.swift; sourceTree = "<group>"; };
+		C770BFDD2A496D150075F408 /* WithdrawScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawScreen.swift; sourceTree = "<group>"; };
+		C770BFE12A496D250075F408 /* IosWithdrawViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosWithdrawViewModel.swift; sourceTree = "<group>"; };
+		C770BFE42A496ED20075F408 /* BankField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankField.swift; sourceTree = "<group>"; };
 		C77C3ACB2A1FB4B000AACF25 /* RegisterHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterHeader.swift; sourceTree = "<group>"; };
 		C77C3ACD2A1FB64D00AACF25 /* FillNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillNumber.swift; sourceTree = "<group>"; };
 		C77C3ACF2A1FBC3B00AACF25 /* NumberVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberVerification.swift; sourceTree = "<group>"; };
@@ -258,6 +264,7 @@
 		7555FF7D242A565900829871 /* AjarinIos */ = {
 			isa = PBXGroup;
 			children = (
+				C770BFDB2A496D040075F408 /* withdraw */,
 				C770BFD22A495E790075F408 /* add_bank */,
 				C770BFC62A49560E0075F408 /* bank_account */,
 				C770BFC02A4953220075F408 /* add_pin */,
@@ -634,6 +641,32 @@
 			path = components;
 			sourceTree = "<group>";
 		};
+		C770BFDB2A496D040075F408 /* withdraw */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFDC2A496D090075F408 /* presentation */,
+			);
+			path = withdraw;
+			sourceTree = "<group>";
+		};
+		C770BFDC2A496D090075F408 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFE32A496ECA0075F408 /* components */,
+				C770BFDD2A496D150075F408 /* WithdrawScreen.swift */,
+				C770BFE12A496D250075F408 /* IosWithdrawViewModel.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		C770BFE32A496ECA0075F408 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFE42A496ED20075F408 /* BankField.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		C78039362A2088C200DEA808 /* core_ui */ = {
 			isa = PBXGroup;
 			children = (
@@ -985,6 +1018,7 @@
 				C7FDBE952A45B58100C60C70 /* IosSessionAsMentorViewModel.swift in Sources */,
 				C755837C2A48A9CD00ED8ABC /* IosMessageViewModel.swift in Sources */,
 				C732F9792A44337F0037B0C4 /* IosMentorProfileViewModel.swift in Sources */,
+				C770BFE22A496D250075F408 /* IosWithdrawViewModel.swift in Sources */,
 				C75583812A48AE5700ED8ABC /* RoundedCorner.swift in Sources */,
 				C78039622A20C41E00DEA808 /* MentorFilterSheet.swift in Sources */,
 				C732F9722A4429100037B0C4 /* HomeRepositoryModule.swift in Sources */,
@@ -1026,6 +1060,7 @@
 				C7FDBE722A458C3200C60C70 /* PaymentMethodField.swift in Sources */,
 				C7FDBE902A45B51E00C60C70 /* ActivityView.swift in Sources */,
 				C7FDBE8E2A45B14100C60C70 /* SessionUseCasesModule.swift in Sources */,
+				C770BFE52A496ED20075F408 /* BankField.swift in Sources */,
 				C770BFD72A4963520075F408 /* IosAddBankViewModel.swift in Sources */,
 				C7FDBE7F2A45A98F00C60C70 /* HistoryScreen.swift in Sources */,
 				C78039562A20B6C800DEA808 /* ProfileScreen.swift in Sources */,
@@ -1045,6 +1080,7 @@
 				C7FDBE632A45554F00C60C70 /* ClickableField.swift in Sources */,
 				C75583892A48B79100ED8ABC /* Stack.swift in Sources */,
 				C732F9932A445ECF0037B0C4 /* IosBookingViewModel.swift in Sources */,
+				C770BFDE2A496D150075F408 /* WithdrawScreen.swift in Sources */,
 				C7FDBE662A45570700C60C70 /* CourseDropDown.swift in Sources */,
 				C75583742A48A8E100ED8ABC /* MessageDatabaseModule.swift in Sources */,
 				C78039542A20B62B00DEA808 /* ProfileButton.swift in Sources */,

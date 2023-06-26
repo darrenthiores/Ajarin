@@ -78,7 +78,7 @@ struct ProfileScreen: View {
                 
                 if isMentor {
                     NavigationLink {
-                        
+                        WithdrawScreen()
                     } label: {
                         HStack {
                             Text("Rp. 0")
