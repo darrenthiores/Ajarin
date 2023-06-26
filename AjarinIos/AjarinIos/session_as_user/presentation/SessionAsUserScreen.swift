@@ -152,7 +152,7 @@ struct SessionAsUserScreen: View {
                         Spacer()
                         
                         NavigationLink {
-                            Text("Review")
+                            AddReviewScreen(sessionId: sessionId)
                         } label: {
                             Text("Review")
                                 .font(.title2)

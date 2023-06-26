@@ -76,7 +76,7 @@ struct MentorHistoryCard: View {
                 
                 if history.status == "3" {
                     NavigationLink {
-                        Text("Review")
+                        AddReviewScreen(sessionId: history.id)
                     } label: {
                         Text("Review")
                     }
