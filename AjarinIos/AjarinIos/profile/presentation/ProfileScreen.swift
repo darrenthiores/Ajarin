@@ -2,7 +2,7 @@ import SwiftUI
 import shared
 
 struct ProfileScreen: View {
-    let isMentor: Bool = true
+    let isMentor: Bool = false
     
     @StateObject private var viewModel = IosProfileViewModel()
     @Environment(\.colorScheme) var colorScheme
@@ -54,7 +54,7 @@ struct ProfileScreen: View {
                 
                 if !isMentor {
                     NavigationLink {
-                        Text("Hello")
+                        ApplyAsMentorScreen()
                     } label: {
                         HStack {
                             Spacer()

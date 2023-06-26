@@ -20,6 +20,7 @@ struct iOSApp: App {
         SessionUseCasesModule()
         InboxUseCasesModule()
         MessageUseCasesModule()
+        ApplyAsMentorUseCasesModule()
     }
     
 	var body: some Scene {
