@@ -70,6 +70,10 @@
 		C770BFEC2A4983D30075F408 /* VerifyPinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFEB2A4983D30075F408 /* VerifyPinScreen.swift */; };
 		C770BFEE2A4983DD0075F408 /* IosVerifyPinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFED2A4983DD0075F408 /* IosVerifyPinViewModel.swift */; };
 		C770BFF22A4984970075F408 /* WithdrawSuccessScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFF12A4984970075F408 /* WithdrawSuccessScreen.swift */; };
+		C770BFF62A498A450075F408 /* AddReviewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFF52A498A450075F408 /* AddReviewScreen.swift */; };
+		C770BFF82A498A4D0075F408 /* IosAddReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFF72A498A4D0075F408 /* IosAddReviewViewModel.swift */; };
+		C770BFFB2A498DB90075F408 /* ReviewMentorCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFFA2A498DB90075F408 /* ReviewMentorCard.swift */; };
+		C770BFFE2A4995C60075F408 /* ReviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFFD2A4995C60075F408 /* ReviewImage.swift */; };
 		C77C3ACC2A1FB4B000AACF25 /* RegisterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACB2A1FB4B000AACF25 /* RegisterHeader.swift */; };
 		C77C3ACE2A1FB64D00AACF25 /* FillNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACD2A1FB64D00AACF25 /* FillNumber.swift */; };
 		C77C3AD02A1FBC3B00AACF25 /* NumberVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACF2A1FBC3B00AACF25 /* NumberVerification.swift */; };
@@ -191,6 +195,10 @@
 		C770BFEB2A4983D30075F408 /* VerifyPinScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPinScreen.swift; sourceTree = "<group>"; };
 		C770BFED2A4983DD0075F408 /* IosVerifyPinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosVerifyPinViewModel.swift; sourceTree = "<group>"; };
 		C770BFF12A4984970075F408 /* WithdrawSuccessScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawSuccessScreen.swift; sourceTree = "<group>"; };
+		C770BFF52A498A450075F408 /* AddReviewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewScreen.swift; sourceTree = "<group>"; };
+		C770BFF72A498A4D0075F408 /* IosAddReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosAddReviewViewModel.swift; sourceTree = "<group>"; };
+		C770BFFA2A498DB90075F408 /* ReviewMentorCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMentorCard.swift; sourceTree = "<group>"; };
+		C770BFFD2A4995C60075F408 /* ReviewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewImage.swift; sourceTree = "<group>"; };
 		C77C3ACB2A1FB4B000AACF25 /* RegisterHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterHeader.swift; sourceTree = "<group>"; };
 		C77C3ACD2A1FB64D00AACF25 /* FillNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillNumber.swift; sourceTree = "<group>"; };
 		C77C3ACF2A1FBC3B00AACF25 /* NumberVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberVerification.swift; sourceTree = "<group>"; };
@@ -272,6 +280,7 @@
 		7555FF7D242A565900829871 /* AjarinIos */ = {
 			isa = PBXGroup;
 			children = (
+				C770BFF32A498A370075F408 /* add_review */,
 				C770BFEF2A49847C0075F408 /* withdraw_success */,
 				C770BFE92A4983AE0075F408 /* verify_pin */,
 				C770BFDB2A496D040075F408 /* withdraw */,
@@ -719,6 +728,41 @@
 			path = presentation;
 			sourceTree = "<group>";
 		};
+		C770BFF32A498A370075F408 /* add_review */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFF42A498A3B0075F408 /* presentation */,
+			);
+			path = add_review;
+			sourceTree = "<group>";
+		};
+		C770BFF42A498A3B0075F408 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFFC2A4995B20075F408 /* model */,
+				C770BFF92A498DAE0075F408 /* components */,
+				C770BFF52A498A450075F408 /* AddReviewScreen.swift */,
+				C770BFF72A498A4D0075F408 /* IosAddReviewViewModel.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		C770BFF92A498DAE0075F408 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFFA2A498DB90075F408 /* ReviewMentorCard.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		C770BFFC2A4995B20075F408 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFFD2A4995C60075F408 /* ReviewImage.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		C78039362A2088C200DEA808 /* core_ui */ = {
 			isa = PBXGroup;
 			children = (
@@ -1052,6 +1096,7 @@
 				C732F9702A44281B0037B0C4 /* HomeDatabaseModule.swift in Sources */,
 				C78039642A20C49500DEA808 /* FilterItem.swift in Sources */,
 				C75583852A48AF6800ED8ABC /* FriendMessageItem.swift in Sources */,
+				C770BFFE2A4995C60075F408 /* ReviewImage.swift in Sources */,
 				C75583832A48AEC700ED8ABC /* PersonalMessageItem.swift in Sources */,
 				C78039582A20B6D100DEA808 /* IosProfileViewModel.swift in Sources */,
 				C755836F2A48A5A900ED8ABC /* IosInboxViewModel.swift in Sources */,
@@ -1123,6 +1168,7 @@
 				C75583672A48A4C800ED8ABC /* InboxDatabaseModule.swift in Sources */,
 				C770BFC32A4953CA0075F408 /* AddPinScreen.swift in Sources */,
 				C732F9892A4455C10037B0C4 /* ReviewImageView.swift in Sources */,
+				C770BFF62A498A450075F408 /* AddReviewScreen.swift in Sources */,
 				C78039442A208C4F00DEA808 /* HomeTabButton.swift in Sources */,
 				C732F9832A444ABD0037B0C4 /* CourseItem.swift in Sources */,
 				C780393D2A208AAB00DEA808 /* HomeScreen.swift in Sources */,
@@ -1145,8 +1191,10 @@
 				C732F9772A4433760037B0C4 /* MentorProfileScreen.swift in Sources */,
 				C780395C2A20C0FF00DEA808 /* SearchMentorScreen.swift in Sources */,
 				C732F9852A444EB30037B0C4 /* MentorSchedule.swift in Sources */,
+				C770BFFB2A498DB90075F408 /* ReviewMentorCard.swift in Sources */,
 				C7385C0B2A23C35900E3801C /* HomeUseCasesModule.swift in Sources */,
 				C75583762A48A91200ED8ABC /* MessageRepositoryModule.swift in Sources */,
+				C770BFF82A498A4D0075F408 /* IosAddReviewViewModel.swift in Sources */,
 				C725F9582A1F982E002FEEFC /* DefaultTextField.swift in Sources */,
 				C732F98B2A4455F60037B0C4 /* ExpandableText.swift in Sources */,
 			);

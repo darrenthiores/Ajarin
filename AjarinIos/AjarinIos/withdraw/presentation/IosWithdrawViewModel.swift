@@ -29,8 +29,6 @@ extension WithdrawScreen {
             withdrawError: nil
         )
         
-        @Published var isSuccess: Bool = false
-        
         private var handle: DisposableHandle?
         
         init() {
@@ -47,10 +45,6 @@ extension WithdrawScreen {
             handle = viewModel.state.subscribe { state in
                 if let state = state {
                     self.state = state
-                    
-                    if state.withdrawSuccess {
-                        self.isSuccess = true
-                    }
                 }
             }
         }
