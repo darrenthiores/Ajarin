@@ -119,7 +119,7 @@ struct ProfileScreen: View {
                     
                     if isMentor {
                         NavigationLink {
-                            
+                            BankAccountScreen()
                         } label: {
                             HStack {
                                 Image(systemName: "person.circle.fill")

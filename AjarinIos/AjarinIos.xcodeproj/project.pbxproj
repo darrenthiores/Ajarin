@@ -54,6 +54,12 @@
 		C75583852A48AF6800ED8ABC /* FriendMessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75583842A48AF6800ED8ABC /* FriendMessageItem.swift */; };
 		C75583872A48B5A800ED8ABC /* ReversedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75583862A48B5A800ED8ABC /* ReversedScrollView.swift */; };
 		C75583892A48B79100ED8ABC /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75583882A48B79100ED8ABC /* Stack.swift */; };
+		C770BFC32A4953CA0075F408 /* AddPinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFC22A4953CA0075F408 /* AddPinScreen.swift */; };
+		C770BFC52A4953D30075F408 /* IosAddPinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFC42A4953D30075F408 /* IosAddPinViewModel.swift */; };
+		C770BFC92A4956B50075F408 /* BankAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFC82A4956B50075F408 /* BankAccountScreen.swift */; };
+		C770BFCB2A4956BF0075F408 /* IosBankAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFCA2A4956BF0075F408 /* IosBankAccountViewModel.swift */; };
+		C770BFCE2A49589E0075F408 /* BankAccountItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFCD2A49589E0075F408 /* BankAccountItem.swift */; };
+		C770BFD12A49590D0075F408 /* BankExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFD02A49590D0075F408 /* BankExtension.swift */; };
 		C77C3ACC2A1FB4B000AACF25 /* RegisterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACB2A1FB4B000AACF25 /* RegisterHeader.swift */; };
 		C77C3ACE2A1FB64D00AACF25 /* FillNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACD2A1FB64D00AACF25 /* FillNumber.swift */; };
 		C77C3AD02A1FBC3B00AACF25 /* NumberVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACF2A1FBC3B00AACF25 /* NumberVerification.swift */; };
@@ -159,6 +165,12 @@
 		C75583842A48AF6800ED8ABC /* FriendMessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendMessageItem.swift; sourceTree = "<group>"; };
 		C75583862A48B5A800ED8ABC /* ReversedScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversedScrollView.swift; sourceTree = "<group>"; };
 		C75583882A48B79100ED8ABC /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		C770BFC22A4953CA0075F408 /* AddPinScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinScreen.swift; sourceTree = "<group>"; };
+		C770BFC42A4953D30075F408 /* IosAddPinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosAddPinViewModel.swift; sourceTree = "<group>"; };
+		C770BFC82A4956B50075F408 /* BankAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountScreen.swift; sourceTree = "<group>"; };
+		C770BFCA2A4956BF0075F408 /* IosBankAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosBankAccountViewModel.swift; sourceTree = "<group>"; };
+		C770BFCD2A49589E0075F408 /* BankAccountItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountItem.swift; sourceTree = "<group>"; };
+		C770BFD02A49590D0075F408 /* BankExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankExtension.swift; sourceTree = "<group>"; };
 		C77C3ACB2A1FB4B000AACF25 /* RegisterHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterHeader.swift; sourceTree = "<group>"; };
 		C77C3ACD2A1FB64D00AACF25 /* FillNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillNumber.swift; sourceTree = "<group>"; };
 		C77C3ACF2A1FBC3B00AACF25 /* NumberVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberVerification.swift; sourceTree = "<group>"; };
@@ -240,6 +252,8 @@
 		7555FF7D242A565900829871 /* AjarinIos */ = {
 			isa = PBXGroup;
 			children = (
+				C770BFC62A49560E0075F408 /* bank_account */,
+				C770BFC02A4953220075F408 /* add_pin */,
 				C75583702A48A8B600ED8ABC /* message */,
 				C75583632A48A45900ED8ABC /* inbox */,
 				C7FDBE862A45AECF00C60C70 /* session_as_user */,
@@ -533,6 +547,58 @@
 				C75583882A48B79100ED8ABC /* Stack.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		C770BFC02A4953220075F408 /* add_pin */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFC12A4953930075F408 /* presentation */,
+			);
+			path = add_pin;
+			sourceTree = "<group>";
+		};
+		C770BFC12A4953930075F408 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFC22A4953CA0075F408 /* AddPinScreen.swift */,
+				C770BFC42A4953D30075F408 /* IosAddPinViewModel.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		C770BFC62A49560E0075F408 /* bank_account */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFC72A4956AA0075F408 /* presentation */,
+			);
+			path = bank_account;
+			sourceTree = "<group>";
+		};
+		C770BFC72A4956AA0075F408 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFCF2A4959030075F408 /* helper */,
+				C770BFCC2A49587F0075F408 /* components */,
+				C770BFC82A4956B50075F408 /* BankAccountScreen.swift */,
+				C770BFCA2A4956BF0075F408 /* IosBankAccountViewModel.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		C770BFCC2A49587F0075F408 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFCD2A49589E0075F408 /* BankAccountItem.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		C770BFCF2A4959030075F408 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFD02A49590D0075F408 /* BankExtension.swift */,
+			);
+			path = helper;
 			sourceTree = "<group>";
 		};
 		C78039362A2088C200DEA808 /* core_ui */ = {
@@ -864,6 +930,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C770BFCE2A49589E0075F408 /* BankAccountItem.swift in Sources */,
 				C732F9702A44281B0037B0C4 /* HomeDatabaseModule.swift in Sources */,
 				C78039642A20C49500DEA808 /* FilterItem.swift in Sources */,
 				C75583852A48AF6800ED8ABC /* FriendMessageItem.swift in Sources */,
@@ -893,6 +960,8 @@
 				C732F9952A4461C50037B0C4 /* SmallMentorCard.swift in Sources */,
 				C78039422A208C2600DEA808 /* HomeHeader.swift in Sources */,
 				C780394A2A20912E00DEA808 /* WrappingHStack.swift in Sources */,
+				C770BFD12A49590D0075F408 /* BankExtension.swift in Sources */,
+				C770BFCB2A4956BF0075F408 /* IosBankAccountViewModel.swift in Sources */,
 				C7FDBE6E2A458AD700C60C70 /* PaymentMethodExtension.swift in Sources */,
 				C780395E2A20C10A00DEA808 /* IosSearchMentorViewModel.swift in Sources */,
 				C78039392A2088D900DEA808 /* MainTab.swift in Sources */,
@@ -915,6 +984,7 @@
 				C75583782A48A93C00ED8ABC /* MessageUseCasesModule.swift in Sources */,
 				C755836D2A48A59E00ED8ABC /* InboxScreen.swift in Sources */,
 				C780393F2A208AB500DEA808 /* IosHomeViewModel.swift in Sources */,
+				C770BFC92A4956B50075F408 /* BankAccountScreen.swift in Sources */,
 				C78039602A20C3BB00DEA808 /* SearchMentorHeader.swift in Sources */,
 				C7FDBE972A45B76E00C60C70 /* SmallUserCard.swift in Sources */,
 				C732F97E2A4442500037B0C4 /* TabButton.swift in Sources */,
@@ -925,12 +995,14 @@
 				C78039562A20B6C800DEA808 /* ProfileScreen.swift in Sources */,
 				C725F9622A1FA4F9002FEEFC /* CreateAccount.swift in Sources */,
 				C75583672A48A4C800ED8ABC /* InboxDatabaseModule.swift in Sources */,
+				C770BFC32A4953CA0075F408 /* AddPinScreen.swift in Sources */,
 				C732F9892A4455C10037B0C4 /* ReviewImageView.swift in Sources */,
 				C78039442A208C4F00DEA808 /* HomeTabButton.swift in Sources */,
 				C732F9832A444ABD0037B0C4 /* CourseItem.swift in Sources */,
 				C780393D2A208AAB00DEA808 /* HomeScreen.swift in Sources */,
 				C7FDBE692A45781A00C60C70 /* ScheduleSheet.swift in Sources */,
 				C732F98D2A4457010037B0C4 /* MentorReview.swift in Sources */,
+				C770BFC52A4953D30075F408 /* IosAddPinViewModel.swift in Sources */,
 				C725F9472A1F937A002FEEFC /* LoginScreen.swift in Sources */,
 				C725F9602A1F9F06002FEEFC /* IosRegisterViewModel.swift in Sources */,
 				C75583872A48B5A800ED8ABC /* ReversedScrollView.swift in Sources */,
