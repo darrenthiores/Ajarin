@@ -32,7 +32,7 @@ struct BankAccountScreen: View {
                         Spacer()
                         
                         NavigationLink {
-                            Text("Add")
+                            AddBankScreen()
                         } label: {
                             Text("+")
                                 .font(.title2)

@@ -60,6 +60,9 @@
 		C770BFCB2A4956BF0075F408 /* IosBankAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFCA2A4956BF0075F408 /* IosBankAccountViewModel.swift */; };
 		C770BFCE2A49589E0075F408 /* BankAccountItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFCD2A49589E0075F408 /* BankAccountItem.swift */; };
 		C770BFD12A49590D0075F408 /* BankExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFD02A49590D0075F408 /* BankExtension.swift */; };
+		C770BFD52A4963490075F408 /* AddBankScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFD42A4963490075F408 /* AddBankScreen.swift */; };
+		C770BFD72A4963520075F408 /* IosAddBankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFD62A4963520075F408 /* IosAddBankViewModel.swift */; };
+		C770BFDA2A49658F0075F408 /* BankDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BFD92A49658F0075F408 /* BankDropDown.swift */; };
 		C77C3ACC2A1FB4B000AACF25 /* RegisterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACB2A1FB4B000AACF25 /* RegisterHeader.swift */; };
 		C77C3ACE2A1FB64D00AACF25 /* FillNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACD2A1FB64D00AACF25 /* FillNumber.swift */; };
 		C77C3AD02A1FBC3B00AACF25 /* NumberVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77C3ACF2A1FBC3B00AACF25 /* NumberVerification.swift */; };
@@ -171,6 +174,9 @@
 		C770BFCA2A4956BF0075F408 /* IosBankAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosBankAccountViewModel.swift; sourceTree = "<group>"; };
 		C770BFCD2A49589E0075F408 /* BankAccountItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountItem.swift; sourceTree = "<group>"; };
 		C770BFD02A49590D0075F408 /* BankExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankExtension.swift; sourceTree = "<group>"; };
+		C770BFD42A4963490075F408 /* AddBankScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankScreen.swift; sourceTree = "<group>"; };
+		C770BFD62A4963520075F408 /* IosAddBankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosAddBankViewModel.swift; sourceTree = "<group>"; };
+		C770BFD92A49658F0075F408 /* BankDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankDropDown.swift; sourceTree = "<group>"; };
 		C77C3ACB2A1FB4B000AACF25 /* RegisterHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterHeader.swift; sourceTree = "<group>"; };
 		C77C3ACD2A1FB64D00AACF25 /* FillNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillNumber.swift; sourceTree = "<group>"; };
 		C77C3ACF2A1FBC3B00AACF25 /* NumberVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberVerification.swift; sourceTree = "<group>"; };
@@ -252,6 +258,7 @@
 		7555FF7D242A565900829871 /* AjarinIos */ = {
 			isa = PBXGroup;
 			children = (
+				C770BFD22A495E790075F408 /* add_bank */,
 				C770BFC62A49560E0075F408 /* bank_account */,
 				C770BFC02A4953220075F408 /* add_pin */,
 				C75583702A48A8B600ED8ABC /* message */,
@@ -601,6 +608,32 @@
 			path = helper;
 			sourceTree = "<group>";
 		};
+		C770BFD22A495E790075F408 /* add_bank */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFD32A495E7E0075F408 /* presentation */,
+			);
+			path = add_bank;
+			sourceTree = "<group>";
+		};
+		C770BFD32A495E7E0075F408 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFD82A4963570075F408 /* components */,
+				C770BFD62A4963520075F408 /* IosAddBankViewModel.swift */,
+				C770BFD42A4963490075F408 /* AddBankScreen.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		C770BFD82A4963570075F408 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				C770BFD92A49658F0075F408 /* BankDropDown.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		C78039362A2088C200DEA808 /* core_ui */ = {
 			isa = PBXGroup;
 			children = (
@@ -940,6 +973,7 @@
 				C7FDBE7D2A45A8C100C60C70 /* UserHistoryCard.swift in Sources */,
 				C77C3ACC2A1FB4B000AACF25 /* RegisterHeader.swift in Sources */,
 				C78039462A208DC900DEA808 /* MentorCard.swift in Sources */,
+				C770BFDA2A49658F0075F408 /* BankDropDown.swift in Sources */,
 				C725F95D2A1F9EE6002FEEFC /* RegisterScreen.swift in Sources */,
 				C732F9912A445EC60037B0C4 /* BookingScreen.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
@@ -977,6 +1011,7 @@
 				C7FDBE842A45AA5800C60C70 /* HistoryUseCasesModule.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				C78039672A20C95000DEA808 /* SearchMentorDefault.swift in Sources */,
+				C770BFD52A4963490075F408 /* AddBankScreen.swift in Sources */,
 				C725F94A2A1F938C002FEEFC /* IosLoginViewModel.swift in Sources */,
 				C7FDBE762A45948900C60C70 /* BookingSuccessScreen.swift in Sources */,
 				C77C3AD02A1FBC3B00AACF25 /* NumberVerification.swift in Sources */,
@@ -991,6 +1026,7 @@
 				C7FDBE722A458C3200C60C70 /* PaymentMethodField.swift in Sources */,
 				C7FDBE902A45B51E00C60C70 /* ActivityView.swift in Sources */,
 				C7FDBE8E2A45B14100C60C70 /* SessionUseCasesModule.swift in Sources */,
+				C770BFD72A4963520075F408 /* IosAddBankViewModel.swift in Sources */,
 				C7FDBE7F2A45A98F00C60C70 /* HistoryScreen.swift in Sources */,
 				C78039562A20B6C800DEA808 /* ProfileScreen.swift in Sources */,
 				C725F9622A1FA4F9002FEEFC /* CreateAccount.swift in Sources */,
