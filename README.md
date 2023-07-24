@@ -4,6 +4,10 @@
 
 This app have a lot of features, like messaging (still saved in local database), Nested Scroll (Mentor Profile), Picking Image (Review Mentor), etc.
 
+# Platform
+
+The app use different storage to store some value like is user logged, where in Android use Shared Preferences and in Ios use App Storage
+
 # Known Issues
 
 This app is not connected to any backend service yet, but already implement all the business logic by using dummy data and local database
@@ -51,4 +55,5 @@ Ios
 - Jetpack Compose
 - SwiftUI
 - SqlDelight (Local Database)
+- Accompanist Library (Pager, Flow Layout)
 
