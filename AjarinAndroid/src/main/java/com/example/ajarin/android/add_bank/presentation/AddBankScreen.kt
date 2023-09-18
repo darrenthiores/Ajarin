@@ -19,8 +19,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.ajarin.addBank.presentation.AddBankEvent
-import com.example.ajarin.addBank.presentation.AddBankState
+import com.example.ajarin.presentation.addBank.AddBankEvent
+import com.example.ajarin.presentation.addBank.AddBankState
 import com.example.ajarin.android.add_bank.presentation.components.BankDropDown
 import com.example.ajarin.android.core_ui.components.BasicTextField
 import com.example.ajarin.android.core_ui.components.CommonHeader

@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.mentorProfile.presentation.MentorProfileTab
+import com.example.ajarin.presentation.mentorProfile.MentorProfileTab
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.pagerTabIndicatorOffset

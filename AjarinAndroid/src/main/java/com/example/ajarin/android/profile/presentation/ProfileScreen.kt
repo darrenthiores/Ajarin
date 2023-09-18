@@ -38,8 +38,8 @@ import com.example.ajarin.android.core_ui.components.OutlinedPrimaryButton
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
 import com.example.ajarin.android.profile.presentation.components.ProfileButton
 import com.example.ajarin.android.profile.presentation.components.ProfileWallet
-import com.example.ajarin.profile.presentation.ProfileEvent
-import com.example.ajarin.profile.presentation.ProfileState
+import com.example.ajarin.presentation.profile.ProfileEvent
+import com.example.ajarin.presentation.profile.ProfileState
 
 @Composable
 fun ProfileScreen(

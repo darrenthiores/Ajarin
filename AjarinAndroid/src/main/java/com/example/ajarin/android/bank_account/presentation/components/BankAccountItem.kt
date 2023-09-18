@@ -38,8 +38,8 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.core_ui.helper.getImageId
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.bankAccount.presentation.BankAccount
-import com.example.ajarin.bankAccount.presentation.dummyAccount
+import com.example.ajarin.presentation.bankAccount.BankAccount
+import com.example.ajarin.presentation.bankAccount.dummyAccount
 import kotlin.math.roundToInt
 
 @SuppressLint("UnusedTransitionTargetStateParameter")

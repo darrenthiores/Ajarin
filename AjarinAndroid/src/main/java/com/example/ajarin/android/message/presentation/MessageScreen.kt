@@ -14,8 +14,8 @@ import com.example.ajarin.android.message.presentation.components.FriendMessageI
 import com.example.ajarin.android.message.presentation.components.MessageBottomBar
 import com.example.ajarin.android.message.presentation.components.MessageHeader
 import com.example.ajarin.android.message.presentation.components.PersonalMessageItem
-import com.example.ajarin.message.presentation.MessageEvent
-import com.example.ajarin.message.presentation.MessageState
+import com.example.ajarin.presentation.message.MessageEvent
+import com.example.ajarin.presentation.message.MessageState
 
 @Composable
 fun MessageScreen(

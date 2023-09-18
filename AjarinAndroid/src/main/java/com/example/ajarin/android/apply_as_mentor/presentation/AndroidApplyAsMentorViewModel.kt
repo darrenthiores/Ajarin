@@ -2,9 +2,9 @@ package com.example.ajarin.android.apply_as_mentor.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.ajarin.applyAsMentor.domain.use_cases.ValidateId
-import com.example.ajarin.applyAsMentor.presentation.ApplyAsMentorEvent
-import com.example.ajarin.applyAsMentor.presentation.ApplyAsMentorViewModel
+import com.example.ajarin.domain.validation.use_cases.ValidateId
+import com.example.ajarin.presentation.applyAsMentor.ApplyAsMentorEvent
+import com.example.ajarin.presentation.applyAsMentor.ApplyAsMentorViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

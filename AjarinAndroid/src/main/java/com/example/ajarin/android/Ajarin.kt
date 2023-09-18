@@ -59,7 +59,7 @@ import com.example.ajarin.android.verify_pin.presentation.VerifyPinScreen
 import com.example.ajarin.android.withdraw.presentation.AndroidWithdrawViewModel
 import com.example.ajarin.android.withdraw.presentation.WithdrawScreen
 import com.example.ajarin.android.withdraw_success.WithdrawSuccessScreen
-import com.example.ajarin.core.utils.UiEvent
+import com.example.ajarin.domain.utils.UiEvent
 import timber.log.Timber
 
 @Composable

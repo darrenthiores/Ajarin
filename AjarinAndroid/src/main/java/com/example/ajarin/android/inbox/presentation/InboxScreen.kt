@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.core_ui.components.CommonHeader
 import com.example.ajarin.android.inbox.presentation.components.InboxItem
-import com.example.ajarin.inbox.presentation.InboxState
+import com.example.ajarin.presentation.inbox.InboxState
 
 @Composable
 fun InboxScreen(

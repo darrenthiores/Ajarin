@@ -38,8 +38,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toSize
 import com.example.ajarin.android.core_ui.helper.getImageId
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.bankAccount.presentation.Bank
-import com.example.ajarin.bankAccount.presentation.dummyBanks
+import com.example.ajarin.presentation.bankAccount.Bank
+import com.example.ajarin.presentation.bankAccount.dummyBanks
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable

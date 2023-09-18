@@ -3,9 +3,9 @@ package com.example.ajarin.android.profile.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ajarin.android.core.domain.preferences.Preferences
-import com.example.ajarin.core.utils.UiEvent
-import com.example.ajarin.profile.presentation.ProfileEvent
-import com.example.ajarin.profile.presentation.ProfileViewModel
+import com.example.ajarin.domain.utils.UiEvent
+import com.example.ajarin.presentation.profile.ProfileEvent
+import com.example.ajarin.presentation.profile.ProfileViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow

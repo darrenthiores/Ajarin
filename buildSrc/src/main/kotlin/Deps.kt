@@ -44,6 +44,11 @@ object Deps {
     const val ktorSerializationJson = "io.ktor:ktor-serialization-kotlinx-json:$ktorVersion"
     const val ktorAndroid = "io.ktor:ktor-client-android:$ktorVersion"
     const val ktorIOS = "io.ktor:ktor-client-ios:$ktorVersion"
+    const val ktorAuth = "io.ktor:ktor-client-auth:$ktorVersion"
+    const val ktorClientLogging = "io.ktor:ktor-client-logging:$ktorVersion"
+
+    private const val logBackClassicVersion = "1.2.3"
+    const val logBackClassic = "ch.qos.logback:logback-classic:$logBackClassicVersion"
 
     // GRADLE PLUGINS
     const val kotlinVersion = "1.7.21"
@@ -63,6 +68,10 @@ object Deps {
     const val sqlDelightAndroidDriver = "com.squareup.sqldelight:android-driver:$sqlDelightVersion"
     const val sqlDelightNativeDriver = "com.squareup.sqldelight:native-driver:$sqlDelightVersion"
     const val sqlDelightCoroutinesExtensions = "com.squareup.sqldelight:coroutines-extensions:$sqlDelightVersion"
+
+    // ENC PREFERENCES
+    private const val encPreferencesVersion = "1.0.0"
+    const val encPreferences = "androidx.security:security-crypto:$encPreferencesVersion"
 
     // LOGGER
     private const val timberVersion = "4.7.1"

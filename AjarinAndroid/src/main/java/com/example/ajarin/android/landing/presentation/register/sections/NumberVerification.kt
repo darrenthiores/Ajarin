@@ -27,9 +27,9 @@ import com.example.ajarin.android.core_ui.components.PrimaryButton
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
 import com.example.ajarin.android.landing.presentation.register.components.OtpTextField
 import com.example.ajarin.android.landing.presentation.register.components.RegisterHeader
-import com.example.ajarin.landing.presentation.register.RegisterEvent
-import com.example.ajarin.landing.presentation.register.RegisterSection
-import com.example.ajarin.landing.presentation.register.RegisterState
+import com.example.ajarin.presentation.register.RegisterEvent
+import com.example.ajarin.presentation.register.RegisterSection
+import com.example.ajarin.presentation.register.RegisterState
 
 @Composable
 fun NumberVerification(

@@ -6,7 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ajarin.android.core.domain.preferences.Preferences
-import com.example.ajarin.bankAccount.presentation.BankAccountViewModel
+import com.example.ajarin.presentation.bankAccount.BankAccountViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

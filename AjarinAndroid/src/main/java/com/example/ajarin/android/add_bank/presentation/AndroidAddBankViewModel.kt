@@ -2,8 +2,8 @@ package com.example.ajarin.android.add_bank.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.ajarin.addBank.presentation.AddBankEvent
-import com.example.ajarin.addBank.presentation.AddBankViewModel
+import com.example.ajarin.presentation.addBank.AddBankEvent
+import com.example.ajarin.presentation.addBank.AddBankViewModel
 
 class AndroidAddBankViewModel: ViewModel() {
     private val viewModel by lazy {

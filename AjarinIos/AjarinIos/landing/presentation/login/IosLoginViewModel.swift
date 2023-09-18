@@ -21,10 +21,12 @@ extension LoginScreen {
         init() {
             @Inject var validateEmail: ValidateEmail
             @Inject var validatePassword: ValidatePassword
+            @Inject var login: Login
             
             self.viewModel = LoginViewModel(
                 validateEmail: validateEmail,
                 validatePassword: validatePassword,
+                login: login,
                 coroutineScope: nil
             )
         }

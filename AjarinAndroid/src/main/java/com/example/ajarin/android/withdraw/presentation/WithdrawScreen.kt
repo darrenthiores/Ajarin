@@ -37,8 +37,8 @@ import com.example.ajarin.android.core_ui.theme.AjarinTheme
 import com.example.ajarin.android.withdraw.presentation.components.BankAccountField
 import com.example.ajarin.android.withdraw.presentation.components.WithdrawBankAccountSheet
 import com.example.ajarin.android.withdraw.presentation.helper.priceFilter
-import com.example.ajarin.withdraw.presentation.WithdrawEvent
-import com.example.ajarin.withdraw.presentation.WithdrawState
+import com.example.ajarin.presentation.withdraw.WithdrawEvent
+import com.example.ajarin.presentation.withdraw.WithdrawState
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterialApi::class)

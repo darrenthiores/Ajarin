@@ -5,22 +5,22 @@ struct iOSApp: App {
     
     init() {
         AppModule()
-        HomeDatabaseModule()
-        HomeRepositoryModule()
+        AuthNetworkModule()
+        AuthRepositoryModule()
         InboxDatabaseModule()
         InboxRepositoryModule()
         MessageDatabaseModule()
         MessageRepositoryModule()
+        ParticipantLocalModule()
+        ParticipantRepositoryModule()
         
-        LandingUseCasesModule()
-        HomeUseCasesModule()
-        SearchMentorUseCasesModule()
-        MentorProfileUseCasesModule()
-        HistoryUseCasesModule()
-        SessionUseCasesModule()
+        ValidationUseCasesModule()
+        AuthUseCasesModule()
+        UserUseCasesModule()
+        MentorUseCasesModule()
+        OrderUseCasesModule()
         InboxUseCasesModule()
         MessageUseCasesModule()
-        ApplyAsMentorUseCasesModule()
     }
     
 	var body: some Scene {

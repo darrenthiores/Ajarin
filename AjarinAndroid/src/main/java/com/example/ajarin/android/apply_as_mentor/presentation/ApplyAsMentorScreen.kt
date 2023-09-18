@@ -41,9 +41,9 @@ import com.example.ajarin.android.core_ui.components.ClickableField
 import com.example.ajarin.android.core_ui.components.CommonHeader
 import com.example.ajarin.android.core_ui.components.PrimaryButton
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.applyAsMentor.presentation.ApplyAsMentorEvent
-import com.example.ajarin.applyAsMentor.presentation.ApplyAsMentorState
-import com.example.ajarin.searchMentor.presentation.dummyEducations
+import com.example.ajarin.presentation.applyAsMentor.ApplyAsMentorEvent
+import com.example.ajarin.presentation.applyAsMentor.ApplyAsMentorState
+import com.example.ajarin.presentation.searchMentor.dummyEducations
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterialApi::class)

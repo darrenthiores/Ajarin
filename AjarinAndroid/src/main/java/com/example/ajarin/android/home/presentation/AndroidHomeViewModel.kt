@@ -3,11 +3,11 @@ package com.example.ajarin.android.home.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ajarin.android.core.domain.preferences.Preferences
-import com.example.ajarin.core.utils.UiEvent
-import com.example.ajarin.home.domain.use_cases.GetUnreadCount
-import com.example.ajarin.home.domain.use_cases.SearchMentorByCourse
-import com.example.ajarin.home.presentation.HomeEvent
-import com.example.ajarin.home.presentation.HomeViewModel
+import com.example.ajarin.domain.mentor.use_cases.SearchMentorByCourse
+import com.example.ajarin.domain.message.use_cases.GetUnreadCount
+import com.example.ajarin.domain.utils.UiEvent
+import com.example.ajarin.presentation.home.HomeEvent
+import com.example.ajarin.presentation.home.HomeViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow

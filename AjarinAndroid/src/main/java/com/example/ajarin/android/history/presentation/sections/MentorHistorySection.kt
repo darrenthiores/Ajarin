@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.history.presentation.components.MentorHistoryItem
-import com.example.ajarin.history.presentation.HistoryState
+import com.example.ajarin.presentation.history.HistoryState
 
 @Composable
 fun MentorHistorySection(

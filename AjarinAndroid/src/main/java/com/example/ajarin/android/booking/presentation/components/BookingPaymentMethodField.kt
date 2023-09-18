@@ -25,7 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.booking.presentation.helper.GetPaymentMethodImage
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.booking.presentation.PaymentMethod
+import com.example.ajarin.presentation.booking.PaymentMethod
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable

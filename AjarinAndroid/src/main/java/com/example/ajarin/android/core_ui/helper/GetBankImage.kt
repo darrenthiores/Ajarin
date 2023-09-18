@@ -1,7 +1,7 @@
 package com.example.ajarin.android.core_ui.helper
 
 import com.example.ajarin.android.R
-import com.example.ajarin.bankAccount.presentation.Bank
+import com.example.ajarin.presentation.bankAccount.Bank
 
 fun Bank.getImageId(): Int {
     return when(bankId) {

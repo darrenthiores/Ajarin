@@ -11,8 +11,15 @@ import shared
 
 class InboxUseCasesModule {
     init() {
+        @Inject var messageRepository: MessageRepository
         @Inject var inboxRepository: InboxRepository
+        @Inject var participantRepository: ParticipantRepository
         
         @Provider var getInbox: GetInbox = GetInbox(repository: inboxRepository)
+        @Provider var createInbox: CreateInbox = CreateInbox(
+            messageRepository: messageRepository,
+            inboxRepository: inboxRepository,
+            participantRepository: participantRepository
+        )
     }
 }

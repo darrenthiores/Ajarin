@@ -33,8 +33,8 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.ajarin.android.R
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.mentorProfile.presentation.Review
-import com.example.ajarin.mentorProfile.presentation.dummyReviews
+import com.example.ajarin.presentation.mentorProfile.Review
+import com.example.ajarin.presentation.mentorProfile.dummyReviews
 import com.google.accompanist.flowlayout.FlowRow
 
 @Composable

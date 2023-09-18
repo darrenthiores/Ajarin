@@ -4,12 +4,12 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ajarin.android.core.domain.preferences.Preferences
-import com.example.ajarin.mentorProfile.domain.use_cases.GetMentorById
-import com.example.ajarin.message.domain.use_cases.CreateInbox
-import com.example.ajarin.message.domain.use_cases.GetMessagesById
-import com.example.ajarin.message.domain.use_cases.InsertMessage
-import com.example.ajarin.message.presentation.MessageEvent
-import com.example.ajarin.message.presentation.MessageViewModel
+import com.example.ajarin.domain.mentor.use_cases.GetMentorById
+import com.example.ajarin.domain.inbox.use_cases.CreateInbox
+import com.example.ajarin.domain.message.use_cases.GetMessagesById
+import com.example.ajarin.domain.message.use_cases.InsertMessage
+import com.example.ajarin.presentation.message.MessageEvent
+import com.example.ajarin.presentation.message.MessageViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

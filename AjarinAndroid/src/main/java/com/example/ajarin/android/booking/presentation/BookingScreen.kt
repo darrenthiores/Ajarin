@@ -42,8 +42,8 @@ import com.example.ajarin.android.booking.presentation.sheets.BookingScheduleShe
 import com.example.ajarin.android.core_ui.components.ClickableField
 import com.example.ajarin.android.core_ui.components.CommonHeader
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.booking.presentation.BookingEvent
-import com.example.ajarin.booking.presentation.BookingState
+import com.example.ajarin.presentation.booking.BookingEvent
+import com.example.ajarin.presentation.booking.BookingState
 import kotlinx.coroutines.launch
 import kotlinx.datetime.toLocalDate
 import java.util.Calendar

@@ -28,7 +28,7 @@ import com.example.ajarin.android.core_ui.components.PrimaryButton
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
 import com.example.ajarin.android.session.presentation.components.SessionMentorCard
 import com.example.ajarin.android.session.presentation.components.SessionPaymentMethodItem
-import com.example.ajarin.session.presentation.SessionState
+import com.example.ajarin.presentation.session.SessionState
 
 @Composable
 fun SessionScreen(

@@ -19,6 +19,9 @@ android {
         testInstrumentationRunner = "com.example.ajarin.TestHiltRunner"
 
         buildConfigField("String", "PREF_NAME", "\"AJARIN_PREFERENCE\"")
+        buildConfigField("String", "ENCRYPTED_PREF_NAME", "\"TOKEN_PREFRENCE\"")
+        buildConfigField("String", "USER_TOKEN_KEY", "\"USER_TOKEN\"")
+        buildConfigField("String", "USER_REFRESH_TOKEN_KEY", "\"USER_REFRESH_TOKEN\"")
         buildConfigField("String", "SHOW_ON_BOARDING_KEY", "\"SHOW_ON_BOARDING\"")
         buildConfigField("String", "HAS_PIN_KEY", "\"HAS_PIN\"")
     }
@@ -64,6 +67,8 @@ dependencies {
     implementation(Deps.hiltNavigationCompose)
 
     implementation(Deps.ktorAndroid)
+
+    implementation(Deps.encPreferences)
 
     implementation(Deps.timber)
 

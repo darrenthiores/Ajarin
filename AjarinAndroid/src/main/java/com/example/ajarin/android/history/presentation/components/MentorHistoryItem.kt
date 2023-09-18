@@ -29,9 +29,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.history.presentation.HistorySession
-import com.example.ajarin.history.presentation.dummyHistory
-import com.example.ajarin.history.presentation.getMentorStatusMessage
+import com.example.ajarin.presentation.history.HistorySession
+import com.example.ajarin.presentation.history.dummyHistory
+import com.example.ajarin.presentation.history.getMentorStatusMessage
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable

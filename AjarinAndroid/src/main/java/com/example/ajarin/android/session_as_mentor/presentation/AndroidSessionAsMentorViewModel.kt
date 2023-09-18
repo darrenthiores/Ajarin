@@ -3,10 +3,10 @@ package com.example.ajarin.android.session_as_mentor.presentation
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.ajarin.session.domain.use_cases.GetSessionById
-import com.example.ajarin.sessionAsMentor.domain.use_cases.GetUserById
-import com.example.ajarin.sessionAsMentor.presentation.SessionAsMentorEvent
-import com.example.ajarin.sessionAsMentor.presentation.SessionAsMentorViewModel
+import com.example.ajarin.domain.order.use_cases.GetSessionById
+import com.example.ajarin.domain.user.use_cases.GetUserById
+import com.example.ajarin.presentation.sessionAsMentor.SessionAsMentorEvent
+import com.example.ajarin.presentation.sessionAsMentor.SessionAsMentorViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

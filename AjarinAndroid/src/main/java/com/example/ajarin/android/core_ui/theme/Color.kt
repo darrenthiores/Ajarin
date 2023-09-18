@@ -1,9 +1,9 @@
 package com.example.ajarin.android.core_ui.theme
 
-import androidx.compose.material.lightColors
 import androidx.compose.material.darkColors
+import androidx.compose.material.lightColors
 import androidx.compose.ui.graphics.Color
-import com.example.ajarin.core.presentation.Colors
+import com.example.ajarin.presentation.core.Colors
 
 val AccentViolet = Color(Colors.AccentViolet)
 val LightBlue = Color(Colors.LightBlue)

@@ -12,8 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.ajarin.addPin.presentation.AddPinEvent
-import com.example.ajarin.addPin.presentation.AddPinState
+import com.example.ajarin.presentation.addPin.AddPinEvent
+import com.example.ajarin.presentation.addPin.AddPinState
 import com.example.ajarin.android.add_pin.presentation.components.PinTextField
 import com.example.ajarin.android.core_ui.components.CommonHeader
 import com.example.ajarin.android.core_ui.components.PrimaryButton

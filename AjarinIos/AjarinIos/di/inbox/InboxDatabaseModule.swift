@@ -14,7 +14,7 @@ class InboxDatabaseModule {
         @Inject var chatDatabase: ChatDatabase
         @Provider var inboxChatDao: InboxChatDao = SqlDelightInboxChatDao(db: chatDatabase)
         @Provider var inboxLocalDataSource: InboxLocalDataSource = InboxLocalDataSource(
-            inboxChatDao: inboxChatDao
+            dao: inboxChatDao
         )
     }
 }

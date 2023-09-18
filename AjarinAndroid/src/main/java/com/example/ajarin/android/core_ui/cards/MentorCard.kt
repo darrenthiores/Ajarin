@@ -34,8 +34,8 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
 import com.example.ajarin.android.R
-import com.example.ajarin.home.presentation.Course
-import com.example.ajarin.home.presentation.Mentor
+import com.example.ajarin.presentation.home.Course
+import com.example.ajarin.presentation.home.Mentor
 import com.google.accompanist.flowlayout.FlowRow
 
 @OptIn(ExperimentalMaterialApi::class)

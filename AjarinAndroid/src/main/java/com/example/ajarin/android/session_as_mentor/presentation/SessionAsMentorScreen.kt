@@ -28,8 +28,8 @@ import com.example.ajarin.android.core_ui.components.CommonHeader
 import com.example.ajarin.android.core_ui.components.PrimaryButton
 import com.example.ajarin.android.session.presentation.components.SessionPaymentMethodItem
 import com.example.ajarin.android.session_as_mentor.presentation.components.SessionUserCard
-import com.example.ajarin.sessionAsMentor.presentation.SessionAsMentorEvent
-import com.example.ajarin.sessionAsMentor.presentation.SessionAsMentorState
+import com.example.ajarin.presentation.sessionAsMentor.SessionAsMentorEvent
+import com.example.ajarin.presentation.sessionAsMentor.SessionAsMentorState
 
 @Composable
 fun SessionAsMentorScreen(

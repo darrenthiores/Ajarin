@@ -7,9 +7,9 @@ import androidx.compose.ui.Modifier
 import com.example.ajarin.android.landing.presentation.register.sections.CreateAccount
 import com.example.ajarin.android.landing.presentation.register.sections.FillNumber
 import com.example.ajarin.android.landing.presentation.register.sections.NumberVerification
-import com.example.ajarin.landing.presentation.register.RegisterEvent
-import com.example.ajarin.landing.presentation.register.RegisterSection
-import com.example.ajarin.landing.presentation.register.RegisterState
+import com.example.ajarin.presentation.register.RegisterEvent
+import com.example.ajarin.presentation.register.RegisterSection
+import com.example.ajarin.presentation.register.RegisterState
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable

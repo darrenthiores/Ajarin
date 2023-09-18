@@ -2,8 +2,8 @@ package com.example.ajarin.android.withdraw.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.ajarin.withdraw.presentation.WithdrawEvent
-import com.example.ajarin.withdraw.presentation.WithdrawViewModel
+import com.example.ajarin.presentation.withdraw.WithdrawEvent
+import com.example.ajarin.presentation.withdraw.WithdrawViewModel
 
 class AndroidWithdrawViewModel: ViewModel() {
     private val viewModel by lazy {

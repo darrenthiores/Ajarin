@@ -28,8 +28,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.ajarin.addReview.presentation.AddReviewEvent
-import com.example.ajarin.addReview.presentation.AddReviewState
+import com.example.ajarin.presentation.addReview.AddReviewEvent
+import com.example.ajarin.presentation.addReview.AddReviewState
 import com.example.ajarin.android.add_review.presentation.components.AddReviewHeader
 import com.example.ajarin.android.add_review.presentation.components.AddReviewImages
 import com.example.ajarin.android.add_review.presentation.components.AddReviewMentorItem

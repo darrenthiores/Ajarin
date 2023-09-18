@@ -2,8 +2,8 @@ package com.example.ajarin.android.verify_pin.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.ajarin.verifyPin.presentation.VerifyPinEvent
-import com.example.ajarin.verifyPin.presentation.VerifyPinViewModel
+import com.example.ajarin.presentation.verifyPin.VerifyPinEvent
+import com.example.ajarin.presentation.verifyPin.VerifyPinViewModel
 
 class AndroidVerifyPinViewModel : ViewModel() {
     private val viewModel by lazy {

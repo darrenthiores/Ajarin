@@ -16,8 +16,8 @@ import com.example.ajarin.android.add_pin.presentation.components.PinTextField
 import com.example.ajarin.android.core_ui.components.CommonHeader
 import com.example.ajarin.android.core_ui.components.PrimaryButton
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.verifyPin.presentation.VerifyPinEvent
-import com.example.ajarin.verifyPin.presentation.VerifyPinState
+import com.example.ajarin.presentation.verifyPin.VerifyPinEvent
+import com.example.ajarin.presentation.verifyPin.VerifyPinState
 
 @Composable
 fun VerifyPinScreen(

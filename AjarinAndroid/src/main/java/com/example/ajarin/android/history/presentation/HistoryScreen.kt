@@ -10,8 +10,8 @@ import com.example.ajarin.android.core_ui.theme.AjarinTheme
 import com.example.ajarin.android.history.presentation.components.HistoryHeader
 import com.example.ajarin.android.history.presentation.sections.MentorHistorySection
 import com.example.ajarin.android.history.presentation.sections.UserHistorySection
-import com.example.ajarin.history.presentation.HistoryState
-import com.example.ajarin.history.presentation.HistoryTab
+import com.example.ajarin.presentation.history.HistoryState
+import com.example.ajarin.presentation.history.HistoryTab
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState

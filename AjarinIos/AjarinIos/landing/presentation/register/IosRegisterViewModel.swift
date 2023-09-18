@@ -36,10 +36,12 @@ extension RegisterScreen {
         private var handle: DisposableHandle?
         
         init() {
-            @Inject var landingUseCases: LandingUseCases
+            @Inject var validationUseCases: ValidationUseCases
+            @Inject var register: Register
             
             self.viewModel = RegisterViewModel(
-                landingUseCases: landingUseCases,
+                validationUseCases: validationUseCases,
+                register: register,
                 coroutineScope: nil
             )
         }

@@ -34,9 +34,9 @@ import coil.request.ImageRequest
 import com.example.ajarin.android.R
 import com.example.ajarin.android.core_ui.components.PrimaryButton
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.history.presentation.HistorySession
-import com.example.ajarin.history.presentation.dummyHistory
-import com.example.ajarin.history.presentation.getStatusMessage
+import com.example.ajarin.presentation.history.HistorySession
+import com.example.ajarin.presentation.history.dummyHistory
+import com.example.ajarin.presentation.history.getStatusMessage
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable

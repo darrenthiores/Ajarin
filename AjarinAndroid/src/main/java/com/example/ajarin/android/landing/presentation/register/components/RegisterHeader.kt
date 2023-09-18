@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.landing.presentation.register.RegisterSection
+import com.example.ajarin.presentation.register.RegisterSection
 
 @Composable
 fun RegisterHeader(

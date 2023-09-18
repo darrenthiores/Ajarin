@@ -14,8 +14,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
 import com.example.ajarin.android.search_mentor.presentation.components.CourseCard
-import com.example.ajarin.home.presentation.Course
-import com.example.ajarin.home.presentation.allCourses
+import com.example.ajarin.presentation.home.Course
+import com.example.ajarin.presentation.home.allCourses
 
 @Composable
 fun SearchMentorDefault(

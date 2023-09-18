@@ -12,9 +12,9 @@ import shared
 class MessageDatabaseModule {
     init() {
         @Inject var chatDatabase: ChatDatabase
-        @Provider var messageChatDao: MessageChatDao = SqlDelightMessageChatDao(db: chatDatabase)
+        @Provider var messageChatDao: MessageDao = SqlDelightMessageDao(db: chatDatabase)
         @Provider var messageLocalDataSource: MessageLocalDataSource = MessageLocalDataSource(
-            chatDao: messageChatDao
+            dao: messageChatDao
         )
     }
 }

@@ -30,8 +30,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.searchMentor.presentation.SearchMentorEvent
-import com.example.ajarin.searchMentor.presentation.SearchMentorState
+import com.example.ajarin.presentation.searchMentor.SearchMentorEvent
+import com.example.ajarin.presentation.searchMentor.SearchMentorState
 import com.google.accompanist.flowlayout.FlowRow
 
 @Composable

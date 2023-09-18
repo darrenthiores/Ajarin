@@ -22,8 +22,8 @@ import com.example.ajarin.android.core_ui.components.BasicTextField
 import com.example.ajarin.android.core_ui.components.PasswordTextField
 import com.example.ajarin.android.core_ui.components.PrimaryButton
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.landing.presentation.login.LoginEvent
-import com.example.ajarin.landing.presentation.login.LoginState
+import com.example.ajarin.presentation.login.LoginEvent
+import com.example.ajarin.presentation.login.LoginState
 
 @Composable
 fun LoginScreen(

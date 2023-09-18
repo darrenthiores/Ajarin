@@ -29,8 +29,8 @@ import com.example.ajarin.android.search_mentor.presentation.components.FilterMe
 import com.example.ajarin.android.search_mentor.presentation.components.SearchTextField
 import com.example.ajarin.android.search_mentor.presentation.sections.SearchMentorDefault
 import com.example.ajarin.android.search_mentor.presentation.sections.SearchMentorResult
-import com.example.ajarin.searchMentor.presentation.SearchMentorEvent
-import com.example.ajarin.searchMentor.presentation.SearchMentorState
+import com.example.ajarin.presentation.searchMentor.SearchMentorEvent
+import com.example.ajarin.presentation.searchMentor.SearchMentorState
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterialApi::class)

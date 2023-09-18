@@ -22,7 +22,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.core.utils.errors.ValidationError
+import com.example.ajarin.domain.validation.utils.ValidationError
 
 @Composable
 fun PinTextField(

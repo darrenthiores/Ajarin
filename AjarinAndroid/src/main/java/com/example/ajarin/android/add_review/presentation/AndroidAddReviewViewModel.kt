@@ -5,9 +5,9 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.ajarin.addReview.presentation.AddReviewEvent
-import com.example.ajarin.addReview.presentation.AddReviewViewModel
-import com.example.ajarin.session.domain.use_cases.GetSessionById
+import com.example.ajarin.presentation.addReview.AddReviewEvent
+import com.example.ajarin.presentation.addReview.AddReviewViewModel
+import com.example.ajarin.domain.order.use_cases.GetSessionById
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

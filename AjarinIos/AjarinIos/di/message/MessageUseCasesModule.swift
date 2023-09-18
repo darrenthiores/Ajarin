@@ -12,9 +12,13 @@ import shared
 class MessageUseCasesModule {
     init() {
         @Inject var messageRepository: MessageRepository
+        @Inject var inboxRepository: InboxRepository
         
+        @Provider var getUnreadCount: GetUnreadCount = GetUnreadCount(repository: messageRepository)
         @Provider var getMessagesById: GetMessagesById = GetMessagesById(repository: messageRepository)
-        @Provider var createInbox: CreateInbox = CreateInbox(repository: messageRepository)
-        @Provider var insertMessage: InsertMessage = InsertMessage(repository: messageRepository)
+        @Provider var insertMessage: InsertMessage = InsertMessage(
+            repository: messageRepository,
+            inboxRepository: inboxRepository
+        )
     }
 }

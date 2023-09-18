@@ -35,8 +35,8 @@ import com.example.ajarin.android.mentor_profile.presentation.components.MentorP
 import com.example.ajarin.android.mentor_profile.presentation.sections.MentorProfileAboutSection
 import com.example.ajarin.android.mentor_profile.presentation.sections.MentorProfileReviewSection
 import com.example.ajarin.android.mentor_profile.presentation.sections.MentorProfileScheduleSection
-import com.example.ajarin.mentorProfile.presentation.MentorProfileState
-import com.example.ajarin.mentorProfile.presentation.MentorProfileTab
+import com.example.ajarin.presentation.mentorProfile.MentorProfileState
+import com.example.ajarin.presentation.mentorProfile.MentorProfileTab
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState

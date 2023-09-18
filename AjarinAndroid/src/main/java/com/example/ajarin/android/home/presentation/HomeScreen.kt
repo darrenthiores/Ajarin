@@ -25,9 +25,9 @@ import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
 import com.example.ajarin.android.core_ui.cards.MentorCard
 import com.example.ajarin.android.home.presentation.components.HomeHeader
-import com.example.ajarin.home.presentation.Course
-import com.example.ajarin.home.presentation.HomeEvent
-import com.example.ajarin.home.presentation.HomeState
+import com.example.ajarin.presentation.home.Course
+import com.example.ajarin.presentation.home.HomeEvent
+import com.example.ajarin.presentation.home.HomeState
 import kotlinx.coroutines.launch
 
 @Composable

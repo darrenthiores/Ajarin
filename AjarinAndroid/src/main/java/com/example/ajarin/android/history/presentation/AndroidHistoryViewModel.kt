@@ -2,8 +2,8 @@ package com.example.ajarin.android.history.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.ajarin.history.domain.use_cases.GetHistory
-import com.example.ajarin.history.presentation.HistoryViewModel
+import com.example.ajarin.domain.order.use_cases.GetHistory
+import com.example.ajarin.presentation.history.HistoryViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

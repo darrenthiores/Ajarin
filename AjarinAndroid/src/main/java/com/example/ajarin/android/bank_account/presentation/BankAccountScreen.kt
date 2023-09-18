@@ -20,8 +20,8 @@ import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.bank_account.presentation.components.BankAccountItem
 import com.example.ajarin.android.core_ui.components.CommonHeader
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.bankAccount.presentation.BankAccountState
-import com.example.ajarin.bankAccount.presentation.dummyAccount
+import com.example.ajarin.presentation.bankAccount.BankAccountState
+import com.example.ajarin.presentation.bankAccount.dummyAccount
 
 @Composable
 fun BankAccountScreen(

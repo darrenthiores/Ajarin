@@ -3,9 +3,9 @@ package com.example.ajarin.android.inbox.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ajarin.android.core.domain.preferences.Preferences
-import com.example.ajarin.inbox.domain.use_cases.GetInbox
-import com.example.ajarin.inbox.presentation.InboxViewModel
-import com.example.ajarin.mentorProfile.domain.use_cases.GetMentorById
+import com.example.ajarin.domain.inbox.use_cases.GetInbox
+import com.example.ajarin.presentation.inbox.InboxViewModel
+import com.example.ajarin.domain.mentor.use_cases.GetMentorById
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

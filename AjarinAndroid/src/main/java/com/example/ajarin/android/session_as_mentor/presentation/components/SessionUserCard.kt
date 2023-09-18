@@ -24,9 +24,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.home.presentation.Course
-import com.example.ajarin.profile.presentation.User
-import com.example.ajarin.profile.presentation.dummyUsers
+import com.example.ajarin.presentation.home.Course
+import com.example.ajarin.presentation.profile.User
+import com.example.ajarin.presentation.profile.dummyUsers
 
 @Composable
 fun SessionUserCard(
