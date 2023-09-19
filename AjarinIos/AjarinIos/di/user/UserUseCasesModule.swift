@@ -11,6 +11,9 @@ import shared
 
 class UserUseCasesModule {
     init() {
-        @Provider var getUserById: GetUserById = GetUserById()
+        @Inject var repository: UserRepository
+        
+        @Provider var getUser: GetUser = GetUser(repository: repository)
+        @Provider var getUserById: GetUserById = GetUserById(repository: repository)
     }
 }

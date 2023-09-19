@@ -32,11 +32,11 @@ extension SessionAsMentorScreen {
         private var handle: DisposableHandle?
         
         init() {
-            @Inject var getSessionById: GetSessionById
+            @Inject var getOrderById: GetOrderById
             @Inject var getUserById: GetUserById
             
             self.viewModel = SessionAsMentorViewModel(
-                getSessionById: getSessionById,
+                getOrderById: getOrderById,
                 getUserById: getUserById,
                 coroutineScope: nil
             )

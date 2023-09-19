@@ -1,11 +1,11 @@
 package com.example.ajarin.presentation.message
 
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
-import com.example.ajarin.domain.utils.Resource
-import com.example.ajarin.domain.mentor.use_cases.GetMentorById
 import com.example.ajarin.domain.inbox.use_cases.CreateInbox
+import com.example.ajarin.domain.mentor.use_cases.GetMentorById
 import com.example.ajarin.domain.message.use_cases.GetMessagesById
 import com.example.ajarin.domain.message.use_cases.InsertMessage
+import com.example.ajarin.domain.utils.Resource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -90,7 +90,7 @@ class MessageViewModel(
             )
 
             when(
-                val result = getMentorById.execute(id = mentorId)
+                val result = getMentorById(id = mentorId)
             ) {
                 is Resource.Error -> {
                     _state.value = state.value.copy(

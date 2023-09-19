@@ -7,7 +7,7 @@ extension SearchMentorScreen {
         
         @Published var state: SearchMentorState = SearchMentorState(
             searchText: "",
-            mentors: [],
+            //mentors: [],
             courses: [],
             tempCourse: nil,
             selectedCourse: nil,

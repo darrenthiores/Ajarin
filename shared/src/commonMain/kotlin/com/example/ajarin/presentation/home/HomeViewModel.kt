@@ -1,8 +1,9 @@
 package com.example.ajarin.presentation.home
 
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
+import com.example.ajarin.domain.mentor.use_cases.GetMentors
+import com.example.ajarin.domain.mentor.use_cases.SearchMentor
 import com.example.ajarin.domain.message.use_cases.GetUnreadCount
-import com.example.ajarin.domain.mentor.use_cases.SearchMentorByCourse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -10,7 +11,8 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
-    private val searchMentorByCourse: SearchMentorByCourse,
+    private val getMentors: GetMentors,
+    private val searchMentor: SearchMentor,
     private val getUnreadCount: GetUnreadCount,
     coroutineScope: CoroutineScope? = null
 ) {
@@ -19,27 +21,19 @@ class HomeViewModel(
     private val _state = MutableStateFlow(HomeState())
     val state = _state.toCommonStateFlow()
 
-    init {
-        _state.value = state.value.copy(
-            mentors = dummyMentors.shuffled()
-        )
-    }
-
     fun onEvent(event: HomeEvent) {
         when(event) {
             is HomeEvent.OnSelectCourse -> {
                 if (event.course.id == "0") {
                     _state.value = state.value.copy(
-                        selectedCourse = event.course,
-                        mentors = dummyMentors.shuffled()
+                        selectedCourse = event.course
                     )
 
                     return
                 }
 
                 _state.value = state.value.copy(
-                    selectedCourse = event.course,
-                    mentors = searchMentorByCourse.execute(event.course)
+                    selectedCourse = event.course
                 )
             }
         }

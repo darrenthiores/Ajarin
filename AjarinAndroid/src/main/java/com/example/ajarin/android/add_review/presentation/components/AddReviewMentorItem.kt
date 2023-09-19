@@ -29,13 +29,13 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.ajarin.android.R
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.presentation.history.HistorySession
-import com.example.ajarin.presentation.history.dummyHistory
+import com.example.ajarin.domain.order.model.Order
+import com.example.ajarin.domain.order.model.dummyHistory
 
 @Composable
 fun AddReviewMentorItem(
     modifier: Modifier = Modifier,
-    history: HistorySession?
+    history: Order?
 ) {
     val context = LocalContext.current
 

@@ -1,7 +1,7 @@
 package com.example.ajarin.presentation.message
 
+import com.example.ajarin.domain.mentor.model.Mentor
 import com.example.ajarin.domain.message.models.Message
-import com.example.ajarin.presentation.home.Mentor
 
 data class MessageState(
     val messages: List<Message> = emptyList(),

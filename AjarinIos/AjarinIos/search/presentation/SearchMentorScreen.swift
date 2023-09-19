@@ -20,11 +20,11 @@ struct SearchMentorScreen: View {
                             )
                         }
                     ),
-                    filtered: !viewModel.state.mentors.isEmpty,
+                    filtered: false,//!viewModel.state.mentors.isEmpty,
                     onSearch: {
-                        viewModel.onEvent(
-                            event: .OnSearch()
-                        )
+//                        viewModel.onEvent(
+//                            event: .OnSearch()
+//                        )
                     },
                     onFilter: {
                         showFilter.toggle()
@@ -42,21 +42,29 @@ struct SearchMentorScreen: View {
                 .padding()
                 
                 ZStack {
-                    if viewModel.state.mentors.isEmpty {
-                        SearchMentorDefault(
-                            courses: viewModel.state.courses,
-                            onEvent: { event in
-                                viewModel.onEvent(
-                                    event: event
-                                )
-                            }
-                        )
-                    } else {
-                        MentorList(
-                            mentors: viewModel.state.mentors
-                        )
-                        .padding(.horizontal)
-                    }
+                    SearchMentorDefault(
+                        courses: viewModel.state.courses,
+                        onEvent: { event in
+                            viewModel.onEvent(
+                                event: event
+                            )
+                        }
+                    )
+//                    if viewModel.state.mentors.isEmpty {
+//                        SearchMentorDefault(
+//                            courses: viewModel.state.courses,
+//                            onEvent: { event in
+//                                viewModel.onEvent(
+//                                    event: event
+//                                )
+//                            }
+//                        )
+//                    } else {
+//                        MentorList(
+//                            mentors: viewModel.state.mentors
+//                        )
+//                        .padding(.horizontal)
+//                    }
                 }
             }
             .navigationTitle("Search Mentor")

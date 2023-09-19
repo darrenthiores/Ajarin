@@ -2,9 +2,9 @@ package com.example.ajarin.presentation.addReview
 
 import com.example.ajarin.domain.core.utils.toCommonFlow
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
+import com.example.ajarin.domain.order.use_cases.GetOrderById
 import com.example.ajarin.domain.utils.Resource
 import com.example.ajarin.domain.utils.UiEvent
-import com.example.ajarin.domain.order.use_cases.GetSessionById
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
 class AddReviewViewModel(
-    private val getSessionById: GetSessionById,
+    private val getOrderById: GetOrderById,
     coroutineScope: CoroutineScope? = null
 ) {
     private val viewModelScope = coroutineScope ?: CoroutineScope(Dispatchers.Main)
@@ -60,7 +60,7 @@ class AddReviewViewModel(
                 isSessionLoading = true
             )
 
-            val result = getSessionById.execute(
+            val result = getOrderById(
                 id = sessionId
             )
 

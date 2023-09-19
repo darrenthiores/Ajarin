@@ -14,7 +14,7 @@ extension HistoryScreen {
         private let viewModel: HistoryViewModel
         
         @Published var state: HistoryState = HistoryState(
-            historySessions: [],
+            //historySessions: [],
             historyLoading: false,
             historyError: nil
         )
@@ -22,10 +22,7 @@ extension HistoryScreen {
         private var handle: DisposableHandle?
         
         init() {
-            @Inject var getHistory: GetHistory
-            
             self.viewModel = HistoryViewModel(
-                getHistory: getHistory,
                 coroutineScope: nil
             )
         }

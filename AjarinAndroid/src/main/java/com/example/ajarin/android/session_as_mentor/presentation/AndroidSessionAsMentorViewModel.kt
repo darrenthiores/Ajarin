@@ -3,7 +3,7 @@ package com.example.ajarin.android.session_as_mentor.presentation
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.ajarin.domain.order.use_cases.GetSessionById
+import com.example.ajarin.domain.order.use_cases.GetOrderById
 import com.example.ajarin.domain.user.use_cases.GetUserById
 import com.example.ajarin.presentation.sessionAsMentor.SessionAsMentorEvent
 import com.example.ajarin.presentation.sessionAsMentor.SessionAsMentorViewModel
@@ -12,14 +12,14 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AndroidSessionAsMentorViewModel @Inject constructor(
-    private val getSessionById: GetSessionById,
+    private val getOrderById: GetOrderById,
     private val getUserById: GetUserById,
     savedStateHandle: SavedStateHandle
 ): ViewModel() {
 
     private val viewModel by lazy {
         SessionAsMentorViewModel(
-            getSessionById = getSessionById,
+            getOrderById = getOrderById,
             getUserById = getUserById,
             coroutineScope = viewModelScope
         )

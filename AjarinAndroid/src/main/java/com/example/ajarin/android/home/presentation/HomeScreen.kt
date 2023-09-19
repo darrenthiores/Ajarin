@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Scaffold
@@ -23,9 +22,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.android.core_ui.cards.MentorCard
 import com.example.ajarin.android.home.presentation.components.HomeHeader
-import com.example.ajarin.presentation.home.Course
+import com.example.ajarin.domain.core.model.Course
 import com.example.ajarin.presentation.home.HomeEvent
 import com.example.ajarin.presentation.home.HomeState
 import kotlinx.coroutines.launch
@@ -114,16 +112,16 @@ fun HomeScreen(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 state = listState
             ) {
-                items(
-                    items = state.mentors,
-                    key = { mentor -> mentor.id }
-                ) { mentor ->
-                    MentorCard(
-                        mentor = mentor
-                    ) {
-                        onMentorClick(mentor.id)
-                    }
-                }
+//                items(
+//                    items = state.mentors,
+//                    key = { mentor -> mentor.id }
+//                ) { mentor ->
+//                    MentorCard(
+//                        mentor = mentor
+//                    ) {
+//                        onMentorClick(mentor.id)
+//                    }
+//                }
             }
         }
     }

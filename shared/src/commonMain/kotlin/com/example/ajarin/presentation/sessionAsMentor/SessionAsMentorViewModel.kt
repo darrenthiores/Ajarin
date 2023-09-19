@@ -1,7 +1,7 @@
 package com.example.ajarin.presentation.sessionAsMentor
 
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
-import com.example.ajarin.domain.order.use_cases.GetSessionById
+import com.example.ajarin.domain.order.use_cases.GetOrderById
 import com.example.ajarin.domain.user.use_cases.GetUserById
 import com.example.ajarin.domain.utils.Resource
 import com.example.ajarin.presentation.session.dummySessionInfo
@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
 class SessionAsMentorViewModel(
-    private val getSessionById: GetSessionById,
+    private val getOrderById: GetOrderById,
     private val getUserById: GetUserById,
     coroutineScope: CoroutineScope? = null
 ) {
@@ -81,7 +81,7 @@ class SessionAsMentorViewModel(
                 isSessionLoading = true
             )
 
-            val result = getSessionById.execute(
+            val result = getOrderById(
                 id = sessionId
             )
 
@@ -108,7 +108,7 @@ class SessionAsMentorViewModel(
                 isUserLoading = true
             )
 
-            val result = getUserById.execute(
+            val result = getUserById(
                 id = userId
             )
 

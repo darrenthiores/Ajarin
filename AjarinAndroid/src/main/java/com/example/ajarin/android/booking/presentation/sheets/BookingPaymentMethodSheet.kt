@@ -27,9 +27,9 @@ import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.booking.presentation.helper.GetPaymentMethodImage
 import com.example.ajarin.android.core_ui.components.CommonHeader
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.presentation.booking.PaymentMethod
-import com.example.ajarin.presentation.booking.paymentMethods
-import com.example.ajarin.presentation.mentorProfile.sessions
+import com.example.ajarin.domain.core.model.PaymentMethod
+import com.example.ajarin.domain.core.model.paymentMethods
+import com.example.ajarin.domain.order.model.sessions
 
 @Composable
 fun BookingPaymentMethodSheet(

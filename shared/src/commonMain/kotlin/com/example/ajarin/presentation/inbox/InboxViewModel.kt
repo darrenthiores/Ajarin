@@ -1,10 +1,10 @@
 package com.example.ajarin.presentation.inbox
 
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
-import com.example.ajarin.domain.utils.Resource
 import com.example.ajarin.domain.inbox.use_cases.GetInbox
-import com.example.ajarin.presentation.inbox.model.UiMessage
 import com.example.ajarin.domain.mentor.use_cases.GetMentorById
+import com.example.ajarin.domain.utils.Resource
+import com.example.ajarin.presentation.inbox.model.UiMessage
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -44,7 +44,7 @@ class InboxViewModel(
                         inbox = it.map { message ->
                             async {
                                 when (
-                                    val result = getMentorById.execute(id = message.participantId)
+                                    val result = getMentorById(id = message.participantId)
                                 ) {
                                     is Resource.Error -> null
                                     is Resource.Loading -> null

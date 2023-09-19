@@ -22,9 +22,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.core_ui.components.CommonHeader
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.presentation.home.Course
-import com.example.ajarin.presentation.home.allCourses
-import com.example.ajarin.presentation.mentorProfile.sessions
+import com.example.ajarin.domain.core.model.Course
+import com.example.ajarin.domain.core.model.allCourses
+import com.example.ajarin.domain.order.model.sessions
 
 @Composable
 fun ApplyAsMentorCourseSheet(

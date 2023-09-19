@@ -24,8 +24,6 @@ class SearchMentorViewModel(
                     education = state.value.tempEducation,
                     price = state.value.tempPrice
                 )
-
-                onSearch()
             }
             is SearchMentorEvent.OnPickCourse -> {
                 if (state.value.tempCourse == event.course) {
@@ -68,9 +66,6 @@ class SearchMentorViewModel(
                     tempPrice = ""
                 )
             }
-            SearchMentorEvent.OnSearch -> {
-                onSearch()
-            }
             SearchMentorEvent.OnToggleRating -> {
                 if (state.value.tempRating != 0) {
                     _state.value = state.value.copy(
@@ -90,29 +85,29 @@ class SearchMentorViewModel(
         }
     }
 
-    private fun onSearch() {
-        if (
-            state.value.searchText.isEmpty()
-            && state.value.selectedCourse == null
-            && state.value.education.isBlank()
-            && state.value.price.isBlank()
-            && state.value.rating == 0
-        ) {
-            _state.value = state.value.copy(
-                mentors = emptyList()
-            )
-
-            return
-        }
-
-        _state.value = state.value.copy(
-            mentors = searchMentor.execute(
-                name = state.value.searchText,
-                course = state.value.selectedCourse,
-                rating = state.value.rating,
-                price = state.value.price,
-                education = state.value.education
-            )
-        )
-    }
+//    private fun onSearch() {
+//        if (
+//            state.value.searchText.isEmpty()
+//            && state.value.selectedCourse == null
+//            && state.value.education.isBlank()
+//            && state.value.price.isBlank()
+//            && state.value.rating == 0
+//        ) {
+//            _state.value = state.value.copy(
+//                mentors = emptyList()
+//            )
+//
+//            return
+//        }
+//
+//        _state.value = state.value.copy(
+//            mentors = searchMentor(
+//                name = state.value.searchText,
+//                course = state.value.selectedCourse,
+//                rating = state.value.rating,
+//                price = state.value.price,
+//                education = state.value.education
+//            )
+//        )
+//    }
 }

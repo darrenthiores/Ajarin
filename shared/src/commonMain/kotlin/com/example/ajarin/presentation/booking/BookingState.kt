@@ -1,9 +1,10 @@
 package com.example.ajarin.presentation.booking
 
+import com.example.ajarin.domain.core.model.Course
+import com.example.ajarin.domain.core.model.PaymentMethod
+import com.example.ajarin.domain.mentor.model.Mentor
+import com.example.ajarin.domain.order.model.Session
 import com.example.ajarin.domain.utils.LocalDateConverter
-import com.example.ajarin.presentation.home.Course
-import com.example.ajarin.presentation.home.Mentor
-import com.example.ajarin.presentation.mentorProfile.Session
 import kotlinx.datetime.LocalDate
 
 data class BookingState(
@@ -20,28 +21,4 @@ data class BookingState(
     val paymentMethod: PaymentMethod? = null,
     val paymentMethodError: Error? = null,
     val bookingSuccess: Boolean = false
-)
-
-data class PaymentMethod(
-    val id: String,
-    val name: String
-)
-
-val paymentMethods = listOf(
-    PaymentMethod(
-        id = "0",
-        name = "Dana"
-    ),
-    PaymentMethod(
-        id = "1",
-        name = "Gopay"
-    ),
-    PaymentMethod(
-        id = "2",
-        name = "Shopee Pay"
-    ),
-    PaymentMethod(
-        id = "3",
-        name = "Ovo"
-    )
 )

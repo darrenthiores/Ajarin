@@ -1,12 +1,10 @@
 package com.example.ajarin.presentation.searchMentor
 
-import com.example.ajarin.presentation.home.Course
-import com.example.ajarin.presentation.home.Mentor
-import com.example.ajarin.presentation.home.allCourses
+import com.example.ajarin.domain.core.model.Course
+import com.example.ajarin.domain.core.model.allCourses
 
 data class SearchMentorState(
     val searchText: String = "",
-    val mentors: List<Mentor> = emptyList(),
     val courses: List<Course> = allCourses,
     val tempCourse: Course? = null,
     val selectedCourse: Course? = null,

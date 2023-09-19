@@ -11,18 +11,20 @@ extension HomeScreen {
                 id: "0",
                 name: "All"
             ),
-            mentors: [],
+            //mentors: [],
             unreadMessageCount: 0
         )
         
         private var handle: DisposableHandle?
         
         init() {
-            @Inject var searchMentorByCourse: SearchMentorByCourse
+            @Inject var getMentors: GetMentors
+            @Inject var searchMentor: SearchMentor
             @Inject var getUnreadCount: GetUnreadCount
             
             self.viewModel = HomeViewModel(
-                searchMentorByCourse: searchMentorByCourse,
+                getMentors: getMentors,
+                searchMentor: searchMentor,
                 getUnreadCount: getUnreadCount,
                 coroutineScope: nil
             )

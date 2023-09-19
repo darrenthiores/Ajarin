@@ -1,26 +1,28 @@
 package com.example.ajarin.domain.mentor.use_cases
 
-import com.example.ajarin.presentation.home.Course
-import com.example.ajarin.presentation.home.Mentor
-import com.example.ajarin.presentation.home.dummyMentors
+import com.example.ajarin.domain.core.model.Course
+import com.example.ajarin.domain.mentor.model.Mentor
+import com.example.ajarin.domain.mentor.repository.MentorRepository
+import com.example.ajarin.domain.utils.Resource
 
-class SearchMentor {
-    fun execute(
+class SearchMentor(
+    private val repository: MentorRepository
+) {
+    suspend operator fun invoke(
         name: String,
         course: Course?,
         rating: Int,
         price: String,
-        education: String
-    ): List<Mentor> {
-        return dummyMentors
-            .asSequence()
-            .filter {
-                it.name.contains(name)
-                        && (course?.let { course ->  it.courses.contains(course) } ?: true)
-                        && (if (rating!=0) (it.rating.toDoubleOrNull() ?: 0.0) > rating else true)
-                        && (if (price!="") it.priceCategory == price else true)
-                        && (if (education!="") it.education == education else true)
-            }
-            .toList()
+        education: String,
+        page: Int
+    ): Resource<List<Mentor>> {
+        return repository.searchMentor(
+            name = name,
+            education = education,
+            rating = rating.toDouble(),
+            courseId = course?.id ?: "",
+            price = price,
+            page = page
+        )
     }
 }

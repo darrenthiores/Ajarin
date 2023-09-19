@@ -1,11 +1,11 @@
 package com.example.ajarin.presentation.sessionAsMentor
 
-import com.example.ajarin.presentation.history.HistorySession
-import com.example.ajarin.presentation.profile.User
+import com.example.ajarin.domain.order.model.Order
+import com.example.ajarin.domain.user.model.User
 import com.example.ajarin.presentation.session.SessionInfo
 
 data class SessionAsMentorState(
-    val historySession: HistorySession? = null,
+    val historySession: Order? = null,
     val isSessionLoading: Boolean = false,
     val isSessionError: Error? = null,
     val user: User? = null,

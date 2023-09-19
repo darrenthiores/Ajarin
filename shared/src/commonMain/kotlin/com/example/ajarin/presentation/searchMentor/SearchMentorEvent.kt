@@ -1,10 +1,9 @@
 package com.example.ajarin.presentation.searchMentor
 
-import com.example.ajarin.presentation.home.Course
+import com.example.ajarin.domain.core.model.Course
 
 sealed class SearchMentorEvent {
     data class OnSearchChange(val newText: String): SearchMentorEvent()
-    object OnSearch: SearchMentorEvent()
     object OnToggleRating: SearchMentorEvent()
     data class OnPickCourse(val course: Course): SearchMentorEvent()
     data class OnPickPrice(val price: String): SearchMentorEvent()

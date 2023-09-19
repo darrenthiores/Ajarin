@@ -33,28 +33,28 @@ struct HomeScreen: View {
                         }
                     )
                 ) {
-                    MentorList(
-                        mentors: viewModel.state.mentors
-                    )
-                    .padding(.horizontal)
-                    .tag(
-                        Course(
-                            id: "0",
-                            name: "All"
-                        )
-                    )
-                    .gesture(DragGesture())
-                    
-                    ForEach(viewModel.state.courses, id: \.id) { course in
-                        MentorList(
-                            mentors: viewModel.state.mentors
-                        )
-                        .padding(.horizontal)
-                        .tag(
-                            course
-                        )
-                        .gesture(DragGesture())
-                    }
+//                    MentorList(
+//                        mentors: viewModel.state.mentors
+//                    )
+//                    .padding(.horizontal)
+//                    .tag(
+//                        Course(
+//                            id: "0",
+//                            name: "All"
+//                        )
+//                    )
+//                    .gesture(DragGesture())
+//                    
+//                    ForEach(viewModel.state.courses, id: \.id) { course in
+//                        MentorList(
+//                            mentors: viewModel.state.mentors
+//                        )
+//                        .padding(.horizontal)
+//                        .tag(
+//                            course
+//                        )
+//                        .gesture(DragGesture())
+//                    }
                 }
                 .tabViewStyle(
                     .page(indexDisplayMode: .never)

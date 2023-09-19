@@ -11,8 +11,12 @@ import shared
 
 class MentorUseCasesModule {
     init() {
-        @Provider var searchMentor: SearchMentor = SearchMentor()
-        @Provider var searchMentorByCourse: SearchMentorByCourse = SearchMentorByCourse()
-        @Provider var getMentorById: GetMentorById = GetMentorById()
+        @Inject var repository: MentorRepository
+        
+        @Provider var getMentor: GetMentor = GetMentor(repository: repository)
+        @Provider var getMentorById: GetMentorById = GetMentorById(repository: repository)
+        @Provider var getMentors: GetMentors = GetMentors(repository: repository)
+        @Provider var searchMentor: SearchMentor = SearchMentor(repository: repository)
+        @Provider var applyAsMentor: ApplyAsMentor = ApplyAsMentor(repository: repository)
     }
 }

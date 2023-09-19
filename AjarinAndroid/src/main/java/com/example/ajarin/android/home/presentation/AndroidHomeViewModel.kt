@@ -3,7 +3,8 @@ package com.example.ajarin.android.home.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ajarin.android.core.domain.preferences.Preferences
-import com.example.ajarin.domain.mentor.use_cases.SearchMentorByCourse
+import com.example.ajarin.domain.mentor.use_cases.GetMentors
+import com.example.ajarin.domain.mentor.use_cases.SearchMentor
 import com.example.ajarin.domain.message.use_cases.GetUnreadCount
 import com.example.ajarin.domain.utils.UiEvent
 import com.example.ajarin.presentation.home.HomeEvent
@@ -15,13 +16,15 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AndroidHomeViewModel @Inject constructor(
-    private val searchMentorByCourse: SearchMentorByCourse,
+    private val searchMentor: SearchMentor,
+    private val getMentors: GetMentors,
     private val getUnreadCount: GetUnreadCount,
     private val preferences: Preferences
 ): ViewModel() {
     private val viewModel by lazy {
         HomeViewModel(
-            searchMentorByCourse = searchMentorByCourse,
+            getMentors = getMentors,
+            searchMentor = searchMentor,
             getUnreadCount = getUnreadCount,
             coroutineScope = viewModelScope
         )

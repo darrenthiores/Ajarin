@@ -17,6 +17,9 @@ object Deps {
     private const val coilComposeVersion = "2.1.0"
     const val coilCompose = "io.coil-kt:coil-compose:$coilComposeVersion"
 
+    private const val pagingVersion = "1.0.0-alpha15"
+    const val paging = "androidx.paging:paging-compose:$pagingVersion"
+
     // ACCOMPANIST
     private const val flowLayoutVersion = "0.24.12-rc"
     const val flowLayout = "com.google.accompanist:accompanist-flowlayout:$flowLayoutVersion"

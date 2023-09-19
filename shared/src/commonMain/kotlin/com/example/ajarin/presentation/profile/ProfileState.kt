@@ -1,17 +1,11 @@
 package com.example.ajarin.presentation.profile
 
+import com.example.ajarin.domain.user.model.User
+
 data class ProfileState(
     val user: User? = null,
     val isFetchingUser: Boolean = false,
     val isDialogShow: Boolean = false
-)
-
-data class User(
-    val id: String,
-    val name: String,
-    val email: String,
-    val number: String,
-    val roleType: String
 )
 
 val dummyUsers = listOf(

@@ -14,7 +14,6 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBackIos
 import androidx.compose.material.icons.filled.Tune
 import androidx.compose.material.rememberBottomSheetScaffoldState
 import androidx.compose.material.rememberBottomSheetState
@@ -28,7 +27,6 @@ import com.example.ajarin.android.core_ui.theme.AjarinTheme
 import com.example.ajarin.android.search_mentor.presentation.components.FilterMentorSheet
 import com.example.ajarin.android.search_mentor.presentation.components.SearchTextField
 import com.example.ajarin.android.search_mentor.presentation.sections.SearchMentorDefault
-import com.example.ajarin.android.search_mentor.presentation.sections.SearchMentorResult
 import com.example.ajarin.presentation.searchMentor.SearchMentorEvent
 import com.example.ajarin.presentation.searchMentor.SearchMentorState
 import kotlinx.coroutines.launch
@@ -78,28 +76,28 @@ fun SearchMentorScreen(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(4.dp)
             ) {
-                if (state.mentors.isNotEmpty()) {
-                    IconButton(
-                        onClick = {
-                            onEvent(
-                                SearchMentorEvent.OnSearchChange("")
-                            )
-
-                            onEvent(
-                                SearchMentorEvent.OnReset
-                            )
-
-                            onEvent(
-                                SearchMentorEvent.OnApply
-                            )
-                        }
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.ArrowBackIos,
-                            contentDescription = "Back"
-                        )
-                    }
-                }
+//                if (state.mentors.isNotEmpty()) {
+//                    IconButton(
+//                        onClick = {
+//                            onEvent(
+//                                SearchMentorEvent.OnSearchChange("")
+//                            )
+//
+//                            onEvent(
+//                                SearchMentorEvent.OnReset
+//                            )
+//
+//                            onEvent(
+//                                SearchMentorEvent.OnApply
+//                            )
+//                        }
+//                    ) {
+//                        Icon(
+//                            imageVector = Icons.Default.ArrowBackIos,
+//                            contentDescription = "Back"
+//                        )
+//                    }
+//                }
 
                 SearchTextField(
                     modifier = Modifier
@@ -111,9 +109,9 @@ fun SearchMentorScreen(
                         )
                     },
                     onSearch = {
-                        onEvent(
-                            SearchMentorEvent.OnSearch
-                        )
+//                        onEvent(
+//                            SearchMentorEvent.OnSearch
+//                        )
                     }
                 )
 
@@ -131,13 +129,13 @@ fun SearchMentorScreen(
                 }
             }
 
-            if (state.mentors.isNotEmpty()) {
-                SearchMentorResult(
-                    mentors = state.mentors,
-                    state = resultListState,
-                    onMentorClick = onMentorClick
-                )
-            } else {
+//            if (state.mentors.isNotEmpty()) {
+//                SearchMentorResult(
+//                    mentors = state.mentors,
+//                    state = resultListState,
+//                    onMentorClick = onMentorClick
+//                )
+//            } else {
                 SearchMentorDefault(
                     courses = state.courses,
                     onCourseClick = {
@@ -151,7 +149,7 @@ fun SearchMentorScreen(
                     },
                     state = defaultListState
                 )
-            }
+            //}
         }
     }
 }

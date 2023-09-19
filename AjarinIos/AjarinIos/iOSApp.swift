@@ -5,8 +5,22 @@ struct iOSApp: App {
     
     init() {
         AppModule()
+        
         AuthNetworkModule()
         AuthRepositoryModule()
+        
+        UserNetworkModule()
+        UserRepositoryModule()
+        
+        MentorNetworkModule()
+        MentorRepositoryModule()
+        
+        ReviewNetworkModule()
+        ReviewRepositoryModule()
+        
+        OrderNetworkModule()
+        OrderRepositoryModule()
+        
         InboxDatabaseModule()
         InboxRepositoryModule()
         MessageDatabaseModule()
@@ -19,6 +33,7 @@ struct iOSApp: App {
         UserUseCasesModule()
         MentorUseCasesModule()
         OrderUseCasesModule()
+        ReviewUseCasesModule()
         InboxUseCasesModule()
         MessageUseCasesModule()
     }

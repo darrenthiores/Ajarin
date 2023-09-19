@@ -10,7 +10,7 @@ import SwiftUI
 import shared
 
 struct UserHistoryCard: View {
-    let history: HistorySession
+    let history: Order
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {

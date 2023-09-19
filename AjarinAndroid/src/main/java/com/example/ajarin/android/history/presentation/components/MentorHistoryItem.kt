@@ -29,15 +29,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.presentation.history.HistorySession
-import com.example.ajarin.presentation.history.dummyHistory
-import com.example.ajarin.presentation.history.getMentorStatusMessage
+import com.example.ajarin.domain.order.model.Order
+import com.example.ajarin.domain.order.model.dummyHistory
+import com.example.ajarin.domain.order.model.getMentorStatusMessage
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun MentorHistoryItem(
     modifier: Modifier = Modifier,
-    history: HistorySession,
+    history: Order,
     onItemClick: () -> Unit
 ) {
     Card(

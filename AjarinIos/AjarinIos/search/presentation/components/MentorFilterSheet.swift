@@ -146,7 +146,7 @@ struct MentorFilterSheet_Previews: PreviewProvider {
         MentorFilterSheet(
             state: SearchMentorState(
                 searchText: "",
-                mentors: [],
+                //mentors: [],
                 courses: [
                     Course(
                         id: "1",

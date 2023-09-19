@@ -108,6 +108,15 @@
 		C78039622A20C41E00DEA808 /* MentorFilterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78039612A20C41E00DEA808 /* MentorFilterSheet.swift */; };
 		C78039642A20C49500DEA808 /* FilterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78039632A20C49500DEA808 /* FilterItem.swift */; };
 		C78039672A20C95000DEA808 /* SearchMentorDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78039662A20C95000DEA808 /* SearchMentorDefault.swift */; };
+		C7BA62552AB8977C00346492 /* UserNetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BA62542AB8977C00346492 /* UserNetworkModule.swift */; };
+		C7BA62572AB8979D00346492 /* UserRepositoryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BA62562AB8979D00346492 /* UserRepositoryModule.swift */; };
+		C7BA62592AB897F900346492 /* OrderNetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BA62582AB897F900346492 /* OrderNetworkModule.swift */; };
+		C7BA625B2AB8981800346492 /* OrderRepositoryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BA625A2AB8981800346492 /* OrderRepositoryModule.swift */; };
+		C7BA625D2AB8988800346492 /* MentorNetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BA625C2AB8988800346492 /* MentorNetworkModule.swift */; };
+		C7BA625F2AB898A300346492 /* MentorRepositoryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BA625E2AB898A300346492 /* MentorRepositoryModule.swift */; };
+		C7BA62622AB8990600346492 /* ReviewNetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BA62612AB8990600346492 /* ReviewNetworkModule.swift */; };
+		C7BA62642AB8992300346492 /* ReviewRepositoryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BA62632AB8992300346492 /* ReviewRepositoryModule.swift */; };
+		C7BA62662AB8993500346492 /* ReviewUseCasesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BA62652AB8993500346492 /* ReviewUseCasesModule.swift */; };
 		C7FDBE632A45554F00C60C70 /* ClickableField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE622A45554F00C60C70 /* ClickableField.swift */; };
 		C7FDBE662A45570700C60C70 /* CourseDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE652A45570700C60C70 /* CourseDropDown.swift */; };
 		C7FDBE692A45781A00C60C70 /* ScheduleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDBE682A45781A00C60C70 /* ScheduleSheet.swift */; };
@@ -244,6 +253,15 @@
 		C78039612A20C41E00DEA808 /* MentorFilterSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorFilterSheet.swift; sourceTree = "<group>"; };
 		C78039632A20C49500DEA808 /* FilterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterItem.swift; sourceTree = "<group>"; };
 		C78039662A20C95000DEA808 /* SearchMentorDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMentorDefault.swift; sourceTree = "<group>"; };
+		C7BA62542AB8977C00346492 /* UserNetworkModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkModule.swift; sourceTree = "<group>"; };
+		C7BA62562AB8979D00346492 /* UserRepositoryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryModule.swift; sourceTree = "<group>"; };
+		C7BA62582AB897F900346492 /* OrderNetworkModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderNetworkModule.swift; sourceTree = "<group>"; };
+		C7BA625A2AB8981800346492 /* OrderRepositoryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRepositoryModule.swift; sourceTree = "<group>"; };
+		C7BA625C2AB8988800346492 /* MentorNetworkModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorNetworkModule.swift; sourceTree = "<group>"; };
+		C7BA625E2AB898A300346492 /* MentorRepositoryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorRepositoryModule.swift; sourceTree = "<group>"; };
+		C7BA62612AB8990600346492 /* ReviewNetworkModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewNetworkModule.swift; sourceTree = "<group>"; };
+		C7BA62632AB8992300346492 /* ReviewRepositoryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRepositoryModule.swift; sourceTree = "<group>"; };
+		C7BA62652AB8993500346492 /* ReviewUseCasesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewUseCasesModule.swift; sourceTree = "<group>"; };
 		C7FDBE622A45554F00C60C70 /* ClickableField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickableField.swift; sourceTree = "<group>"; };
 		C7FDBE652A45570700C60C70 /* CourseDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDropDown.swift; sourceTree = "<group>"; };
 		C7FDBE682A45781A00C60C70 /* ScheduleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSheet.swift; sourceTree = "<group>"; };
@@ -354,6 +372,7 @@
 		C725F9402A1F8ECC002FEEFC /* di */ = {
 			isa = PBXGroup;
 			children = (
+				C7BA62602AB898FF00346492 /* review */,
 				C705FA372AB82A5500013711 /* auth */,
 				C763CF8F2AB7862B001DD758 /* participant */,
 				C763CF8C2AB785FC001DD758 /* user */,
@@ -587,6 +606,8 @@
 			isa = PBXGroup;
 			children = (
 				C763CF842AB783E5001DD758 /* MentorUseCasesModule.swift */,
+				C7BA625C2AB8988800346492 /* MentorNetworkModule.swift */,
+				C7BA625E2AB898A300346492 /* MentorRepositoryModule.swift */,
 			);
 			path = mentor;
 			sourceTree = "<group>";
@@ -603,6 +624,8 @@
 			isa = PBXGroup;
 			children = (
 				C763CF8A2AB785D8001DD758 /* OrderUseCasesModule.swift */,
+				C7BA62582AB897F900346492 /* OrderNetworkModule.swift */,
+				C7BA625A2AB8981800346492 /* OrderRepositoryModule.swift */,
 			);
 			path = order;
 			sourceTree = "<group>";
@@ -611,6 +634,8 @@
 			isa = PBXGroup;
 			children = (
 				C763CF8D2AB78608001DD758 /* UserUseCasesModule.swift */,
+				C7BA62542AB8977C00346492 /* UserNetworkModule.swift */,
+				C7BA62562AB8979D00346492 /* UserRepositoryModule.swift */,
 			);
 			path = user;
 			sourceTree = "<group>";
@@ -985,6 +1010,16 @@
 			path = sections;
 			sourceTree = "<group>";
 		};
+		C7BA62602AB898FF00346492 /* review */ = {
+			isa = PBXGroup;
+			children = (
+				C7BA62612AB8990600346492 /* ReviewNetworkModule.swift */,
+				C7BA62632AB8992300346492 /* ReviewRepositoryModule.swift */,
+				C7BA62652AB8993500346492 /* ReviewUseCasesModule.swift */,
+			);
+			path = review;
+			sourceTree = "<group>";
+		};
 		C7FDBE642A4556FD00C60C70 /* components */ = {
 			isa = PBXGroup;
 			children = (
@@ -1184,11 +1219,13 @@
 				C770BFCE2A49589E0075F408 /* BankAccountItem.swift in Sources */,
 				C770C0112A49E9910075F408 /* IosApplyAsMentorState.swift in Sources */,
 				C78039642A20C49500DEA808 /* FilterItem.swift in Sources */,
+				C7BA62622AB8990600346492 /* ReviewNetworkModule.swift in Sources */,
 				C75583852A48AF6800ED8ABC /* FriendMessageItem.swift in Sources */,
 				C770BFFE2A4995C60075F408 /* ReviewImage.swift in Sources */,
 				C763CF852AB783E5001DD758 /* MentorUseCasesModule.swift in Sources */,
 				C75583832A48AEC700ED8ABC /* PersonalMessageItem.swift in Sources */,
 				C78039582A20B6D100DEA808 /* IosProfileViewModel.swift in Sources */,
+				C7BA625B2AB8981800346492 /* OrderRepositoryModule.swift in Sources */,
 				C755836F2A48A5A900ED8ABC /* IosInboxViewModel.swift in Sources */,
 				C7FDBE7D2A45A8C100C60C70 /* UserHistoryCard.swift in Sources */,
 				C77C3ACC2A1FB4B000AACF25 /* RegisterHeader.swift in Sources */,
@@ -1217,8 +1254,12 @@
 				C770C0022A499A110075F408 /* ApplyAsMentorScreen.swift in Sources */,
 				C780394A2A20912E00DEA808 /* WrappingHStack.swift in Sources */,
 				C763CF8E2AB78608001DD758 /* UserUseCasesModule.swift in Sources */,
+				C7BA62572AB8979D00346492 /* UserRepositoryModule.swift in Sources */,
+				C7BA62592AB897F900346492 /* OrderNetworkModule.swift in Sources */,
 				C770BFD12A49590D0075F408 /* BankExtension.swift in Sources */,
+				C7BA62552AB8977C00346492 /* UserNetworkModule.swift in Sources */,
 				C770BFCB2A4956BF0075F408 /* IosBankAccountViewModel.swift in Sources */,
+				C7BA62662AB8993500346492 /* ReviewUseCasesModule.swift in Sources */,
 				C7FDBE6E2A458AD700C60C70 /* PaymentMethodExtension.swift in Sources */,
 				C780395E2A20C10A00DEA808 /* IosSearchMentorViewModel.swift in Sources */,
 				C763CF9A2AB78734001DD758 /* KeychainSwift.swift in Sources */,
@@ -1227,6 +1268,7 @@
 				C763CF982AB786F2001DD758 /* IosTokenPreferences.swift in Sources */,
 				C78039392A2088D900DEA808 /* MainTab.swift in Sources */,
 				C7FDBE812A45A99800C60C70 /* IosHistoryViewModel.swift in Sources */,
+				C7BA62642AB8992300346492 /* ReviewRepositoryModule.swift in Sources */,
 				C7FDBE7B2A459CB000C60C70 /* MentorHistoryCard.swift in Sources */,
 				C78039482A20901200DEA808 /* InformationItem.swift in Sources */,
 				C75583692A48A50300ED8ABC /* InboxRepositoryModule.swift in Sources */,
@@ -1254,6 +1296,7 @@
 				C7FDBE722A458C3200C60C70 /* PaymentMethodField.swift in Sources */,
 				C7FDBE902A45B51E00C60C70 /* ActivityView.swift in Sources */,
 				C770BFE52A496ED20075F408 /* BankField.swift in Sources */,
+				C7BA625D2AB8988800346492 /* MentorNetworkModule.swift in Sources */,
 				C770BFD72A4963520075F408 /* IosAddBankViewModel.swift in Sources */,
 				C7FDBE7F2A45A98F00C60C70 /* HistoryScreen.swift in Sources */,
 				C78039562A20B6C800DEA808 /* ProfileScreen.swift in Sources */,
@@ -1268,6 +1311,7 @@
 				C780393D2A208AAB00DEA808 /* HomeScreen.swift in Sources */,
 				C7FDBE692A45781A00C60C70 /* ScheduleSheet.swift in Sources */,
 				C732F98D2A4457010037B0C4 /* MentorReview.swift in Sources */,
+				C7BA625F2AB898A300346492 /* MentorRepositoryModule.swift in Sources */,
 				C770BFC52A4953D30075F408 /* IosAddPinViewModel.swift in Sources */,
 				C725F9472A1F937A002FEEFC /* LoginScreen.swift in Sources */,
 				C725F9602A1F9F06002FEEFC /* IosRegisterViewModel.swift in Sources */,

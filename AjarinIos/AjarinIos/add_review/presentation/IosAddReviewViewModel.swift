@@ -30,10 +30,10 @@ extension AddReviewScreen {
         private var handle: DisposableHandle?
         
         init() {
-            @Inject var getSessionById: GetSessionById
+            @Inject var getOrderById: GetOrderById
             
             self.viewModel = AddReviewViewModel(
-                getSessionById: getSessionById,
+                getOrderById: getOrderById,
                 coroutineScope: nil
             )
         }

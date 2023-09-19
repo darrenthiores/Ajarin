@@ -28,11 +28,11 @@ extension SessionAsUserScreen {
         private var handle: DisposableHandle?
         
         init() {
-            @Inject var getSessionById: GetSessionById
+            @Inject var getOrderById: GetOrderById
             @Inject var getMentorById: GetMentorById
             
             self.viewModel = SessionViewModel(
-                getSessionById: getSessionById,
+                getOrderById: getOrderById,
                 getMentorById: getMentorById,
                 coroutineScope: nil
             )

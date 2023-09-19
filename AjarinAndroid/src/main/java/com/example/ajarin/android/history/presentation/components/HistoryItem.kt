@@ -34,15 +34,15 @@ import coil.request.ImageRequest
 import com.example.ajarin.android.R
 import com.example.ajarin.android.core_ui.components.PrimaryButton
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.presentation.history.HistorySession
-import com.example.ajarin.presentation.history.dummyHistory
-import com.example.ajarin.presentation.history.getStatusMessage
+import com.example.ajarin.domain.order.model.Order
+import com.example.ajarin.domain.order.model.dummyHistory
+import com.example.ajarin.domain.order.model.getStatusMessage
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun HistoryItem(
     modifier: Modifier = Modifier,
-    history: HistorySession,
+    history: Order,
     onItemClick: () -> Unit,
     onReviewClick: () -> Unit
 ) {

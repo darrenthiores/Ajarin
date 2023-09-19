@@ -1,7 +1,7 @@
 package com.example.ajarin.presentation.applyAsMentor
 
-import com.example.ajarin.presentation.home.Course
-import com.example.ajarin.presentation.mentorProfile.Session
+import com.example.ajarin.domain.core.model.Course
+import com.example.ajarin.domain.order.model.Session
 
 sealed class ApplyAsMentorEvent {
     data class OnFullNameChange(val newText: String): ApplyAsMentorEvent()

@@ -27,8 +27,8 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.ajarin.android.R
 import com.example.ajarin.android.core_ui.theme.AjarinTheme
-import com.example.ajarin.presentation.home.Course
-import com.example.ajarin.presentation.home.Mentor
+import com.example.ajarin.domain.core.model.Course
+import com.example.ajarin.domain.mentor.model.Mentor
 
 @Composable
 fun MessageHeader(

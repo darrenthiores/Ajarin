@@ -11,7 +11,12 @@ import shared
 
 class OrderUseCasesModule {
     init() {
-        @Provider var getSessionById: GetSessionById = GetSessionById()
-        @Provider var getHistory: GetHistory = GetHistory()
+        @Inject var repository: OrderRepository
+        
+        @Provider var getUserOrders: GetUserOrders = GetUserOrders(repository: repository)
+        @Provider var getMentorOrders: GetMentorOrders = GetMentorOrders(repository: repository)
+        @Provider var getOrderById: GetOrderById = GetOrderById(repository: repository)
+        @Provider var createOrder: CreateOrder = CreateOrder(repository: repository)
+        @Provider var updateOrder: UpdateOrder = UpdateOrder(repository: repository)
     }
 }

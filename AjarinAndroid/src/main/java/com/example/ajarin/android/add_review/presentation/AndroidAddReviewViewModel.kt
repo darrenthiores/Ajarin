@@ -5,20 +5,20 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.ajarin.domain.order.use_cases.GetOrderById
 import com.example.ajarin.presentation.addReview.AddReviewEvent
 import com.example.ajarin.presentation.addReview.AddReviewViewModel
-import com.example.ajarin.domain.order.use_cases.GetSessionById
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class AndroidAddReviewViewModel @Inject constructor(
-    private val getSessionById: GetSessionById,
+    private val getOrderById: GetOrderById,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
     private val viewModel by lazy {
         AddReviewViewModel(
-            getSessionById = getSessionById,
+            getOrderById = getOrderById,
             coroutineScope = viewModelScope
         )
     }

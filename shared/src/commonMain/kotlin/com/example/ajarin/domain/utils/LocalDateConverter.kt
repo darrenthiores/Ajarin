@@ -1,6 +1,7 @@
 package com.example.ajarin.domain.utils
 
 import kotlinx.datetime.Clock
+import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.atStartOfDayIn
@@ -18,9 +19,16 @@ object LocalDateConverter {
         )
     }
 
+    fun timestampToLocalDate(
+        timestamp: Long
+    ): LocalDate {
+        return Instant
+            .fromEpochMilliseconds(timestamp)
+            .toLocalDateTime(TimeZone.currentSystemDefault())
+            .date
+    }
+
     fun toLocalDate(date: String): LocalDate {
-
-
         return date.toLocalDate()
     }
 
