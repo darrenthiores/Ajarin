@@ -38,9 +38,13 @@ extension ApplyAsMentorScreen {
         
         init() {
             @Inject var validateId: ValidateId
+            @Inject var applyAsMentor: ApplyAsMentor
+            @Inject var getUser: GetUser
             
             self.viewModel = ApplyAsMentorViewModel(
                 validateId: validateId,
+                getUser: getUser,
+                applyAsMentor: applyAsMentor,
                 coroutineScope: nil
             )
         }

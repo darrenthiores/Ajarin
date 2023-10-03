@@ -8,9 +8,12 @@ import com.example.ajarin.data.core.remote.dto.response.BaseResponse
 interface AuthService {
     suspend fun login(request: LoginRequest): BaseResponse<AuthResponse>
     suspend fun register(request: RegisterRequest): BaseResponse<AuthResponse>
+    suspend fun resetToken()
 
     companion object {
         private const val BASE_URL = "http://10.0.2.2:8080"
+        private const val LOCAL_BASE_URL = "http://10.0.2.2:8080"
+        private const val IOS_BASE_URL = "http://0.0.0.0:8080"
         const val LOGIN_URL = "$BASE_URL/user/login"
         const val REGISTER_URL = "$BASE_URL/user/register"
     }

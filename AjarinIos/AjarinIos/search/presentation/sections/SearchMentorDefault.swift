@@ -4,6 +4,7 @@ import shared
 struct SearchMentorDefault: View {
     let courses: [Course]
     let onEvent: (SearchMentorEvent) -> Void
+    let iosOnEvent: (IosSearchMentorEvent) -> Void
     
     var body: some View {
         GeometryReader { geo in
@@ -17,15 +18,7 @@ struct SearchMentorDefault: View {
                 ) {
                     ForEach(courses, id: \.id) { course in
                         Button {
-                            onEvent(
-                                .OnPickCourse(
-                                    course: course
-                                )
-                            )
-                            
-                            onEvent(
-                                .OnApply()
-                            )
+                            iosOnEvent(.SelectCourse(course: course))
                             
 //                            onEvent(
 //                                .OnSearch()
@@ -84,7 +77,8 @@ struct SearchMentorDefault_Previews: PreviewProvider {
                     name: "Bio"
                 )
             ],
-            onEvent: { event in }
+            onEvent: { event in },
+            iosOnEvent: { event in }
         )
     }
 }

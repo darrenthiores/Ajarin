@@ -15,6 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import androidx.navigation.navDeepLink
+import androidx.paging.compose.collectAsLazyPagingItems
 import com.example.ajarin.android.add_bank.presentation.AddBankScreen
 import com.example.ajarin.android.add_bank.presentation.AndroidAddBankViewModel
 import com.example.ajarin.android.add_pin.presentation.AddPinScreen
@@ -155,9 +156,13 @@ fun Ajarin(
             composable(TopLevelDestination.Home.name) {
                 val viewModel: AndroidHomeViewModel = hiltViewModel()
                 val state by viewModel.state.collectAsState()
+                val mentors = viewModel.mentors.collectAsLazyPagingItems()
+                val searchMentors = viewModel.searchMentors.collectAsLazyPagingItems()
 
                 HomeScreen(
                     state = state,
+                    mentors = mentors,
+                    searchMentors = searchMentors,
                     onEvent = viewModel::onEvent,
                     onMentorClick = { mentorId ->
                         navController.navigate(Route.MentorProfile.name + "/$mentorId")
@@ -171,10 +176,13 @@ fun Ajarin(
             composable(TopLevelDestination.Search.name) {
                 val viewModel: AndroidSearchMentorViewModel = hiltViewModel()
                 val state by viewModel.state.collectAsState()
+                val mentors = viewModel.searchMentors.collectAsLazyPagingItems()
 
                 SearchMentorScreen(
                     state = state,
+                    mentors = mentors,
                     onEvent = viewModel::onEvent,
+                    onAndroidEvent = viewModel::onEvent,
                     onMentorClick = { mentorId ->
                         navController.navigate(Route.MentorProfile.name + "/$mentorId")
                     }
@@ -184,9 +192,13 @@ fun Ajarin(
             composable(TopLevelDestination.History.name) {
                 val viewModel: AndroidHistoryViewModel = hiltViewModel()
                 val state by viewModel.state.collectAsState()
+                val userOrders = viewModel.userOrders.collectAsLazyPagingItems()
+                val mentorOrders = viewModel.mentorOrders.collectAsLazyPagingItems()
 
                 HistoryScreen(
                     state = state,
+                    userOrders = userOrders,
+                    mentorOrders = mentorOrders,
                     onUserClick = { sessionId, mentorId ->
                         navController.navigate(Route.Session.name + "/$sessionId" + "/$mentorId")
                     },
@@ -335,9 +347,11 @@ fun Ajarin(
                 val mentorId = navBackStackEntry.arguments?.getString("mentor_id")
                 val viewModel: AndroidMentorProfileViewModel = hiltViewModel()
                 val state by viewModel.state.collectAsState()
+                val reviews = viewModel.reviews.collectAsLazyPagingItems()
 
                 MentorProfileScreen(
                     state = state,
+                    reviews = reviews,
                     onBackClick = {
                         navController.navigateUp()
                     },

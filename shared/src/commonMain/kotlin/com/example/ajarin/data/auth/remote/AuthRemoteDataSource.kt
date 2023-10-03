@@ -46,4 +46,8 @@ class AuthRemoteDataSource(
             }
         }
     }
+
+    suspend fun resetToken() {
+        apiService.resetToken()
+    }
 }

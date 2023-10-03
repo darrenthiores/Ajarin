@@ -6,6 +6,9 @@ import com.example.ajarin.data.auth.remote.dto.response.AuthResponse
 import com.example.ajarin.data.core.remote.dto.response.BaseResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
+import io.ktor.client.plugins.auth.Auth
+import io.ktor.client.plugins.auth.providers.BearerAuthProvider
+import io.ktor.client.plugins.plugin
 import io.ktor.client.request.post
 import io.ktor.client.request.setBody
 import io.ktor.client.request.url
@@ -35,5 +38,13 @@ class KtorAuthService(
         }
 
         return result.body()
+    }
+
+    override suspend fun resetToken() {
+        client.plugin(Auth)
+            .providers
+            .filterIsInstance<BearerAuthProvider>()
+            .firstOrNull()
+            ?.clearToken()
     }
 }

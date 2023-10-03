@@ -2,6 +2,9 @@ package com.example.ajarin.presentation.applyAsMentor
 
 import com.example.ajarin.domain.core.utils.toCommonFlow
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
+import com.example.ajarin.domain.mentor.use_cases.ApplyAsMentor
+import com.example.ajarin.domain.user.use_cases.GetUser
+import com.example.ajarin.domain.utils.Resource
 import com.example.ajarin.domain.utils.UiEvent
 import com.example.ajarin.domain.validation.use_cases.ValidateId
 import com.example.ajarin.domain.validation.utils.ValidationError
@@ -14,6 +17,8 @@ import kotlinx.coroutines.launch
 
 class ApplyAsMentorViewModel (
     private val validateId: ValidateId,
+    private val getUser: GetUser,
+    private val applyAsMentor: ApplyAsMentor,
     coroutineScope: CoroutineScope? = null
 ) {
     private val viewModelScope = coroutineScope ?: CoroutineScope(Dispatchers.Main)
@@ -29,14 +34,35 @@ class ApplyAsMentorViewModel (
     fun onEvent(event: ApplyAsMentorEvent) {
         when(event) {
             ApplyAsMentorEvent.OnApply -> {
-                _state.value = state.value.copy(
-                    applySuccess = true
-                )
-
                 viewModelScope.launch {
-                    _uiEvent.send(
-                        UiEvent.Success
+                    val stateValue = state.value
+                    val user = getUser()
+                    val result = applyAsMentor(
+                        id = user?.id ?: return@launch,
+                        education = stateValue.lastEducation ?: return@launch,
+                        courses = stateValue.selectedCourses.map { it.id },
+                        price = stateValue.proposedFee
                     )
+
+                    when (result) {
+                        is Resource.Error -> {
+                            _state.value = state.value.copy(
+                                applyError = Error(result.message)
+                            )
+                        }
+                        is Resource.Loading -> Unit
+                        is Resource.Success -> {
+                            _state.value = state.value.copy(
+                                applySuccess = true
+                            )
+
+                            viewModelScope.launch {
+                                _uiEvent.send(
+                                    UiEvent.Success
+                                )
+                            }
+                        }
+                    }
                 }
             }
             is ApplyAsMentorEvent.OnFeeChange -> {

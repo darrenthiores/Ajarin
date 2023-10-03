@@ -1,5 +1,6 @@
 package com.example.ajarin.data.review.remote
 
+import com.example.ajarin.data.core.remote.dto.request.IdRequest
 import com.example.ajarin.data.core.utils.ApiResponse
 import com.example.ajarin.data.core.utils.tryCatch
 import com.example.ajarin.data.review.remote.dto.request.CreateReviewRequest
@@ -13,11 +14,13 @@ class ReviewRemoteDataSource(
     private val dispatchers: DispatchersProvider
 ) {
     suspend fun getMentorReviews(
+        request: IdRequest,
         page: Int
     ): ApiResponse<List<ReviewResponse>> {
         return withContext(dispatchers.io) {
             tryCatch {
                 val result = apiService.getMentorReviews(
+                    request = request,
                     page = page
                 )
 

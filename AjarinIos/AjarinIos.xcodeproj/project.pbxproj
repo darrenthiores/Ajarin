@@ -108,6 +108,14 @@
 		C78039622A20C41E00DEA808 /* MentorFilterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78039612A20C41E00DEA808 /* MentorFilterSheet.swift */; };
 		C78039642A20C49500DEA808 /* FilterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78039632A20C49500DEA808 /* FilterItem.swift */; };
 		C78039672A20C95000DEA808 /* SearchMentorDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78039662A20C95000DEA808 /* SearchMentorDefault.swift */; };
+		C79C02292ABAE421008E0AF3 /* IosHomeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C02282ABAE421008E0AF3 /* IosHomeState.swift */; };
+		C79C022B2ABAE49F008E0AF3 /* IosHomeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C022A2ABAE49F008E0AF3 /* IosHomeEvent.swift */; };
+		C79C022D2ABAEFC7008E0AF3 /* IosMentorProfileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C022C2ABAEFC7008E0AF3 /* IosMentorProfileState.swift */; };
+		C79C022F2ABAEFD0008E0AF3 /* IosMentorProfileEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C022E2ABAEFD0008E0AF3 /* IosMentorProfileEvent.swift */; };
+		C79C02312ABAF35D008E0AF3 /* IosSearchMentorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C02302ABAF35D008E0AF3 /* IosSearchMentorState.swift */; };
+		C79C02332ABAF39F008E0AF3 /* IosSearchMentorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C02322ABAF39F008E0AF3 /* IosSearchMentorEvent.swift */; };
+		C79C02352ABAF7A3008E0AF3 /* IosHistoryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C02342ABAF7A3008E0AF3 /* IosHistoryState.swift */; };
+		C79C02372ABAF7ED008E0AF3 /* IosHistoryEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C02362ABAF7ED008E0AF3 /* IosHistoryEvent.swift */; };
 		C7BA62552AB8977C00346492 /* UserNetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BA62542AB8977C00346492 /* UserNetworkModule.swift */; };
 		C7BA62572AB8979D00346492 /* UserRepositoryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BA62562AB8979D00346492 /* UserRepositoryModule.swift */; };
 		C7BA62592AB897F900346492 /* OrderNetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BA62582AB897F900346492 /* OrderNetworkModule.swift */; };
@@ -253,6 +261,14 @@
 		C78039612A20C41E00DEA808 /* MentorFilterSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorFilterSheet.swift; sourceTree = "<group>"; };
 		C78039632A20C49500DEA808 /* FilterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterItem.swift; sourceTree = "<group>"; };
 		C78039662A20C95000DEA808 /* SearchMentorDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMentorDefault.swift; sourceTree = "<group>"; };
+		C79C02282ABAE421008E0AF3 /* IosHomeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosHomeState.swift; sourceTree = "<group>"; };
+		C79C022A2ABAE49F008E0AF3 /* IosHomeEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosHomeEvent.swift; sourceTree = "<group>"; };
+		C79C022C2ABAEFC7008E0AF3 /* IosMentorProfileState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosMentorProfileState.swift; sourceTree = "<group>"; };
+		C79C022E2ABAEFD0008E0AF3 /* IosMentorProfileEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosMentorProfileEvent.swift; sourceTree = "<group>"; };
+		C79C02302ABAF35D008E0AF3 /* IosSearchMentorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosSearchMentorState.swift; sourceTree = "<group>"; };
+		C79C02322ABAF39F008E0AF3 /* IosSearchMentorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosSearchMentorEvent.swift; sourceTree = "<group>"; };
+		C79C02342ABAF7A3008E0AF3 /* IosHistoryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosHistoryState.swift; sourceTree = "<group>"; };
+		C79C02362ABAF7ED008E0AF3 /* IosHistoryEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosHistoryEvent.swift; sourceTree = "<group>"; };
 		C7BA62542AB8977C00346492 /* UserNetworkModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkModule.swift; sourceTree = "<group>"; };
 		C7BA62562AB8979D00346492 /* UserRepositoryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryModule.swift; sourceTree = "<group>"; };
 		C7BA62582AB897F900346492 /* OrderNetworkModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderNetworkModule.swift; sourceTree = "<group>"; };
@@ -492,6 +508,8 @@
 				C732F9752A4433680037B0C4 /* components */,
 				C732F9762A4433760037B0C4 /* MentorProfileScreen.swift */,
 				C732F9782A44337F0037B0C4 /* IosMentorProfileViewModel.swift */,
+				C79C022C2ABAEFC7008E0AF3 /* IosMentorProfileState.swift */,
+				C79C022E2ABAEFD0008E0AF3 /* IosMentorProfileEvent.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -934,6 +952,8 @@
 				C78039402A208ABC00DEA808 /* components */,
 				C780393C2A208AAB00DEA808 /* HomeScreen.swift */,
 				C780393E2A208AB500DEA808 /* IosHomeViewModel.swift */,
+				C79C02282ABAE421008E0AF3 /* IosHomeState.swift */,
+				C79C022A2ABAE49F008E0AF3 /* IosHomeEvent.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -988,6 +1008,8 @@
 				C780395A2A20C0F200DEA808 /* components */,
 				C780395B2A20C0FF00DEA808 /* SearchMentorScreen.swift */,
 				C780395D2A20C10A00DEA808 /* IosSearchMentorViewModel.swift */,
+				C79C02302ABAF35D008E0AF3 /* IosSearchMentorState.swift */,
+				C79C02322ABAF39F008E0AF3 /* IosSearchMentorEvent.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -1076,6 +1098,8 @@
 				C7FDBE792A459C9B00C60C70 /* components */,
 				C7FDBE7E2A45A98F00C60C70 /* HistoryScreen.swift */,
 				C7FDBE802A45A99800C60C70 /* IosHistoryViewModel.swift */,
+				C79C02342ABAF7A3008E0AF3 /* IosHistoryState.swift */,
+				C79C02362ABAF7ED008E0AF3 /* IosHistoryEvent.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -1218,6 +1242,7 @@
 			files = (
 				C770BFCE2A49589E0075F408 /* BankAccountItem.swift in Sources */,
 				C770C0112A49E9910075F408 /* IosApplyAsMentorState.swift in Sources */,
+				C79C022B2ABAE49F008E0AF3 /* IosHomeEvent.swift in Sources */,
 				C78039642A20C49500DEA808 /* FilterItem.swift in Sources */,
 				C7BA62622AB8990600346492 /* ReviewNetworkModule.swift in Sources */,
 				C75583852A48AF6800ED8ABC /* FriendMessageItem.swift in Sources */,
@@ -1232,6 +1257,7 @@
 				C770C00D2A49AC850075F408 /* SelectCoursesSheet.swift in Sources */,
 				C770BFEC2A4983D30075F408 /* VerifyPinScreen.swift in Sources */,
 				C78039462A208DC900DEA808 /* MentorCard.swift in Sources */,
+				C79C022F2ABAEFD0008E0AF3 /* IosMentorProfileEvent.swift in Sources */,
 				C770BFDA2A49658F0075F408 /* BankDropDown.swift in Sources */,
 				C725F95D2A1F9EE6002FEEFC /* RegisterScreen.swift in Sources */,
 				C732F9912A445EC60037B0C4 /* BookingScreen.swift in Sources */,
@@ -1289,6 +1315,7 @@
 				C755836D2A48A59E00ED8ABC /* InboxScreen.swift in Sources */,
 				C770BFF22A4984970075F408 /* WithdrawSuccessScreen.swift in Sources */,
 				C780393F2A208AB500DEA808 /* IosHomeViewModel.swift in Sources */,
+				C79C02372ABAF7ED008E0AF3 /* IosHistoryEvent.swift in Sources */,
 				C770BFC92A4956B50075F408 /* BankAccountScreen.swift in Sources */,
 				C78039602A20C3BB00DEA808 /* SearchMentorHeader.swift in Sources */,
 				C7FDBE972A45B76E00C60C70 /* SmallUserCard.swift in Sources */,
@@ -1304,12 +1331,16 @@
 				C75583672A48A4C800ED8ABC /* InboxDatabaseModule.swift in Sources */,
 				C770BFC32A4953CA0075F408 /* AddPinScreen.swift in Sources */,
 				C732F9892A4455C10037B0C4 /* ReviewImageView.swift in Sources */,
+				C79C02312ABAF35D008E0AF3 /* IosSearchMentorState.swift in Sources */,
 				C770BFF62A498A450075F408 /* AddReviewScreen.swift in Sources */,
 				C78039442A208C4F00DEA808 /* HomeTabButton.swift in Sources */,
 				C732F9832A444ABD0037B0C4 /* CourseItem.swift in Sources */,
 				C705FA3D2AB82D5A00013711 /* AuthUseCasesModule.swift in Sources */,
 				C780393D2A208AAB00DEA808 /* HomeScreen.swift in Sources */,
 				C7FDBE692A45781A00C60C70 /* ScheduleSheet.swift in Sources */,
+				C79C02332ABAF39F008E0AF3 /* IosSearchMentorEvent.swift in Sources */,
+				C79C02352ABAF7A3008E0AF3 /* IosHistoryState.swift in Sources */,
+				C79C02292ABAE421008E0AF3 /* IosHomeState.swift in Sources */,
 				C732F98D2A4457010037B0C4 /* MentorReview.swift in Sources */,
 				C7BA625F2AB898A300346492 /* MentorRepositoryModule.swift in Sources */,
 				C770BFC52A4953D30075F408 /* IosAddPinViewModel.swift in Sources */,
@@ -1318,6 +1349,7 @@
 				C75583872A48B5A800ED8ABC /* ReversedScrollView.swift in Sources */,
 				C7FDBE632A45554F00C60C70 /* ClickableField.swift in Sources */,
 				C75583892A48B79100ED8ABC /* Stack.swift in Sources */,
+				C79C022D2ABAEFC7008E0AF3 /* IosMentorProfileState.swift in Sources */,
 				C732F9932A445ECF0037B0C4 /* IosBookingViewModel.swift in Sources */,
 				C770BFDE2A496D150075F408 /* WithdrawScreen.swift in Sources */,
 				C770BFE82A4982D70075F408 /* BankAccountSheet.swift in Sources */,
@@ -1475,6 +1507,7 @@
 					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
 				);
 				INFOPLIST_FILE = AjarinIos/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Studify;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1503,6 +1536,7 @@
 					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
 				);
 				INFOPLIST_FILE = AjarinIos/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Studify;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

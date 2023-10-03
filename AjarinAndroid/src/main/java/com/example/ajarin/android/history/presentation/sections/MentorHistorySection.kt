@@ -7,12 +7,14 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.ajarin.presentation.history.HistoryState
+import androidx.paging.compose.LazyPagingItems
+import com.example.ajarin.android.history.presentation.components.MentorHistoryItem
+import com.example.ajarin.domain.order.model.Order
 
 @Composable
 fun MentorHistorySection(
     modifier: Modifier = Modifier,
-    state: HistoryState,
+    orders: LazyPagingItems<Order>,
     onItemClick: (String, String) -> Unit
 ) {
     LazyColumn(
@@ -21,16 +23,17 @@ fun MentorHistorySection(
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-//        items(
-//            items = state.historySessions,
-//            key = { history -> history.id }
-//        ) { history ->
-//            MentorHistoryItem(
-//                history = history,
-//                onItemClick = {
-//                    onItemClick(history.id, history.userId)
-//                }
-//            )
-//        }
+        items(
+            count = orders.itemCount
+        ) { index ->
+            orders[index]?.let { history ->
+                MentorHistoryItem(
+                    history = history,
+                    onItemClick = {
+                        onItemClick(history.id, history.userId)
+                    }
+                )
+            }
+        }
     }
 }

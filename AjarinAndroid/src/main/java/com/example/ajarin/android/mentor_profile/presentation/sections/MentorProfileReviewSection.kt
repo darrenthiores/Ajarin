@@ -5,12 +5,12 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Divider
 import androidx.compose.material.Icon
@@ -29,6 +29,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.paging.compose.LazyPagingItems
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.ajarin.android.R
@@ -40,28 +41,21 @@ import com.google.accompanist.flowlayout.FlowRow
 @Composable
 fun MentorProfileReviewSection(
     modifier: Modifier = Modifier,
-    reviews: List<Review>
+    reviews: LazyPagingItems<Review>
 ) {
     LazyColumn(
         modifier = modifier
-            .fillMaxWidth(),
+            .fillMaxSize(),
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(32.dp)
     ) {
         items(
-            items = reviews,
-            key = { review -> review.reviewId }
-        ) { review ->
-            ReviewItem(review = review)
+            count = reviews.itemCount
+        ) { index ->
+            reviews[index]?.let { review ->
+                ReviewItem(review = review)
+            }
         }
-    }
-}
-
-@Preview
-@Composable
-private fun MentorProfileReviewSectionPreview() {
-    AjarinTheme {
-        MentorProfileReviewSection(reviews = dummyReviews)
     }
 }
 

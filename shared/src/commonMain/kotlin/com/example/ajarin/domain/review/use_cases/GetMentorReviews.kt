@@ -8,11 +8,19 @@ class GetMentorReviews(
     private val repository: ReviewRepository
 ) {
     suspend operator fun invoke(
+        id: String,
         page: Int
-    ): Resource<List<Review>> {
-        return repository
+    ): List<Review> {
+        val result = repository
             .getMentorReviews(
+                id = id,
                 page = page
             )
+
+        return when (result) {
+            is Resource.Error -> emptyList()
+            is Resource.Loading -> emptyList()
+            is Resource.Success -> result.data ?: emptyList()
+        }
     }
 }

@@ -14,6 +14,7 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBackIos
 import androidx.compose.material.icons.filled.Tune
 import androidx.compose.material.rememberBottomSheetScaffoldState
 import androidx.compose.material.rememberBottomSheetState
@@ -21,12 +22,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.ajarin.android.core_ui.theme.AjarinTheme
+import androidx.paging.compose.LazyPagingItems
+import com.example.ajarin.android.home.presentation.AndroidSearchMentorEvent
 import com.example.ajarin.android.search_mentor.presentation.components.FilterMentorSheet
 import com.example.ajarin.android.search_mentor.presentation.components.SearchTextField
 import com.example.ajarin.android.search_mentor.presentation.sections.SearchMentorDefault
+import com.example.ajarin.android.search_mentor.presentation.sections.SearchMentorResult
+import com.example.ajarin.domain.mentor.model.Mentor
 import com.example.ajarin.presentation.searchMentor.SearchMentorEvent
 import com.example.ajarin.presentation.searchMentor.SearchMentorState
 import kotlinx.coroutines.launch
@@ -35,7 +38,9 @@ import kotlinx.coroutines.launch
 @Composable
 fun SearchMentorScreen(
     state: SearchMentorState,
+    mentors: LazyPagingItems<Mentor>,
     onEvent: (SearchMentorEvent) -> Unit,
+    onAndroidEvent: (AndroidSearchMentorEvent) -> Unit,
     onMentorClick: (String) -> Unit
 ) {
     val sheetState = rememberBottomSheetState(initialValue = BottomSheetValue.Collapsed)
@@ -76,28 +81,28 @@ fun SearchMentorScreen(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(4.dp)
             ) {
-//                if (state.mentors.isNotEmpty()) {
-//                    IconButton(
-//                        onClick = {
-//                            onEvent(
-//                                SearchMentorEvent.OnSearchChange("")
-//                            )
-//
-//                            onEvent(
-//                                SearchMentorEvent.OnReset
-//                            )
-//
-//                            onEvent(
-//                                SearchMentorEvent.OnApply
-//                            )
-//                        }
-//                    ) {
-//                        Icon(
-//                            imageVector = Icons.Default.ArrowBackIos,
-//                            contentDescription = "Back"
-//                        )
-//                    }
-//                }
+                if (mentors.itemCount > 0) {
+                    IconButton(
+                        onClick = {
+                            onEvent(
+                                SearchMentorEvent.OnSearchChange("")
+                            )
+
+                            onEvent(
+                                SearchMentorEvent.OnReset
+                            )
+
+                            onEvent(
+                                SearchMentorEvent.OnApply
+                            )
+                        }
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.ArrowBackIos,
+                            contentDescription = "Back"
+                        )
+                    }
+                }
 
                 SearchTextField(
                     modifier = Modifier
@@ -109,9 +114,9 @@ fun SearchMentorScreen(
                         )
                     },
                     onSearch = {
-//                        onEvent(
-//                            SearchMentorEvent.OnSearch
-//                        )
+                        onAndroidEvent(
+                            AndroidSearchMentorEvent.OnSearch
+                        )
                     }
                 )
 
@@ -129,13 +134,13 @@ fun SearchMentorScreen(
                 }
             }
 
-//            if (state.mentors.isNotEmpty()) {
-//                SearchMentorResult(
-//                    mentors = state.mentors,
-//                    state = resultListState,
-//                    onMentorClick = onMentorClick
-//                )
-//            } else {
+            if (mentors.itemCount > 0) {
+                SearchMentorResult(
+                    mentors = mentors,
+                    state = resultListState,
+                    onMentorClick = onMentorClick
+                )
+            } else {
                 SearchMentorDefault(
                     courses = state.courses,
                     onCourseClick = {
@@ -149,19 +154,7 @@ fun SearchMentorScreen(
                     },
                     state = defaultListState
                 )
-            //}
+            }
         }
-    }
-}
-
-@Preview
-@Composable
-private fun SearchMentorScreenPreview() {
-    AjarinTheme {
-        SearchMentorScreen(
-            state = SearchMentorState(),
-            onEvent = {  },
-            onMentorClick = {  }
-        )
     }
 }

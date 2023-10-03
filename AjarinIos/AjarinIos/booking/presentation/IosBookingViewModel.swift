@@ -33,9 +33,11 @@ extension BookingScreen {
         
         init() {
             @Inject var getMentorById: GetMentorById
+            @Inject var createOrder: CreateOrder
             
             self.viewModel = BookingViewModel(
                 getMentorById: getMentorById,
+                createOrder: createOrder,
                 coroutineScope: nil
             )
         }

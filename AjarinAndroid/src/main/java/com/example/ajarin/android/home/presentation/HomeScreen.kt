@@ -13,17 +13,17 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.ajarin.android.core_ui.theme.AjarinTheme
+import androidx.paging.compose.LazyPagingItems
+import com.example.ajarin.android.core_ui.cards.MentorCard
 import com.example.ajarin.android.home.presentation.components.HomeHeader
 import com.example.ajarin.domain.core.model.Course
+import com.example.ajarin.domain.mentor.model.Mentor
 import com.example.ajarin.presentation.home.HomeEvent
 import com.example.ajarin.presentation.home.HomeState
 import kotlinx.coroutines.launch
@@ -31,6 +31,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun HomeScreen(
     state: HomeState,
+    mentors: LazyPagingItems<Mentor>,
+    searchMentors: LazyPagingItems<Mentor>,
     onEvent: (HomeEvent) -> Unit,
     onMentorClick: (String) -> Unit,
     onMessageClick: () -> Unit
@@ -103,41 +105,51 @@ fun HomeScreen(
                 }
             }
 
-            LazyVerticalGrid(
-                modifier = Modifier
-                    .weight(1f),
-                columns = GridCells.Fixed(2),
-                contentPadding = PaddingValues(8.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                state = listState
-            ) {
-//                items(
-//                    items = state.mentors,
-//                    key = { mentor -> mentor.id }
-//                ) { mentor ->
-//                    MentorCard(
-//                        mentor = mentor
-//                    ) {
-//                        onMentorClick(mentor.id)
-//                    }
-//                }
+            if (state.selectedCourse.id == "0") {
+                LazyVerticalGrid(
+                    modifier = Modifier
+                        .weight(1f),
+                    columns = GridCells.Fixed(2),
+                    contentPadding = PaddingValues(8.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    state = listState
+                ) {
+                    items(
+                        count = mentors.itemCount
+                    ) { index ->
+                        mentors[index]?.let { mentor ->
+                            MentorCard(
+                                mentor = mentor
+                            ) {
+                                onMentorClick(mentor.id)
+                            }
+                        }
+                    }
+                }
+            } else {
+                LazyVerticalGrid(
+                    modifier = Modifier
+                        .weight(1f),
+                    columns = GridCells.Fixed(2),
+                    contentPadding = PaddingValues(8.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    state = listState
+                ) {
+                    items(
+                        count = searchMentors.itemCount
+                    ) { index ->
+                        searchMentors[index]?.let { mentor ->
+                            MentorCard(
+                                mentor = mentor
+                            ) {
+                                onMentorClick(mentor.id)
+                            }
+                        }
+                    }
+                }
             }
-        }
-    }
-}
-
-@Preview
-@Composable
-private fun HomeScreenPreview() {
-    AjarinTheme {
-        Surface {
-            HomeScreen(
-                state = HomeState(),
-                onEvent = {  },
-                onMentorClick = {  },
-                onMessageClick = {  }
-            )
         }
     }
 }

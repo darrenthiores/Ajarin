@@ -1,13 +1,11 @@
 package com.example.ajarin.presentation.searchMentor
 
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
-import com.example.ajarin.domain.mentor.use_cases.SearchMentor
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 
 class SearchMentorViewModel(
-    private val searchMentor: SearchMentor,
     coroutineScope: CoroutineScope? = null
 ) {
     private val viewModelScope = coroutineScope ?: CoroutineScope(Dispatchers.Main)

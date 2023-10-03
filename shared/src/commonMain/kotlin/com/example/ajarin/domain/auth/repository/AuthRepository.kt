@@ -14,4 +14,6 @@ interface AuthRepository {
         username: String,
         password: String
     ): Resource<String>
+
+    suspend fun resetToken()
 }

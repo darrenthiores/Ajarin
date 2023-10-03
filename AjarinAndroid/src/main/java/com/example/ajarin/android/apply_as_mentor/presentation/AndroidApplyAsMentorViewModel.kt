@@ -2,6 +2,8 @@ package com.example.ajarin.android.apply_as_mentor.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.ajarin.domain.mentor.use_cases.ApplyAsMentor
+import com.example.ajarin.domain.user.use_cases.GetUser
 import com.example.ajarin.domain.validation.use_cases.ValidateId
 import com.example.ajarin.presentation.applyAsMentor.ApplyAsMentorEvent
 import com.example.ajarin.presentation.applyAsMentor.ApplyAsMentorViewModel
@@ -12,11 +14,15 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AndroidApplyAsMentorViewModel @Inject constructor(
-    private val validateId: ValidateId
+    private val validateId: ValidateId,
+    private val getUser: GetUser,
+    private val applyAsMentor: ApplyAsMentor
 ): ViewModel() {
     private val viewModel by lazy {
         ApplyAsMentorViewModel(
             validateId = validateId,
+            getUser = getUser,
+            applyAsMentor = applyAsMentor,
             coroutineScope = viewModelScope
         )
     }

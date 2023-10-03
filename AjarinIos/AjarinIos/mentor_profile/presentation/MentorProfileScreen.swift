@@ -86,8 +86,15 @@ struct MentorProfileScreen: View {
                     
                     if selectedTab == .review {
                         MentorReview(
-                            reviews: viewModel.state.reviews,
-                            geo: geo
+                            reviews: viewModel.iosState.reviews,
+                            geo: geo,
+                            onAppear: {
+                                if !viewModel.iosState.endReviewReached
+                                    && !viewModel.iosState.isFetchingReviews {
+                                    viewModel.iosOnEvent(event: .FetchReviews(id: id)
+                                    )
+                                }
+                            }
                         )
                         .padding()
                     }

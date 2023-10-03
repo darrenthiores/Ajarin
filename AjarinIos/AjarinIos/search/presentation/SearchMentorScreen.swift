@@ -20,11 +20,11 @@ struct SearchMentorScreen: View {
                             )
                         }
                     ),
-                    filtered: false,//!viewModel.state.mentors.isEmpty,
+                    filtered: !viewModel.iosState.mentors.isEmpty,
                     onSearch: {
-//                        viewModel.onEvent(
-//                            event: .OnSearch()
-//                        )
+                        viewModel.iosOnEvent(
+                            event: .OnSearch
+                        )
                     },
                     onFilter: {
                         showFilter.toggle()
@@ -37,34 +37,36 @@ struct SearchMentorScreen: View {
                         viewModel.onEvent(
                             event: .OnApply()
                         )
+                        
+                        viewModel.iosOnEvent(event: .Clear)
                     }
                 )
                 .padding()
                 
-                ZStack {
+                if viewModel.iosState.mentors.isEmpty {
                     SearchMentorDefault(
                         courses: viewModel.state.courses,
                         onEvent: { event in
                             viewModel.onEvent(
                                 event: event
                             )
+                        },
+                        iosOnEvent: { event in
+                            viewModel.iosOnEvent(event: event)
                         }
                     )
-//                    if viewModel.state.mentors.isEmpty {
-//                        SearchMentorDefault(
-//                            courses: viewModel.state.courses,
-//                            onEvent: { event in
-//                                viewModel.onEvent(
-//                                    event: event
-//                                )
-//                            }
-//                        )
-//                    } else {
-//                        MentorList(
-//                            mentors: viewModel.state.mentors
-//                        )
-//                        .padding(.horizontal)
-//                    }
+                } else {
+                    MentorList(
+                        mentors: viewModel.iosState.mentors,
+                        onAppear: {
+                            if !viewModel.iosState.endMentorReached
+                                && !viewModel.iosState.isFetchingMentors {
+                                viewModel.iosOnEvent(event: .FetchMentor
+                                )
+                            }
+                        }
+                    )
+                    .padding(.horizontal)
                 }
             }
             .navigationTitle("Search Mentor")
@@ -72,11 +74,14 @@ struct SearchMentorScreen: View {
                 MentorFilterSheet(
                     state: viewModel.state,
                     onEvent: { event in
-                        if event == .OnApply() {
-                            showFilter = false
-                        }
-                        
                         viewModel.onEvent(event: event)
+                        
+                        if event == .OnApply() {
+                            viewModel.iosOnEvent(event: .OnSearch)
+                            showFilter = false
+                            
+                            return
+                        }
                     }
                 )
             }

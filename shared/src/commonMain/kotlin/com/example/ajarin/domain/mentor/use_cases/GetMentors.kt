@@ -9,9 +9,15 @@ class GetMentors(
 ) {
     suspend operator fun invoke(
         page: Int
-    ): Resource<List<Mentor>> {
-        return repository.getMentors(
+    ): List<Mentor> {
+        val result = repository.getMentors(
             page = page
         )
+
+        return when (result) {
+            is Resource.Error -> emptyList()
+            is Resource.Loading -> emptyList()
+            is Resource.Success -> result.data ?: emptyList()
+        }
     }
 }

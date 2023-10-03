@@ -15,8 +15,8 @@ class SearchMentor(
         price: String,
         education: String,
         page: Int
-    ): Resource<List<Mentor>> {
-        return repository.searchMentor(
+    ): List<Mentor> {
+        val result = repository.searchMentor(
             name = name,
             education = education,
             rating = rating.toDouble(),
@@ -24,5 +24,11 @@ class SearchMentor(
             price = price,
             page = page
         )
+
+        return when (result) {
+            is Resource.Error -> emptyList()
+            is Resource.Loading -> emptyList()
+            is Resource.Success -> result.data ?: emptyList()
+        }
     }
 }

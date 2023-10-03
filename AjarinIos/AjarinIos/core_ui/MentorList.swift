@@ -3,6 +3,7 @@ import shared
 
 struct MentorList: View {
     let mentors: [Mentor]
+    let onAppear: () -> Void
     
     var body: some View {
         GeometryReader { geo in
@@ -27,6 +28,20 @@ struct MentorList: View {
                             )
                         }
                         .buttonStyle(.plain)
+                        .onAppear {
+                            let index = mentors.firstIndex(
+                                where: { mentors in mentors.id == mentor.id }
+                            )
+                            
+                            if let index = index {
+                                let count = index + 1
+                                
+                                if count == mentors.count
+                                    && count % 15 == 0{
+                                    onAppear()
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -126,7 +141,8 @@ struct MentorList_Previews: PreviewProvider {
                     price: "100.000",
                     priceCategory: "50k-100k"
                 )
-            ]
+            ],
+            onAppear: {  }
         )
     }
 }

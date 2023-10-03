@@ -23,18 +23,18 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.paging.compose.LazyPagingItems
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.ajarin.android.R
 import com.example.ajarin.android.core_ui.components.PrimaryButton
 import com.example.ajarin.android.core_ui.navigation.Route
-import com.example.ajarin.android.core_ui.theme.AjarinTheme
 import com.example.ajarin.android.mentor_profile.presentation.components.MentorProfileHeader
 import com.example.ajarin.android.mentor_profile.presentation.components.MentorProfileTabRow
 import com.example.ajarin.android.mentor_profile.presentation.sections.MentorProfileAboutSection
 import com.example.ajarin.android.mentor_profile.presentation.sections.MentorProfileReviewSection
 import com.example.ajarin.android.mentor_profile.presentation.sections.MentorProfileScheduleSection
+import com.example.ajarin.domain.review.model.Review
 import com.example.ajarin.presentation.mentorProfile.MentorProfileState
 import com.example.ajarin.presentation.mentorProfile.MentorProfileTab
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -45,6 +45,7 @@ import com.google.accompanist.pager.rememberPagerState
 @Composable
 fun MentorProfileScreen(
     state: MentorProfileState,
+    reviews: LazyPagingItems<Review>,
     onBackClick: () -> Unit,
     onBookClick: () -> Unit,
     onChatClick: () -> Unit
@@ -153,7 +154,7 @@ fun MentorProfileScreen(
                             2 -> {
                                 MentorProfileReviewSection(
                                     modifier = Modifier,
-                                    reviews = state.reviews
+                                    reviews = reviews
                                 )
                             }
                         }
@@ -164,15 +165,15 @@ fun MentorProfileScreen(
     }
 }
 
-@Preview
-@Composable
-fun MentorProfileScreenPreview() {
-    AjarinTheme {
-        MentorProfileScreen(
-            state = MentorProfileState(),
-            onBackClick = {  },
-            onBookClick = {  },
-            onChatClick = {  }
-        )
-    }
-}
+//@Preview
+//@Composable
+//fun MentorProfileScreenPreview() {
+//    AjarinTheme {
+//        MentorProfileScreen(
+//            state = MentorProfileState(),
+//            onBackClick = {  },
+//            onBookClick = {  },
+//            onChatClick = {  }
+//        )
+//    }
+//}

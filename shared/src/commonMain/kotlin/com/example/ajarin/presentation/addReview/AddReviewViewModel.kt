@@ -3,6 +3,7 @@ package com.example.ajarin.presentation.addReview
 import com.example.ajarin.domain.core.utils.toCommonFlow
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
 import com.example.ajarin.domain.order.use_cases.GetOrderById
+import com.example.ajarin.domain.review.use_cases.CreateReview
 import com.example.ajarin.domain.utils.Resource
 import com.example.ajarin.domain.utils.UiEvent
 import kotlinx.coroutines.CoroutineScope
@@ -14,6 +15,7 @@ import kotlinx.coroutines.launch
 
 class AddReviewViewModel(
     private val getOrderById: GetOrderById,
+    private val addReview: CreateReview,
     coroutineScope: CoroutineScope? = null
 ) {
     private val viewModelScope = coroutineScope ?: CoroutineScope(Dispatchers.Main)
@@ -34,14 +36,34 @@ class AddReviewViewModel(
                 )
             }
             AddReviewEvent.OnPostReview -> {
-                _state.value = state.value.copy(
-                    isPostSuccess = true
-                )
-
                 viewModelScope.launch {
-                    _uiEvent.send(
-                        UiEvent.Success
+                    val result = addReview(
+                        orderId = state.value.historySession?.id ?: return@launch,
+                        comment = state.value.reviewText,
+                        rating = state.value.rating.toDouble()
                     )
+
+                    when (result) {
+                        is Resource.Error -> {
+                            _state.value = state.value.copy(
+                                isPostError = Error(result.message),
+                                isPosting = false
+                            )
+                        }
+                        is Resource.Loading -> Unit
+                        is Resource.Success -> {
+                            _state.value = state.value.copy(
+                                isPostSuccess = true,
+                                isPosting = false
+                            )
+
+                            viewModelScope.launch {
+                                _uiEvent.send(
+                                    UiEvent.Success
+                                )
+                            }
+                        }
+                    }
                 }
             }
             is AddReviewEvent.OnReviewChange -> {

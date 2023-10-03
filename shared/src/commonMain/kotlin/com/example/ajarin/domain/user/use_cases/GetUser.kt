@@ -7,9 +7,13 @@ import com.example.ajarin.domain.utils.Resource
 class GetUser(
     private val repository: UserRepository
 ) {
-    suspend operator fun invoke(
-        id: String
-    ): Resource<User> {
-        return repository.getUser()
+    suspend operator fun invoke(): User? {
+        val result = repository.getUser()
+
+        return when (result) {
+            is Resource.Error -> null
+            is Resource.Loading -> null
+            is Resource.Success -> result.data
+        }
     }
 }

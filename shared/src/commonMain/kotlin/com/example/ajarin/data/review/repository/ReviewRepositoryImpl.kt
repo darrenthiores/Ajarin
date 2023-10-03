@@ -1,5 +1,6 @@
 package com.example.ajarin.data.review.repository
 
+import com.example.ajarin.data.core.remote.dto.request.IdRequest
 import com.example.ajarin.data.core.utils.ApiResponse
 import com.example.ajarin.data.review.mapper.toReview
 import com.example.ajarin.data.review.remote.ReviewRemoteDataSource
@@ -12,8 +13,14 @@ class ReviewRepositoryImpl(
     private val remoteDataSource: ReviewRemoteDataSource
 ): ReviewRepository {
 
-    override suspend fun getMentorReviews(page: Int): Resource<List<Review>> {
+    override suspend fun getMentorReviews(
+        id: String,
+        page: Int
+    ): Resource<List<Review>> {
         val result = remoteDataSource.getMentorReviews(
+            request = IdRequest(
+                id = id
+            ),
             page = page
         )
 

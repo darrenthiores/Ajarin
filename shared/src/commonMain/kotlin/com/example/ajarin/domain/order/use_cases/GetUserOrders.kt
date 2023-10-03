@@ -9,10 +9,16 @@ class GetUserOrders(
 ) {
     suspend operator fun invoke(
         page: Int
-    ): Resource<List<Order>> {
-        return repository
+    ): List<Order> {
+        val result = repository
             .getUserOrders(
                 page = page
             )
+
+        return when (result) {
+            is Resource.Error -> emptyList()
+            is Resource.Loading -> emptyList()
+            is Resource.Success -> result.data ?: emptyList()
+        }
     }
 }

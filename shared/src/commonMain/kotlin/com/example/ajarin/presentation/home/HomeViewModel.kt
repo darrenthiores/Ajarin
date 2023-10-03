@@ -1,8 +1,6 @@
 package com.example.ajarin.presentation.home
 
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
-import com.example.ajarin.domain.mentor.use_cases.GetMentors
-import com.example.ajarin.domain.mentor.use_cases.SearchMentor
 import com.example.ajarin.domain.message.use_cases.GetUnreadCount
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -11,8 +9,6 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
-    private val getMentors: GetMentors,
-    private val searchMentor: SearchMentor,
     private val getUnreadCount: GetUnreadCount,
     coroutineScope: CoroutineScope? = null
 ) {

@@ -14,7 +14,10 @@ extension ProfileScreen {
         private var handle: DisposableHandle?
         
         init() {
+            @Inject var getUser: GetUser
+            
             self.viewModel = ProfileViewModel(
+                getUser: getUser,
                 coroutineScope: nil
             )
         }

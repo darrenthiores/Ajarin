@@ -26,6 +26,8 @@ class Login(
                     refreshToken = result.data ?: "",
                 )
 
+                repository.resetToken()
+
                 Resource.Success(Unit)
             }
         }

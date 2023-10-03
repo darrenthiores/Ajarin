@@ -31,9 +31,11 @@ extension AddReviewScreen {
         
         init() {
             @Inject var getOrderById: GetOrderById
+            @Inject var createReview: CreateReview
             
             self.viewModel = AddReviewViewModel(
                 getOrderById: getOrderById,
+                addReview: createReview,
                 coroutineScope: nil
             )
         }

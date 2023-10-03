@@ -12,4 +12,14 @@ class HistoryViewModel(
 
     private val _state = MutableStateFlow(HistoryState())
     val state = _state.toCommonStateFlow()
+
+    fun onEvent(event: HistoryEvent) {
+        when (event) {
+            is HistoryEvent.OnUpdateIsMentor -> {
+                _state.value = state.value.copy(
+                    isMentor = event.isMentor
+                )
+            }
+        }
+    }
 }

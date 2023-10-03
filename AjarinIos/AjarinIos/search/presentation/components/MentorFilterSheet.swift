@@ -34,7 +34,7 @@ struct MentorFilterSheet: View {
                     } label: {
                         FilterItem(
                             text: "⭐ 4 keatas",
-                            isSelected: state.rating != 0
+                            isSelected: state.tempRating != 0
                         )
                     }
                 }
@@ -146,7 +146,6 @@ struct MentorFilterSheet_Previews: PreviewProvider {
         MentorFilterSheet(
             state: SearchMentorState(
                 searchText: "",
-                //mentors: [],
                 courses: [
                     Course(
                         id: "1",

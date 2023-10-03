@@ -3,6 +3,8 @@ package com.example.ajarin.presentation.booking
 import com.example.ajarin.domain.core.utils.toCommonFlow
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
 import com.example.ajarin.domain.mentor.use_cases.GetMentorById
+import com.example.ajarin.domain.order.use_cases.CreateOrder
+import com.example.ajarin.domain.utils.LocalDateConverter
 import com.example.ajarin.domain.utils.Resource
 import com.example.ajarin.domain.utils.UiEvent
 import kotlinx.coroutines.CoroutineScope
@@ -14,6 +16,7 @@ import kotlinx.coroutines.launch
 
 class BookingViewModel(
     private val getMentorById: GetMentorById,
+    private val createOrder: CreateOrder,
     coroutineScope: CoroutineScope? = null
 ) {
     private val viewModelScope = coroutineScope ?: CoroutineScope(Dispatchers.Main)
@@ -53,14 +56,35 @@ class BookingViewModel(
                     return
                 }
 
-                _state.value = state.value.copy(
-                    bookingSuccess = true
-                )
-
                 viewModelScope.launch {
-                    _uiEvent.send(
-                        UiEvent.Success
+                    val stateValue = state.value
+                    val result = createOrder(
+                        mentorId = stateValue.mentor?.id ?: return@launch,
+                        courseId = stateValue.course?.id ?: return@launch,
+                        date = LocalDateConverter.localDateToEpoch(stateValue.date ?: return@launch),
+                        sessionId = stateValue.schedule?.id ?: return@launch,
+                        paymentMethodId = stateValue.paymentMethod?.id ?: return@launch
                     )
+
+                    when (result) {
+                        is Resource.Error -> {
+                            _state.value = state.value.copy(
+                                isError = Error(result.message)
+                            )
+                        }
+                        is Resource.Loading -> Unit
+                        is Resource.Success -> {
+                            _state.value = state.value.copy(
+                                bookingSuccess = true
+                            )
+
+                            viewModelScope.launch {
+                                _uiEvent.send(
+                                    UiEvent.Success
+                                )
+                            }
+                        }
+                    }
                 }
             }
             is BookingEvent.PickCourse -> {

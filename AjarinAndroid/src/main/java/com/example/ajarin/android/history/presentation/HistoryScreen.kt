@@ -5,11 +5,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.ajarin.android.core_ui.theme.AjarinTheme
+import androidx.paging.compose.LazyPagingItems
 import com.example.ajarin.android.history.presentation.components.HistoryHeader
 import com.example.ajarin.android.history.presentation.sections.MentorHistorySection
 import com.example.ajarin.android.history.presentation.sections.UserHistorySection
+import com.example.ajarin.domain.order.model.Order
 import com.example.ajarin.presentation.history.HistoryState
 import com.example.ajarin.presentation.history.HistoryTab
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -20,7 +20,8 @@ import com.google.accompanist.pager.rememberPagerState
 @Composable
 fun HistoryScreen(
     state: HistoryState,
-    isMentor: Boolean = true,
+    userOrders: LazyPagingItems<Order>,
+    mentorOrders: LazyPagingItems<Order>,
     onUserClick: (String, String) -> Unit,
     onMentorClick: (String, String) -> Unit,
     onReviewClick: (String) -> Unit,
@@ -32,13 +33,13 @@ fun HistoryScreen(
         topBar = {
             HistoryHeader(
                 title = "History",
-                isMentor = isMentor,
+                isMentor = state.isMentor,
                 pagerState = pagerState,
                 onBackClick = onBackClick
             )
         }
     ) { paddingValues ->
-        if(isMentor) {
+        if(state.isMentor) {
             HorizontalPager(
                 count = HistoryTab.values().size,
                 state = pagerState,
@@ -49,14 +50,14 @@ fun HistoryScreen(
                 when(page) {
                     0 -> {
                         UserHistorySection(
-                            state = state,
+                            orders = userOrders,
                             onItemClick = onUserClick,
                             onReviewClick = onReviewClick
                         )
                     }
                     1 -> {
                         MentorHistorySection(
-                            state = state,
+                            orders = mentorOrders,
                             onItemClick =onMentorClick
                         )
                     }
@@ -66,25 +67,10 @@ fun HistoryScreen(
             UserHistorySection(
                 modifier = Modifier
                     .padding(paddingValues),
-                state = state,
+                orders = userOrders,
                 onItemClick = onUserClick,
                 onReviewClick = onReviewClick
             )
         }
-    }
-}
-
-@Preview
-@Composable
-private fun HistoryScreenPreview() {
-    AjarinTheme {
-        HistoryScreen(
-            state = HistoryState(),
-            isMentor = true,
-            onUserClick = { _, _ -> },
-            onMentorClick = { _, _ -> },
-            onBackClick = {  },
-            onReviewClick = {  }
-        )
     }
 }

@@ -12,6 +12,7 @@ import shared
 struct MentorReview: View {
     let reviews: [Review]
     let geo: GeometryProxy
+    let onAppear: () -> Void
     
     var body: some View {
         LazyVStack {
@@ -21,6 +22,20 @@ struct MentorReview: View {
                     geo: geo,
                     onImageClick: { index in }
                 )
+                .onAppear {
+                    let index = reviews.firstIndex(
+                        where: { reviews in reviews.reviewId == review.reviewId }
+                    )
+                    
+                    if let index = index {
+                        let count = index + 1
+                        
+                        if count == reviews.count
+                            && count % 15 == 0{
+                            onAppear()
+                        }
+                    }
+                }
             }
         }
     }
@@ -31,7 +46,8 @@ struct MentorReview_Previews: PreviewProvider {
         GeometryReader { geo in
             MentorReview(
                 reviews: [],
-                geo: geo
+                geo: geo,
+                onAppear: {  }
             )
         }
     }

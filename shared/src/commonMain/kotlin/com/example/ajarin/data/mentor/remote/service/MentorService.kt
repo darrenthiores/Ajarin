@@ -18,6 +18,8 @@ interface MentorService {
 
     companion object {
         private const val BASE_URL = "http://10.0.2.2:8080"
+        private const val LOCAL_BASE_URL = "http://10.0.2.2:8080"
+        private const val IOS_BASE_URL = "http://0.0.0.0:8080"
         const val MENTOR_URL = "$BASE_URL/mentor"
         const val APPLY_AS_MENTOR_URL = "$BASE_URL/mentor/register"
         const val SEARCH_MENTOR_URL = "$BASE_URL/mentor/search"

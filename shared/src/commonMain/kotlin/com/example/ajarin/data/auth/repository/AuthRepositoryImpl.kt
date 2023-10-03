@@ -46,4 +46,8 @@ class AuthRepositoryImpl(
             is ApiResponse.Success -> Resource.Success(result.data.token)
         }
     }
+
+    override suspend fun resetToken() {
+        remoteDataSource.resetToken()
+    }
 }

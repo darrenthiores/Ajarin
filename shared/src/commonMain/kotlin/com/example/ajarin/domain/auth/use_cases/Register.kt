@@ -30,6 +30,8 @@ class Register(
                     refreshToken = result.data ?: "",
                 )
 
+                repository.resetToken()
+
                 Resource.Success(Unit)
             }
         }

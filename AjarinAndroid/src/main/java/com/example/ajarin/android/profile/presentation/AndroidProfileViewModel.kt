@@ -3,6 +3,7 @@ package com.example.ajarin.android.profile.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ajarin.android.core.domain.preferences.Preferences
+import com.example.ajarin.domain.user.use_cases.GetUser
 import com.example.ajarin.domain.utils.UiEvent
 import com.example.ajarin.presentation.profile.ProfileEvent
 import com.example.ajarin.presentation.profile.ProfileViewModel
@@ -14,10 +15,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AndroidProfileViewModel @Inject constructor(
+    private val getUser: GetUser,
     private val preferences: Preferences,
 ): ViewModel() {
     private val viewModel by lazy {
         ProfileViewModel(
+            getUser = getUser,
             coroutineScope = viewModelScope
         )
     }

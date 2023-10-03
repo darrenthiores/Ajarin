@@ -5,6 +5,7 @@ import com.example.ajarin.domain.utils.Resource
 
 interface ReviewRepository {
     suspend fun getMentorReviews(
+        id: String,
         page: Int
     ): Resource<List<Review>>
     suspend fun createReview(
