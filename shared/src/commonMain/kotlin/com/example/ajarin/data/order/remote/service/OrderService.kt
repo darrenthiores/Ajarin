@@ -14,8 +14,8 @@ interface OrderService {
     ): BaseResponse<OrderResponse>
     suspend fun createOrder(
         request: CreateOrderRequest
-    ): BaseResponse<Any?>
-    suspend fun updateOrder(request: UpdateOrderRequest): BaseResponse<Any?>
+    ): BaseResponse<String?>
+    suspend fun updateOrder(request: UpdateOrderRequest): BaseResponse<String?>
 
     companion object {
         private const val BASE_URL = "http://10.0.2.2:8080"

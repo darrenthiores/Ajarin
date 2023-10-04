@@ -44,7 +44,6 @@ import com.example.ajarin.presentation.profile.ProfileState
 @Composable
 fun ProfileScreen(
     state: ProfileState,
-    isMentor: Boolean = true,
     onEvent: (ProfileEvent) -> Unit,
     onApplyAsMentorClick: () -> Unit,
     onBankAccountClick: () -> Unit,
@@ -117,7 +116,7 @@ fun ProfileScreen(
             }
         }
 
-        if (isMentor) {
+        if (state.user?.roleType == "2") {
             item {
                 Spacer(modifier = Modifier.height(16.dp))
 
@@ -130,7 +129,7 @@ fun ProfileScreen(
             }
         }
 
-        if (!isMentor) {
+        if (state.user?.roleType == "1") {
             item {
                 Spacer(modifier = Modifier.height(16.dp))
 
@@ -170,7 +169,7 @@ fun ProfileScreen(
 
             }
 
-            if (isMentor) {
+            if (state.user?.roleType == "2") {
                 Spacer(modifier = Modifier.height(8.dp))
 
                 ProfileButton(

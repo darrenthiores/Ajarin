@@ -1,6 +1,7 @@
 package com.example.ajarin.data.mentor.remote.service
 
 import com.example.ajarin.data.core.remote.dto.request.IdRequest
+import com.example.ajarin.data.core.remote.dto.response.ApplyResponse
 import com.example.ajarin.data.core.remote.dto.response.BaseResponse
 import com.example.ajarin.data.mentor.remote.dto.request.ApplyAsMentorRequest
 import com.example.ajarin.data.mentor.remote.dto.request.SearchMentorRequest
@@ -62,7 +63,7 @@ class KtorMentorService(
         return result.body()
     }
 
-    override suspend fun applyAsMentor(request: ApplyAsMentorRequest): BaseResponse<Any?> {
+    override suspend fun applyAsMentor(request: ApplyAsMentorRequest): ApplyResponse {
         val result = client.post {
             url(MentorService.APPLY_AS_MENTOR_URL)
             contentType(ContentType.Application.Json)

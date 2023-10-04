@@ -1,6 +1,7 @@
 package com.example.ajarin.data.mentor.remote.service
 
 import com.example.ajarin.data.core.remote.dto.request.IdRequest
+import com.example.ajarin.data.core.remote.dto.response.ApplyResponse
 import com.example.ajarin.data.core.remote.dto.response.BaseResponse
 import com.example.ajarin.data.mentor.remote.dto.request.ApplyAsMentorRequest
 import com.example.ajarin.data.mentor.remote.dto.request.SearchMentorRequest
@@ -14,7 +15,7 @@ interface MentorService {
         request: SearchMentorRequest,
         page: Int
     ): BaseResponse<List<MentorResponse>>
-    suspend fun applyAsMentor(request: ApplyAsMentorRequest): BaseResponse<Any?>
+    suspend fun applyAsMentor(request: ApplyAsMentorRequest): ApplyResponse
 
     companion object {
         private const val BASE_URL = "http://10.0.2.2:8080"

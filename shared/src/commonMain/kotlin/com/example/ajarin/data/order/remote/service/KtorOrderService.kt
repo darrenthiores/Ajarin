@@ -46,7 +46,7 @@ class KtorOrderService(
         return result.body()
     }
 
-    override suspend fun createOrder(request: CreateOrderRequest): BaseResponse<Any?> {
+    override suspend fun createOrder(request: CreateOrderRequest): BaseResponse<String?> {
         val result = client.post {
             url(OrderService.CREATE_ORDER_URL)
             contentType(ContentType.Application.Json)
@@ -57,7 +57,7 @@ class KtorOrderService(
         return result.body()
     }
 
-    override suspend fun updateOrder(request: UpdateOrderRequest): BaseResponse<Any?> {
+    override suspend fun updateOrder(request: UpdateOrderRequest): BaseResponse<String?> {
         val result = client.post {
             url(OrderService.UPDATE_ORDER_URL)
             contentType(ContentType.Application.Json)

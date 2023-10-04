@@ -24,7 +24,8 @@ import java.util.Calendar
 
 @Composable
 fun MentorProfileScheduleSection(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    sessions: List<Session>
 ) {
     val currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
     val currentSession = Session.currentSession(currentHour)
@@ -66,7 +67,9 @@ fun MentorProfileScheduleSection(
 @Composable
 private fun MentorProfileScheduleSectionPreview() {
     AjarinTheme {
-        MentorProfileScheduleSection()
+        MentorProfileScheduleSection(
+            sessions = sessions
+        )
     }
 }
 

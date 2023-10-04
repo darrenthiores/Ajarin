@@ -34,6 +34,7 @@ import com.example.ajarin.android.mentor_profile.presentation.components.MentorP
 import com.example.ajarin.android.mentor_profile.presentation.sections.MentorProfileAboutSection
 import com.example.ajarin.android.mentor_profile.presentation.sections.MentorProfileReviewSection
 import com.example.ajarin.android.mentor_profile.presentation.sections.MentorProfileScheduleSection
+import com.example.ajarin.domain.order.model.sessions
 import com.example.ajarin.domain.review.model.Review
 import com.example.ajarin.presentation.mentorProfile.MentorProfileState
 import com.example.ajarin.presentation.mentorProfile.MentorProfileTab
@@ -148,7 +149,9 @@ fun MentorProfileScreen(
                             }
 
                             1 -> {
-                                MentorProfileScheduleSection()
+                                MentorProfileScheduleSection(
+                                    sessions = sessions
+                                )
                             }
 
                             2 -> {

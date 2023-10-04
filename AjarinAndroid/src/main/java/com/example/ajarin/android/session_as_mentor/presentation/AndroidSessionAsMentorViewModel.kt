@@ -4,6 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ajarin.domain.order.use_cases.GetOrderById
+import com.example.ajarin.domain.order.use_cases.UpdateOrder
 import com.example.ajarin.domain.user.use_cases.GetUserById
 import com.example.ajarin.presentation.sessionAsMentor.SessionAsMentorEvent
 import com.example.ajarin.presentation.sessionAsMentor.SessionAsMentorViewModel
@@ -14,6 +15,7 @@ import javax.inject.Inject
 class AndroidSessionAsMentorViewModel @Inject constructor(
     private val getOrderById: GetOrderById,
     private val getUserById: GetUserById,
+    private val updateOrder: UpdateOrder,
     savedStateHandle: SavedStateHandle
 ): ViewModel() {
 
@@ -21,6 +23,7 @@ class AndroidSessionAsMentorViewModel @Inject constructor(
         SessionAsMentorViewModel(
             getOrderById = getOrderById,
             getUserById = getUserById,
+            updateOrder = updateOrder,
             coroutineScope = viewModelScope
         )
     }
