@@ -1,5 +1,8 @@
 package com.example.ajarin.android.profile.presentation
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ajarin.android.core.domain.preferences.Preferences
@@ -16,7 +19,7 @@ import javax.inject.Inject
 @HiltViewModel
 class AndroidProfileViewModel @Inject constructor(
     private val getUser: GetUser,
-    private val preferences: Preferences,
+    private val preferences: Preferences
 ): ViewModel() {
     private val viewModel by lazy {
         ProfileViewModel(
@@ -29,6 +32,12 @@ class AndroidProfileViewModel @Inject constructor(
     val uiEvent = _uiEvent.receiveAsFlow()
 
     val state = viewModel.state
+
+    var hasPin by mutableStateOf(false)
+
+    fun init() {
+        hasPin = preferences.loadHasPin()
+    }
 
     fun onEvent(event: ProfileEvent) {
         if (event == ProfileEvent.LogOut) {

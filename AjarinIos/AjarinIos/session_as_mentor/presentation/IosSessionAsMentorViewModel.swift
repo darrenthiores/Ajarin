@@ -34,10 +34,12 @@ extension SessionAsMentorScreen {
         init() {
             @Inject var getOrderById: GetOrderById
             @Inject var getUserById: GetUserById
+            @Inject var updateOrder: UpdateOrder
             
             self.viewModel = SessionAsMentorViewModel(
                 getOrderById: getOrderById,
                 getUserById: getUserById,
+                updateOrder: updateOrder,
                 coroutineScope: nil
             )
         }

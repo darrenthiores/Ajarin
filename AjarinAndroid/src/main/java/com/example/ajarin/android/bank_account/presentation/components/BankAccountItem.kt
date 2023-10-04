@@ -75,7 +75,7 @@ fun BankAccountItem(
             horizontalArrangement = Arrangement.End
         ) {
             IconButton(
-                onClick = { /*TODO*/ }
+                onClick = { }
             ) {
                 Icon(
                     imageVector = Icons.Rounded.Settings,

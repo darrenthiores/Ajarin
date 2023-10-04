@@ -270,6 +270,10 @@ fun Ajarin(
                 val state by viewModel.state.collectAsState()
 
                 LaunchedEffect(key1 = true) {
+                    viewModel.init()
+                }
+
+                LaunchedEffect(key1 = true) {
                     viewModel.uiEvent.collect { event ->
                         when(event) {
                             is UiEvent.Success -> {
@@ -291,7 +295,11 @@ fun Ajarin(
                         navController.navigate(Route.ApplyAsMentor.name)
                     },
                     onBankAccountClick = {
-                        navController.navigate(Route.BankAccount.name)
+                        if (viewModel.hasPin) {
+                            navController.navigate(Route.BankAccount.name)
+                        } else {
+                            navController.navigate(Route.AddPin.name)
+                        }
                     },
                     onWithdrawClick = {
                         navController.navigate(Route.Withdraw.name)
@@ -505,12 +513,6 @@ fun Ajarin(
                     Timber.d("INIT BANK ACCOUNT")
                 }
 
-                LaunchedEffect(viewModel.hasPin) {
-                    if (!viewModel.hasPin) {
-                        navController.navigate(Route.AddPin.name)
-                    }
-                }
-
                 BankAccountScreen(
                     state = state,
                     onBackClick = {
@@ -555,7 +557,11 @@ fun Ajarin(
                     viewModel.uiEvent.collect { event ->
                         when(event) {
                             is UiEvent.Success -> {
-                                navController.navigateUp()
+                                navController.navigate(Route.BankAccount.name) {
+                                    popUpTo(Route.AddPin.name) {
+                                        inclusive = true
+                                    }
+                                }
                             }
                             else -> Unit
                         }
@@ -566,11 +572,7 @@ fun Ajarin(
                     state = state,
                     onEvent = viewModel::onEvent,
                     onBackClick = {
-                        navController.navigate(TopLevelDestination.Profile.name) {
-                            popUpTo(TopLevelDestination.Profile.name) {
-                                inclusive = true
-                            }
-                        }
+                        navController.navigateUp()
                     }
                 )
             }

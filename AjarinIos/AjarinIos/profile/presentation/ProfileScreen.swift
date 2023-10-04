@@ -2,8 +2,6 @@ import SwiftUI
 import shared
 
 struct ProfileScreen: View {
-    let isMentor: Bool = false
-    
     @StateObject private var viewModel = IosProfileViewModel()
     @Environment(\.colorScheme) var colorScheme
     
@@ -52,7 +50,7 @@ struct ProfileScreen: View {
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(.hidden)
                 
-                if !isMentor {
+                if viewModel.state.user?.roleType == "1" {
                     NavigationLink {
                         ApplyAsMentorScreen()
                     } label: {
@@ -76,7 +74,7 @@ struct ProfileScreen: View {
                     .listRowSeparator(.hidden)
                 }
                 
-                if isMentor {
+                if viewModel.state.user?.roleType == "2" {
                     NavigationLink {
                         WithdrawScreen()
                     } label: {
@@ -117,7 +115,7 @@ struct ProfileScreen: View {
                         )
                     )
                     
-                    if isMentor {
+                    if viewModel.state.user?.roleType == "2" {
                         NavigationLink {
                             BankAccountScreen()
                         } label: {
