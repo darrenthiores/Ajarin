@@ -20,5 +20,6 @@ data class BookingState(
     val scheduleError: Error? = null,
     val paymentMethod: PaymentMethod? = null,
     val paymentMethodError: Error? = null,
+    val platformFee: String? = null,
     val bookingSuccess: Boolean = false
 )

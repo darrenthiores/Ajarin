@@ -136,10 +136,15 @@ class BookingViewModel(
                 }
                 is Resource.Loading -> Unit
                 is Resource.Success -> {
+                    val mentorPrice = result.data?.price?.toIntOrNull() ?: 0
+                    val fee = mentorPrice * 0.1
+                    val fixedFee = if (fee == 0.0) "5000" else fee.toString()
+
                     _state.value = state.value.copy(
                         isError = null,
                         isFetching = false,
-                        mentor = result.data
+                        mentor = result.data,
+                        platformFee = fixedFee
                     )
                 }
             }

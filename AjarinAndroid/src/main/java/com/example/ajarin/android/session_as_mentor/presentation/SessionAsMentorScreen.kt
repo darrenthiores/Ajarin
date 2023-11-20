@@ -286,7 +286,7 @@ fun SessionAsMentorScreen(
                     )
 
                     Text(
-                        text = "Rp. 0",
+                        text = "Rp. 5.000",
                         style = MaterialTheme.typography.subtitle1
                     )
                 }

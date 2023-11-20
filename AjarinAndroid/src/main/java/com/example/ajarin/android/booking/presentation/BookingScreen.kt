@@ -282,7 +282,7 @@ fun BookingScreen(
                         )
 
                         Text(
-                            text = "Rp. 0",
+                            text = "Rp. ${state.platformFee}",
                             style = MaterialTheme.typography.subtitle1
                         )
                     }
