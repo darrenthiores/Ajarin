@@ -35,18 +35,6 @@ class ApplyAsMentorViewModel (
         when(event) {
             ApplyAsMentorEvent.OnApply -> {
                 viewModelScope.launch {
-                    _state.value = state.value.copy(
-                        applySuccess = true
-                    )
-
-                    viewModelScope.launch {
-                        _uiEvent.send(
-                            UiEvent.Success
-                        )
-                    }
-
-                    return@launch
-
                     val stateValue = state.value
                     val user = getUser()
                     val result = applyAsMentor(

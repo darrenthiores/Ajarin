@@ -22,13 +22,6 @@ class ProfileViewModel(
                 isFetchingUser = true
             )
 
-            _state.value = state.value.copy(
-                isFetchingUser = false,
-                user = dummyUsers.firstOrNull()
-            )
-
-            return@launch
-
             val result = getUser()
             _state.value = state.value.copy(
                 isFetchingUser = false,

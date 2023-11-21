@@ -1,7 +1,6 @@
 package com.example.ajarin.presentation.mentorProfile
 
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
-import com.example.ajarin.domain.mentor.model.dummyMentors
 import com.example.ajarin.domain.mentor.use_cases.GetMentorById
 import com.example.ajarin.domain.utils.Resource
 import kotlinx.coroutines.CoroutineScope
@@ -20,18 +19,6 @@ class MentorProfileViewModel(
 
     fun initMentor(id: String) {
         viewModelScope.launch {
-            _state.value = state.value.copy(
-                isFetching = true
-            )
-
-            _state.value = state.value.copy(
-                isError = null,
-                isFetching = false,
-                mentor = dummyMentors.firstOrNull { it.id == id }
-            )
-
-            return@launch
-
             when(
                 val result = getMentorById(id)
             ) {

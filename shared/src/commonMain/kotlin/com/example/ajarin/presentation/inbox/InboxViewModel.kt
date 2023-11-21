@@ -2,8 +2,8 @@ package com.example.ajarin.presentation.inbox
 
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
 import com.example.ajarin.domain.inbox.use_cases.GetInbox
-import com.example.ajarin.domain.mentor.model.dummyMentors
 import com.example.ajarin.domain.mentor.use_cases.GetMentorById
+import com.example.ajarin.domain.utils.Resource
 import com.example.ajarin.presentation.inbox.model.UiMessage
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -43,24 +43,19 @@ class InboxViewModel(
                     _state.value = state.value.copy(
                         inbox = it.map { message ->
                             async {
-//                                when (
-//                                    val result = getMentorById(id = message.participantId)
-//                                ) {
-//                                    is Resource.Error -> null
-//                                    is Resource.Loading -> null
-//                                    is Resource.Success -> {
-//                                        UiMessage(
-//                                            inboxId = message.id,
-//                                            lastMessage = message.lastMessage,
-//                                            mentor = result.data ?: return@async null
-//                                        )
-//                                    }
-//                                }
-                                UiMessage(
-                                    inboxId = message.id,
-                                    lastMessage = message.lastMessage,
-                                    mentor = dummyMentors.firstOrNull { it.id == message.participantId } ?: return@async null
-                                )
+                                when (
+                                    val result = getMentorById(id = message.participantId)
+                                ) {
+                                    is Resource.Error -> null
+                                    is Resource.Loading -> null
+                                    is Resource.Success -> {
+                                        UiMessage(
+                                            inboxId = message.id,
+                                            lastMessage = message.lastMessage,
+                                            mentor = result.data ?: return@async null
+                                        )
+                                    }
+                                }
                             }
                         }
                         .awaitAll()

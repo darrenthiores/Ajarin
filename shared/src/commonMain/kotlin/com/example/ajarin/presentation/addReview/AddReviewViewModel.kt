@@ -2,7 +2,6 @@ package com.example.ajarin.presentation.addReview
 
 import com.example.ajarin.domain.core.utils.toCommonFlow
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
-import com.example.ajarin.domain.order.model.dummyHistory
 import com.example.ajarin.domain.order.use_cases.GetOrderById
 import com.example.ajarin.domain.review.use_cases.CreateReview
 import com.example.ajarin.domain.utils.Resource
@@ -38,19 +37,6 @@ class AddReviewViewModel(
             }
             AddReviewEvent.OnPostReview -> {
                 viewModelScope.launch {
-                    _state.value = state.value.copy(
-                        isPostSuccess = true,
-                        isPosting = false
-                    )
-
-                    viewModelScope.launch {
-                        _uiEvent.send(
-                            UiEvent.Success
-                        )
-                    }
-
-                    return@launch
-
                     val result = addReview(
                         orderId = state.value.historySession?.id ?: return@launch,
                         comment = state.value.reviewText,
@@ -95,14 +81,6 @@ class AddReviewViewModel(
             _state.value = state.value.copy(
                 isSessionLoading = true
             )
-
-            _state.value = state.value.copy(
-                historySession = dummyHistory.firstOrNull { it.id == sessionId },
-                isSessionLoading = false,
-                isSessionError = null
-            )
-
-            return@launch
 
             val result = getOrderById(
                 id = sessionId
