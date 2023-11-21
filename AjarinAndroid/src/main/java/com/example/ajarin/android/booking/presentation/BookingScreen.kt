@@ -92,6 +92,14 @@ fun BookingScreen(
         dDay
     )
 
+    val mentorPrice = state
+        .mentor
+        ?.price
+        ?.replace(".", "")
+        ?.toIntOrNull() ?: 0
+    val fee = state.platformFee?.toInt() ?: 0
+    val totalPrice = mentorPrice + fee
+
     BottomSheetScaffold(
         topBar = {
             CommonHeader(
@@ -150,7 +158,7 @@ fun BookingScreen(
         Scaffold(
             bottomBar = {
                 BookingBottomBar(
-                    total = state.mentor?.price ?: "0",
+                    total = totalPrice.toString(),
                     onPay = {
                         onEvent(
                             BookingEvent.Book

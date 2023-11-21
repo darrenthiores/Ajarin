@@ -1,5 +1,6 @@
 package com.example.ajarin.android.home.presentation
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -10,7 +11,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.grid.rememberLazyGridState
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
@@ -27,13 +29,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.LazyPagingItems
-import coil.compose.AsyncImage
-import coil.request.ImageRequest
 import com.example.ajarin.android.R
 import com.example.ajarin.android.core_ui.cards.FixedMentorCard
 import com.example.ajarin.android.home.presentation.components.CoursesList
 import com.example.ajarin.android.home.presentation.components.HomeHeader
+import com.example.ajarin.domain.core.model.Course
 import com.example.ajarin.domain.mentor.model.Mentor
+import com.example.ajarin.domain.mentor.model.dummyMentors
 import com.example.ajarin.presentation.home.HomeEvent
 import com.example.ajarin.presentation.home.HomeState
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -46,10 +48,13 @@ fun HomeScreen(
     mentors: LazyPagingItems<Mentor>,
     searchMentors: LazyPagingItems<Mentor>,
     onEvent: (HomeEvent) -> Unit,
+    onCourseClick: (Course) -> Unit,
     onMentorClick: (String) -> Unit,
     onMessageClick: () -> Unit
 ) {
-    val listState = rememberLazyGridState()
+    val listState = rememberLazyListState()
+    val topPickListState = rememberLazyListState()
+    val recommendationListState = rememberLazyListState()
     val coroutineScope = rememberCoroutineScope()
     val context = LocalContext.current
 
@@ -73,7 +78,8 @@ fun HomeScreen(
             verticalArrangement = Arrangement.spacedBy(32.dp),
             contentPadding = PaddingValues(
                 vertical = 24.dp
-            )
+            ),
+            state = listState
         ) {
             item {
                 HorizontalPager(
@@ -82,8 +88,15 @@ fun HomeScreen(
                         horizontal = 24.dp
                     ),
                     itemSpacing = 12.dp
-                ) {
-                    AsyncImage(
+                ) { index ->
+                    val painter = when (index) {
+                        0 -> R.drawable.car_1
+                        1 -> R.drawable.car_2
+                        2 -> R.drawable.car_3
+                        else -> R.drawable.ic_no_picture
+                    }
+
+                    Image(
                         modifier = Modifier
                             .width(screenWidth.dp)
                             .height(screenHeight.dp)
@@ -91,13 +104,7 @@ fun HomeScreen(
                                 RoundedCornerShape(8.dp)
                             ),
                         contentScale = ContentScale.Crop,
-                        model = ImageRequest
-                            .Builder(context)
-                            .data("")
-                            .crossfade(true)
-                            .build(),
-                        placeholder = painterResource(id = R.drawable.ic_no_picture),
-                        error = painterResource(id = R.drawable.ic_no_picture),
+                        painter = painterResource(id = painter),
                         contentDescription = null
                     )
                 }
@@ -119,7 +126,7 @@ fun HomeScreen(
 
                 CoursesList(
                     courses = state.courses,
-                    onClick = {  }
+                    onClick = onCourseClick
                 )
             }
 
@@ -144,17 +151,66 @@ fun HomeScreen(
                     verticalAlignment = Alignment.CenterVertically,
                     contentPadding = PaddingValues(
                         horizontal = 24.dp
+                    ),
+                    state = topPickListState
+                ) {
+//                    items(
+//                        items = mentors,
+//                        key = { mentor -> mentor.id }
+//                    ) { mentor ->
+//                        mentor?.let {
+//                            FixedMentorCard(
+//                                mentor = mentor
+//                            ) {
+//                                onMentorClick(mentor.id)
+//                            }
+//                        }
+//                    }
+                    items(
+                        items = dummyMentors,
+                        key = { mentor -> mentor.id }
+                    ) { mentor ->
+                        FixedMentorCard(
+                            mentor = mentor
+                        ) {
+                            onMentorClick(mentor.id)
+                        }
+                    }
+                }
+            }
+
+            item {
+                Text(
+                    modifier = Modifier
+                        .padding(
+                            horizontal = 24.dp
+                        ),
+                    text = "Our Recommendation",
+                    style = MaterialTheme.typography.subtitle1.copy(
+                        fontWeight = FontWeight.Bold
                     )
+                )
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                LazyRow(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    contentPadding = PaddingValues(
+                        horizontal = 24.dp
+                    ),
+                    state = recommendationListState
                 ) {
                     items(
-                        count = mentors.itemCount
-                    ) { index ->
-                        mentors[index]?.let { mentor ->
-                            FixedMentorCard(
-                                mentor = mentor
-                            ) {
-                                onMentorClick(mentor.id)
-                            }
+                        items = dummyMentors,
+                        key = { mentor -> mentor.id }
+                    ) { mentor ->
+                        FixedMentorCard(
+                            mentor = mentor
+                        ) {
+                            onMentorClick(mentor.id)
                         }
                     }
                 }

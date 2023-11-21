@@ -3,10 +3,10 @@ package com.example.ajarin.android.history.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
-import androidx.paging.cachedIn
 import com.example.ajarin.android.core.domain.use_cases.AndroidGetMentorOrders
 import com.example.ajarin.android.core.domain.use_cases.AndroidGetUserOrders
 import com.example.ajarin.domain.order.model.Order
+import com.example.ajarin.domain.order.model.dummyHistory
 import com.example.ajarin.domain.user.use_cases.GetUser
 import com.example.ajarin.presentation.history.HistoryEvent
 import com.example.ajarin.presentation.history.HistoryViewModel
@@ -14,7 +14,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -40,35 +39,51 @@ class AndroidHistoryViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            val result = getUser()
-            val isMentor = result?.roleType == "2"
-
             viewModel.onEvent(
                 event = HistoryEvent.OnUpdateIsMentor(
-                    isMentor = isMentor
+                    isMentor = true
                 )
             )
 
-            if (isMentor) {
-                viewModelScope.launch {
-                    getMentorOrders()
-                        .distinctUntilChanged()
-                        .cachedIn(viewModelScope)
-                        .collect {
-                            _mentorOrders.value = it
-                        }
-                }
+            viewModelScope.launch {
+                _mentorOrders.value = PagingData.from(dummyHistory)
             }
         }
 
         viewModelScope.launch {
-            getUserOrders()
-                .distinctUntilChanged()
-                .cachedIn(viewModelScope)
-                .collect {
-                    _userOrders.value = it
-                }
+            _userOrders.value = PagingData.from(dummyHistory)
         }
+
+//        viewModelScope.launch {
+//            val result = getUser()
+//            val isMentor = result?.roleType == "2"
+//
+//            viewModel.onEvent(
+//                event = HistoryEvent.OnUpdateIsMentor(
+//                    isMentor = isMentor
+//                )
+//            )
+//
+//            if (isMentor) {
+//                viewModelScope.launch {
+//                    getMentorOrders()
+//                        .distinctUntilChanged()
+//                        .cachedIn(viewModelScope)
+//                        .collect {
+//                            _mentorOrders.value = it
+//                        }
+//                }
+//            }
+//        }
+//
+//        viewModelScope.launch {
+//            getUserOrders()
+//                .distinctUntilChanged()
+//                .cachedIn(viewModelScope)
+//                .collect {
+//                    _userOrders.value = it
+//                }
+//        }
     }
 
     val state = viewModel.state

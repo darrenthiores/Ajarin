@@ -134,26 +134,29 @@ fun SearchMentorScreen(
                 }
             }
 
-            if (mentors.itemCount > 0) {
-                SearchMentorResult(
-                    mentors = mentors,
-                    state = resultListState,
-                    onMentorClick = onMentorClick
-                )
-            } else {
-                SearchMentorDefault(
-                    courses = state.courses,
-                    onCourseClick = {
-                        onEvent(
-                            SearchMentorEvent.OnPickCourse(it)
-                        )
+            when {
+                mentors.itemCount <= 0 -> {
+                    SearchMentorDefault(
+                        courses = state.courses,
+                        onCourseClick = {
+                            onEvent(
+                                SearchMentorEvent.OnPickCourse(it)
+                            )
 
-                        onEvent(
-                            SearchMentorEvent.OnApply
-                        )
-                    },
-                    state = defaultListState
-                )
+                            onEvent(
+                                SearchMentorEvent.OnApply
+                            )
+                        },
+                        state = defaultListState
+                    )
+                }
+                else -> {
+                    SearchMentorResult(
+                        mentors = mentors,
+                        state = resultListState,
+                        onMentorClick = onMentorClick
+                    )
+                }
             }
         }
     }

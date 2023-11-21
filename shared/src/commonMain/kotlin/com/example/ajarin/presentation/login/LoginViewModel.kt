@@ -35,6 +35,18 @@ class LoginViewModel(
         when(event) {
             LoginEvent.Login -> {
                 viewModelScope.launch {
+                    _state.value = state.value.copy(
+                        loginSuccess = true
+                    )
+
+                    viewModelScope.launch {
+                        _uiEvent.send(
+                            UiEvent.Success
+                        )
+                    }
+
+                    return@launch
+
                     val result = login(
                         email = state.value.email,
                         password = state.value.password

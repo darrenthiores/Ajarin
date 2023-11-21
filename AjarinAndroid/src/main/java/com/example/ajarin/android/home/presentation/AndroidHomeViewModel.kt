@@ -3,11 +3,11 @@ package com.example.ajarin.android.home.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
-import androidx.paging.cachedIn
 import com.example.ajarin.android.core.domain.preferences.Preferences
 import com.example.ajarin.android.core.domain.use_cases.AndroidGetMentors
 import com.example.ajarin.android.core.domain.use_cases.AndroidSearchMentors
 import com.example.ajarin.domain.mentor.model.Mentor
+import com.example.ajarin.domain.mentor.model.dummyMentors
 import com.example.ajarin.domain.mentor.use_cases.GetMentors
 import com.example.ajarin.domain.mentor.use_cases.SearchMentor
 import com.example.ajarin.domain.message.use_cases.GetUnreadCount
@@ -20,7 +20,6 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -60,36 +59,41 @@ class AndroidHomeViewModel @Inject constructor(
         viewModel.onEvent(event)
 
         if (event is HomeEvent.OnSelectCourse) {
-            searchMentorJob?.cancel()
-            searchMentorJob = viewModelScope.launch {
-                androidSearchMentor(
-                    name = "",
-                    education = "",
-                    rating = 0.0,
-                    courseId = event.course.id,
-                    price = ""
-                )
-                    .distinctUntilChanged()
-                    .cachedIn(viewModelScope)
-                    .collect {
-                        _searchMentors.value = it
-                    }
-            }
+//            searchMentorJob?.cancel()
+//            searchMentorJob = viewModelScope.launch {
+//                androidSearchMentor(
+//                    name = "",
+//                    education = "",
+//                    rating = 0.0,
+//                    courseId = event.course.id,
+//                    price = ""
+//                )
+//                    .distinctUntilChanged()
+//                    .cachedIn(viewModelScope)
+//                    .collect {
+//                        _searchMentors.value = it
+//                    }
+//            }
         }
     }
 
     init {
-        viewModel.initUnreadCount(
-            userId = "U1"
-        )
+//        viewModel.initUnreadCount(
+//            userId = "U1"
+//        )
+//
+//        viewModelScope.launch {
+//            androidGetMentors()
+//                .distinctUntilChanged()
+//                .cachedIn(viewModelScope)
+//                .collect {
+//                    _mentors.value = it
+//                }
+//        }
 
         viewModelScope.launch {
-            androidGetMentors()
-                .distinctUntilChanged()
-                .cachedIn(viewModelScope)
-                .collect {
-                    _mentors.value = it
-                }
+            _mentors.value = PagingData
+                .from(dummyMentors)
         }
     }
 }

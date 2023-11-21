@@ -91,6 +91,7 @@ fun MentorProfileScreen(
         BoxWithConstraints {
             val screenHeight = maxHeight
             val scrollState = rememberScrollState()
+
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -108,6 +109,7 @@ fun MentorProfileScreen(
                         .crossfade(true)
                         .build(),
                     placeholder = painterResource(id = R.drawable.ic_no_picture),
+                    error = painterResource(id = R.drawable.ic_no_picture),
                     contentDescription = mentor?.id + " photo"
                 )
 

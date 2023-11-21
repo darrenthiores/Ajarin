@@ -34,7 +34,11 @@ class AppState(
             TopLevelDestination.Search.name -> true
             TopLevelDestination.History.name -> true
             TopLevelDestination.Profile.name -> true
-            else -> false
+            else -> {
+                currentDestination
+                    ?.route
+                    ?.contains(TopLevelDestination.Search.name) ?: false
+            }
         }
 }
 

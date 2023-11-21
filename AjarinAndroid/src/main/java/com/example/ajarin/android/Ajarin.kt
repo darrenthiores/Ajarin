@@ -167,13 +167,25 @@ fun Ajarin(
                     onMentorClick = { mentorId ->
                         navController.navigate(Route.MentorProfile.name + "/$mentorId")
                     },
+                    onCourseClick = { course ->
+                        navController.navigate(TopLevelDestination.Search.name + "?courseId=${course.id}")
+                    },
                     onMessageClick = {
                         navController.navigate(Route.Inbox.name)
                     }
                 )
             }
 
-            composable(TopLevelDestination.Search.name) {
+            composable(
+                route = TopLevelDestination.Search.name + "?courseId={courseId}",
+                arguments = listOf(
+                    navArgument("courseId") {
+                        NavType.StringType
+                        nullable = true
+                        defaultValue = null
+                    }
+                )
+            ) {
                 val viewModel: AndroidSearchMentorViewModel = hiltViewModel()
                 val state by viewModel.state.collectAsState()
                 val mentors = viewModel.searchMentors.collectAsLazyPagingItems()

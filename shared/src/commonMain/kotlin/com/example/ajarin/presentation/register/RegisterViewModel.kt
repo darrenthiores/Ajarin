@@ -142,6 +142,18 @@ class RegisterViewModel(
             }
             RegisterEvent.OnVerifyOtp -> {
                 viewModelScope.launch {
+                    _state.value = state.value.copy(
+                        registerSuccess = true
+                    )
+
+                    viewModelScope.launch {
+                        _uiEvent.send(
+                            UiEvent.Success
+                        )
+                    }
+
+                    return@launch
+
                     val result = register(
                         email = state.value.email,
                         number = state.value.number,

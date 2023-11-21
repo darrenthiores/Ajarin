@@ -30,7 +30,15 @@ enum class TopLevelDestination(
                 Search.name -> Search
                 History.name -> History
                 Profile.name -> Profile
-                else -> null
+                else -> {
+                    when (route?.substringBefore("?")) {
+                        Home.name -> Home
+                        Search.name -> Search
+                        History.name -> History
+                        Profile.name -> Profile
+                        else -> null
+                    }
+                }
             }
     }
 }

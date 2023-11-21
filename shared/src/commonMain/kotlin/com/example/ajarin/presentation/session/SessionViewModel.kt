@@ -1,7 +1,9 @@
 package com.example.ajarin.presentation.session
 
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
+import com.example.ajarin.domain.mentor.model.dummyMentors
 import com.example.ajarin.domain.mentor.use_cases.GetMentorById
+import com.example.ajarin.domain.order.model.dummyHistory
 import com.example.ajarin.domain.order.use_cases.GetOrderById
 import com.example.ajarin.domain.utils.Resource
 import kotlinx.coroutines.CoroutineScope
@@ -27,6 +29,14 @@ class SessionViewModel(
             _state.value = state.value.copy(
                 isSessionLoading = true
             )
+
+            _state.value = state.value.copy(
+                historySession = dummyHistory.firstOrNull { it.id == sessionId },
+                isSessionLoading = false,
+                isSessionError = null
+            )
+
+            return@launch
 
             val result = getOrderById(
                 id = sessionId
@@ -54,6 +64,14 @@ class SessionViewModel(
             _state.value = state.value.copy(
                 isMentorLoading = true
             )
+
+            _state.value = state.value.copy(
+                isMentorLoading = false,
+                isMentorError = null,
+                mentor = dummyMentors.firstOrNull { it.id == mentorId }
+            )
+
+            return@launch
 
             val result = getMentorById(
                 id = mentorId

@@ -2,6 +2,7 @@ package com.example.ajarin.presentation.message
 
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
 import com.example.ajarin.domain.inbox.use_cases.CreateInbox
+import com.example.ajarin.domain.mentor.model.dummyMentors
 import com.example.ajarin.domain.mentor.use_cases.GetMentorById
 import com.example.ajarin.domain.message.use_cases.GetMessagesById
 import com.example.ajarin.domain.message.use_cases.InsertMessage
@@ -88,6 +89,14 @@ class MessageViewModel(
             _state.value = state.value.copy(
                 mentorLoading = true
             )
+
+            _state.value = state.value.copy(
+                mentor = dummyMentors.firstOrNull { it.id == mentorId },
+                mentorError = null,
+                mentorLoading = false
+            )
+
+            return@launch
 
             when(
                 val result = getMentorById(id = mentorId)

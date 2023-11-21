@@ -5,8 +5,6 @@ import com.example.ajarin.domain.message.use_cases.GetUnreadCount
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 
 class HomeViewModel(
     private val getUnreadCount: GetUnreadCount,
@@ -36,16 +34,16 @@ class HomeViewModel(
     }
 
     fun initUnreadCount(userId: String) {
-        viewModelScope.launch {
-            getUnreadCount
-                .execute(
-                    userId = userId
-                )
-                .collectLatest {
-                    _state.value = state.value.copy(
-                        unreadMessageCount = it
-                    )
-                }
-        }
+//        viewModelScope.launch {
+//            getUnreadCount
+//                .execute(
+//                    userId = userId
+//                )
+//                .collectLatest {
+//                    _state.value = state.value.copy(
+//                        unreadMessageCount = it
+//                    )
+//                }
+//        }
     }
 }

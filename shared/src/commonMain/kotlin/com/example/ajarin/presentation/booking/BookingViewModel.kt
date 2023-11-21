@@ -2,6 +2,7 @@ package com.example.ajarin.presentation.booking
 
 import com.example.ajarin.domain.core.utils.toCommonFlow
 import com.example.ajarin.domain.core.utils.toCommonStateFlow
+import com.example.ajarin.domain.mentor.model.dummyMentors
 import com.example.ajarin.domain.mentor.use_cases.GetMentorById
 import com.example.ajarin.domain.order.use_cases.CreateOrder
 import com.example.ajarin.domain.utils.LocalDateConverter
@@ -55,6 +56,18 @@ class BookingViewModel(
 
                     return
                 }
+
+                _state.value = state.value.copy(
+                    bookingSuccess = true
+                )
+
+                viewModelScope.launch {
+                    _uiEvent.send(
+                        UiEvent.Success
+                    )
+                }
+
+                return
 
                 viewModelScope.launch {
                     val stateValue = state.value
@@ -124,6 +137,23 @@ class BookingViewModel(
             _state.value = state.value.copy(
                 isFetching = true
             )
+
+            val result = dummyMentors.firstOrNull { it.id == id }
+            val mentorPrice = result
+                ?.price
+                ?.replace(".", "")
+                ?.toIntOrNull() ?: 0
+            val fee = mentorPrice * 0.1
+            val fixedFee = if (fee == 0.0) "5000" else fee.toString()
+
+            _state.value = state.value.copy(
+                isError = null,
+                isFetching = false,
+                mentor = result,
+                platformFee = "5000"
+            )
+
+            return@launch
 
             when(
                 val result = getMentorById(id)
