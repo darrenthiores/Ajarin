@@ -37,8 +37,8 @@ fun CoursesList(
 ) {
     val configuration = LocalConfiguration.current
     val screenWidth = configuration.screenWidthDp / 4
-    val itemWidth = (screenWidth - 24)
-    val imageWidth = (itemWidth - 32)
+    val itemWidth = (screenWidth - 24 - 2)
+    val imageWidth = (itemWidth - 32 - 2)
 
     FlowRow(
         modifier = modifier
