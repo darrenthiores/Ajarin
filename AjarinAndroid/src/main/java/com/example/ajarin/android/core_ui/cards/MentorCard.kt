@@ -57,14 +57,15 @@ fun MentorCard(
             AsyncImage(
                 modifier = modifier
                     .fillMaxWidth()
-                    .aspectRatio(4/5f),
+                    .aspectRatio(4 / 5f),
                 contentScale = ContentScale.Crop,
                 model = ImageRequest
                     .Builder(context)
                     .data(mentor.photoUrl)
                     .crossfade(true)
                     .build(),
-                placeholder = painterResource(id = R.drawable.ic_no_picture),
+                placeholder = painterResource(id = R.drawable.boy),
+                error = painterResource(id = R.drawable.boy),
                 contentDescription = mentor.id + " photo"
             )
 

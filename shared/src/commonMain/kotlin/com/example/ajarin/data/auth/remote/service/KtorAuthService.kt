@@ -18,7 +18,7 @@ import io.ktor.http.contentType
 class KtorAuthService(
     private val client: HttpClient
 ): AuthService {
-    override suspend fun login(request: LoginRequest): BaseResponse<AuthResponse> {
+    override suspend fun login(request: LoginRequest): BaseResponse<AuthResponse?> {
         val result = client.post {
             url(AuthService.LOGIN_URL)
             contentType(ContentType.Application.Json)
@@ -29,7 +29,7 @@ class KtorAuthService(
         return result.body()
     }
 
-    override suspend fun register(request: RegisterRequest): BaseResponse<AuthResponse> {
+    override suspend fun register(request: RegisterRequest): BaseResponse<AuthResponse?> {
         val result = client.post {
             url(AuthService.REGISTER_URL)
             contentType(ContentType.Application.Json)

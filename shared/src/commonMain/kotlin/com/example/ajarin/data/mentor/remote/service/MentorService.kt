@@ -18,7 +18,7 @@ interface MentorService {
     suspend fun applyAsMentor(request: ApplyAsMentorRequest): ApplyResponse
 
     companion object {
-        private const val BASE_URL = "http://10.0.2.2:8080"
+        private const val BASE_URL = "https://ajarin-400903.et.r.appspot.com"
         private const val LOCAL_BASE_URL = "http://10.0.2.2:8080"
         private const val IOS_BASE_URL = "http://0.0.0.0:8080"
         const val MENTOR_URL = "$BASE_URL/mentor"

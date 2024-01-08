@@ -108,8 +108,8 @@ fun MentorProfileScreen(
                         .data(mentor?.photoUrl)
                         .crossfade(true)
                         .build(),
-                    placeholder = painterResource(id = R.drawable.ic_no_picture),
-                    error = painterResource(id = R.drawable.ic_no_picture),
+                    placeholder = painterResource(id = R.drawable.boy),
+                    error = painterResource(id = R.drawable.boy),
                     contentDescription = mentor?.id + " photo"
                 )
 
