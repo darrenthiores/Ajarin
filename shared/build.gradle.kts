@@ -51,7 +51,7 @@ kotlin {
                 implementation(Deps.sqlDelightAndroidDriver)
             }
         }
-        val androidTest by getting
+        // val androidTest by getting
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
@@ -80,10 +80,10 @@ kotlin {
 
 android {
     namespace = "com.example.ajarin"
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
     }
 }
 

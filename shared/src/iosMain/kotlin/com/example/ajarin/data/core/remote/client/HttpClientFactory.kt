@@ -13,6 +13,7 @@ import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.http.encodedPath
 import io.ktor.serialization.kotlinx.json.json
+import kotlinx.serialization.json.Json
 
 actual class HttpClientFactory {
     actual fun create(
@@ -81,8 +82,8 @@ actual class HttpClientFactory {
 //                        }
 //                    }
                     sendWithoutRequest {
-                        !it.url.encodedPath.startsWith("/local/login") &&
-                                !it.url.encodedPath.startsWith("/local/register")
+                        !it.url.encodedPath.startsWith("/user/login") &&
+                                !it.url.encodedPath.startsWith("/user/register")
                     }
                 }
             }
