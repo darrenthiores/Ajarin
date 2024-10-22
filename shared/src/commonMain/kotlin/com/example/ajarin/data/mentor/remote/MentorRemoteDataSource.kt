@@ -20,7 +20,11 @@ class MentorRemoteDataSource(
                 val result = apiService.getMentor()
 
                 if (result.meta.success) {
-                    ApiResponse.Success(result.data)
+                    result.data?.let {
+                        return@tryCatch ApiResponse.Success(it)
+                    }
+
+                    ApiResponse.Error(result.meta.message)
                 }
                 else {
                     ApiResponse.Error(result.meta.message)
@@ -39,7 +43,11 @@ class MentorRemoteDataSource(
                 )
 
                 if (result.meta.success) {
-                    ApiResponse.Success(result.data)
+                    result.data?.let {
+                        return@tryCatch ApiResponse.Success(it)
+                    }
+
+                    ApiResponse.Error(result.meta.message)
                 }
                 else {
                     ApiResponse.Error(result.meta.message)
@@ -58,7 +66,11 @@ class MentorRemoteDataSource(
                 )
 
                 if (result.meta.success) {
-                    ApiResponse.Success(result.data)
+                    result.data?.let {
+                        return@tryCatch ApiResponse.Success(it)
+                    }
+
+                    ApiResponse.Error(result.meta.message)
                 }
                 else {
                     ApiResponse.Error(result.meta.message)
@@ -79,7 +91,11 @@ class MentorRemoteDataSource(
                 )
 
                 if (result.meta.success) {
-                    ApiResponse.Success(result.data)
+                    result.data?.let {
+                        return@tryCatch ApiResponse.Success(it)
+                    }
+
+                    ApiResponse.Error(result.meta.message)
                 }
                 else {
                     ApiResponse.Error(result.meta.message)

@@ -81,8 +81,8 @@ actual class HttpClientFactory {
 //                        }
 //                    }
                     sendWithoutRequest {
-                        !it.url.encodedPath.startsWith("/local/login") &&
-                                !it.url.encodedPath.startsWith("/local/register")
+                        !it.url.encodedPath.startsWith("/user/login") &&
+                                !it.url.encodedPath.startsWith("/user/register")
                     }
                 }
             }

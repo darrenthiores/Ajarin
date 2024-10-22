@@ -18,8 +18,8 @@ interface ReviewService {
         private const val BASE_URL = "http://10.0.2.2:8080"
         private const val LOCAL_BASE_URL = "http://10.0.2.2:8080"
         private const val IOS_BASE_URL = "http://0.0.0.0t:8080"
-        const val REVIEW_URL = "$BASE_URL/review"
-        const val GET_MENTOR_REVIEW_URL = "$BASE_URL/review/mentor"
-        const val CREATE_REVIEW_URL = "$BASE_URL/review/create"
+        const val REVIEW_URL = "$IOS_BASE_URL/review"
+        const val GET_MENTOR_REVIEW_URL = "$IOS_BASE_URL/review/mentor"
+        const val CREATE_REVIEW_URL = "$IOS_BASE_URL/review/create"
     }
 }

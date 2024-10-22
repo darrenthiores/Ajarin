@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class BaseResponse <T> (
     val meta: Meta,
-    val data: T
+    val data: T?
 ) {
     @Serializable
     data class Meta(

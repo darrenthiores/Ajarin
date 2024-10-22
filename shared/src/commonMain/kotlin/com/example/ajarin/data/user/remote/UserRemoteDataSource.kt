@@ -18,7 +18,11 @@ class UserRemoteDataSource(
                 val result = apiService.getUser()
 
                 if (result.meta.success) {
-                    ApiResponse.Success(result.data)
+                    result.data?.let {
+                        ApiResponse.Success(it)
+                    }
+
+                    ApiResponse.Error(result.meta.message)
                 }
                 else {
                     ApiResponse.Error(result.meta.message)
@@ -37,7 +41,11 @@ class UserRemoteDataSource(
                 )
 
                 if (result.meta.success) {
-                    ApiResponse.Success(result.data)
+                    result.data?.let {
+                        return@tryCatch ApiResponse.Success(it)
+                    }
+
+                    ApiResponse.Error(result.meta.message)
                 }
                 else {
                     ApiResponse.Error(result.meta.message)

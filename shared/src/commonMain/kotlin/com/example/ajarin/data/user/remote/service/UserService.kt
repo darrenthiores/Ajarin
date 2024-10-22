@@ -12,6 +12,6 @@ interface UserService {
         private const val BASE_URL = "http://10.0.2.2:8080"
         private const val LOCAL_BASE_URL = "http://10.0.2.2:8080"
         private const val IOS_BASE_URL = "http://0.0.0.0:8080"
-        const val USER_URL = "$BASE_URL/user"
+        const val USER_URL = "$IOS_BASE_URL/user"
     }
 }

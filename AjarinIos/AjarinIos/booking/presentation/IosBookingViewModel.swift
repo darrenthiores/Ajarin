@@ -26,6 +26,7 @@ extension BookingScreen {
             scheduleError: nil,
             paymentMethod: nil,
             paymentMethodError: nil,
+            platformFee: nil,
             bookingSuccess: false
         )
         
