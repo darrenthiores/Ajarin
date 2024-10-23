@@ -3,7 +3,7 @@ object Deps {
     private const val activityComposeVersion = "1.6.1"
     const val activityCompose = "androidx.activity:activity-compose:$activityComposeVersion"
 
-    const val composeVersion = "1.4.0-alpha02"
+    const val composeVersion = "1.5.3"
     const val composeUi = "androidx.compose.ui:ui:$composeVersion"
     const val composeUiTooling = "androidx.compose.ui:ui-tooling:$composeVersion"
     const val composeUiToolingPreview = "androidx.compose.ui:ui-tooling-preview:$composeVersion"
@@ -33,8 +33,8 @@ object Deps {
     const val kotlinDateTime = "org.jetbrains.kotlinx:kotlinx-datetime:$dateTimeVersion"
 
     // HILT
-    private const val hiltVersion = "2.42"
-    private const val hiltCompilerVersion = "1.0.0"
+    private const val hiltVersion = "2.48"
+    private const val hiltCompilerVersion = "1.2.0"
     const val hiltAndroid = "com.google.dagger:hilt-android:$hiltVersion"
     const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
     const val hiltCompiler = "androidx.hilt:hilt-compiler:$hiltCompilerVersion"
@@ -54,7 +54,7 @@ object Deps {
     const val logBackClassic = "ch.qos.logback:logback-classic:$logBackClassicVersion"
 
     // GRADLE PLUGINS
-    const val kotlinVersion = "1.7.21"
+    const val kotlinVersion = "1.9.10"
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
 
     private const val gradleVersion = "7.2.2"
